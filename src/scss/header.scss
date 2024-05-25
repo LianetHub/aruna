@@ -7,6 +7,13 @@
 	@media (min-width: $md1) {
 		background: transparent;
 	}
+	&.header_main {
+		.header__body {
+			@media (min-width: $md1) {
+				margin-bottom: -100%;
+			}
+		}
+	}
 	// .header__container
 	&__container {
 	}
@@ -21,7 +28,6 @@
 			padding: 1.25rem 1rem;
 		}
 		@media (min-width: $md1) {
-			margin-bottom: -100%;
 			padding: 1.75rem 6rem;
 		}
 	}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'ARUNA | Каталог'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "className": "",
+            "active": 2
+            })
+            <main class="page">
+                <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Главная</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <span class="breadcrumbs__link active" itemprop="item">
+                                    <span itemprop="name">О нас</span>
+                                </span>
+                                <meta itemprop="position" content="2">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="products">
+                    <div class="products__container">
+                        <div class="products__header">
+                            <h2 class="products__title title">
+                                Продукция
+                            </h2>
+                            <div class="products__controls">
+                                <button type="button" class="swiper-button-prev products__prev"></button>
+                                <button type="button" class="swiper-button-next products__next"></button>
+                            </div>
+                        </div>
+                        <div class="products__slider ">
+                            <div class="swiper-wrapper">
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/01.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Линейные светильники</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/02.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Прожекторы</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/03.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Акцентные</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/04.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Контурные</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/01.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Линейные светильники</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/02.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Прожекторы</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/03.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Акцентные</span>
+                                </a>
+                                <a href="" class="products__slide swiper-slide">
+                                    <span class="products__slide-image">
+                                        <img src="@img/products/04.png" alt="Изображение товара">
+                                    </span>
+                                    <span class="products__slide-name icon-right">Контурные</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="" class="products__more btn btn-lg btn-secondary icon-more">
+                            Смотреть каталог
+                        </a>
+                    </div>
+                </section>
+
+                @@include('./html/_feedback.html', {})
+            </main>
+            @@include('html/_footer.html', {
+            "active": 2
+            })
+        </div>
+        @@include('html/_modal.html', {})
+        @@include('html/_js.html', {})
+    </body>
+</html>
