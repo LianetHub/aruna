@@ -78,7 +78,7 @@ export const fontsStyle = () => {
                         case "thin": fontWeight = 100; break;
                         case "extralight": fontWeight = 200; break;
                         case "light": fontWeight = 300; break;
-                        case "book": fontWeight = 400; break;
+                        case "book": fontWeight = 350; break;
                         case "medium": fontWeight = 500; break;
                         case "semibold":
                         case "demi": fontWeight = 600; break;
@@ -93,7 +93,7 @@ export const fontsStyle = () => {
                         `@font-face {
                             font-family: '${fontName}';
                             font-display: swap;
-                            src: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");
+                            src: url("../fonts/${fontFileName}.woff") format("woff"), url("../fonts/${fontFileName}.woff2") format("woff2");
                             font-weight: ${fontWeight};
                             font-style: normal;
                         }\r\n`, cb);

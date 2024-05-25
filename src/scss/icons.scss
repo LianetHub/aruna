@@ -1,0 +1,41 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	speak: never;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+.icon-location:before {
+	content: "\e905";
+}
+.icon-phone:before {
+	content: "\e906";
+}
+.icon-check:before {
+	content: "\e900";
+}
+.icon-left:before {
+	content: "\e901";
+}
+.icon-more:before {
+	content: "\e902";
+}
+.icon-right:before {
+	content: "\e903";
+}
+.icon-right-short:before {
+	content: "\e904";
+}
