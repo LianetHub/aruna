@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'ARUNA | Ошибка'
+    })
+    <body>
+        <div class="wrapper">
+
+            <main class="page">
+                <section class="error">
+                    <div class="error__container">
+                        <div class="error__status">
+                            404
+                        </div>
+                        <h1 class="error__title">
+                            Страница не найдена
+                        </h1>
+                        <p class="error__subtitle">
+                            Страница, которую вы пытаетесь открыть, не существует или была удалена
+                        </p>
+                        <a href="/" class="error__btn btn btn-shadow icon-more"><span><span class="desktop-only">Перейти</span> на главную <span class="desktop-only">страницу</span></span></a>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {
+            "active": 0
+            })
+        </div>
+        @@include('html/_modal.html', {})
+        @@include('html/_js.html', {
+        "map": false
+        })
+    </body>
+</html>
