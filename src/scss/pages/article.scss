@@ -1,0 +1,345 @@
+.article {
+	padding: 0.25rem 0 4rem;
+	@media (min-width: $md4) {
+		padding: 0.75rem 0 4rem;
+	}
+	@media (min-width: $md2) {
+		padding: 1.25rem 0 4rem;
+	}
+	// .article__container
+	&__container {
+	}
+	// .article__content
+	&__content {
+		@media (min-width: $md1) {
+			margin-right: -5.7rem;
+		}
+	}
+	// .article__time
+	&__time {
+		color: #a1a5a7;
+		font-weight: 500;
+		line-height: 120%;
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		font-size: 0.875rem;
+		@media (min-width: $md2) {
+			font-size: 1.25rem;
+		}
+	}
+	// .article__title
+	&__title {
+		margin-top: 0.5rem;
+		@media (min-width: $md4) {
+			margin-top: 1.5rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 1rem;
+		}
+	}
+	// .article__image
+	&__image {
+		margin-top: 1.125rem;
+		margin-right: -1rem;
+		margin-left: -1rem;
+		@media (min-width: $md4) {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 3.5rem;
+		}
+		@media (min-width: $md3) {
+			height: 30.85644rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 3.75rem;
+			height: 43.16763rem;
+		}
+		& img {
+			min-height: 12.82994rem;
+		}
+	}
+	// .article__caption
+	&__caption {
+		margin-top: 1.65rem;
+		font-size: 1.25rem;
+		font-weight: 500;
+		line-height: 120%;
+		@media (min-width: $md4) {
+			font-size: 2rem;
+			margin-top: 2.75rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 3.75rem;
+		}
+	}
+	// .article__nav
+	&__nav {
+		margin-top: 1.25rem;
+		@media (min-width: $md4) {
+			margin-top: 1.75rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 1.5rem;
+		}
+	}
+	// .article__nav-list
+	&__nav-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	// .article__nav-item
+	&__nav-item {
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+
+			@media (min-width: $md2) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	// .article__nav-link
+	&__nav-link {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		transition: color 0.3s ease 0s;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 140%;
+		@media (min-width: $md4) {
+			line-height: 120%;
+			font-size: 1rem;
+			gap: 1rem;
+			font-size: 1.125rem;
+		}
+		@media (min-width: $md2) {
+			font-size: 1.25rem;
+		}
+		&::before {
+			align-self: flex-start;
+			font-size: 1.25rem;
+			@media (min-width: $md4) {
+				font-size: 1.4rem;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: #8a8e92;
+			}
+		}
+	}
+	// .article__body
+	&__body {
+		margin-top: 2rem;
+		@media (min-width: $md4) {
+			margin-top: 2.75rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 3.75rem;
+		}
+		& > * {
+			&:not(figure) {
+				max-width: 51.77063rem;
+				@media (min-width: $md2) {
+					max-width: 62.5rem;
+				}
+			}
+		}
+		& h2 {
+			font-weight: 500;
+			line-height: 120%;
+			font-size: 1.25rem;
+			@media (min-width: $md4) {
+				font-size: 2rem;
+			}
+			&:not(:first-child) {
+				margin-top: 1.5rem;
+				@media (min-width: $md4) {
+					margin-top: 2.35rem;
+				}
+				@media (min-width: $md2) {
+					margin-top: 3rem;
+				}
+			}
+		}
+		& p {
+			&:not(:first-child) {
+				margin-top: 1rem;
+			}
+			font-size: 0.875rem;
+			line-height: 160%;
+			@media (min-width: $md4) {
+				&:not(:first-child) {
+					margin-top: 1.5rem;
+				}
+				font-size: 1rem;
+				line-height: 120%;
+			}
+			@media (min-width: $md2) {
+				line-height: 140%;
+				&:not(:first-child) {
+					margin-top: 1.6rem;
+				}
+				font-size: 1.125rem;
+			}
+		}
+		& cite {
+			font-weight: 500;
+			display: block;
+			font-style: normal;
+			border-left: rem(6) solid #8a8e92;
+			font-size: 1rem;
+			padding: 0.25rem 0 0.25rem 1.2rem;
+			&:not(:first-child) {
+				margin-top: 2rem;
+			}
+			line-height: 160%;
+			@media (min-width: $md4) {
+				line-height: 120%;
+				&:not(:first-child) {
+					margin-top: 2.25rem;
+				}
+				font-size: 1.25rem;
+				padding: 0.25rem 0 0.25rem 1.2rem;
+			}
+			@media (min-width: $md2) {
+				padding: 0.25rem 0 0.25rem 1.6rem;
+				font-size: 1.5rem;
+			}
+		}
+		& figure {
+			display: flex;
+			flex-wrap: wrap;
+			gap: rem(22);
+			@media (min-width: $md2) {
+				gap: rem(30);
+			}
+			& img {
+				height: 17.58081rem;
+				width: 100%;
+				@media (min-width: $md5) {
+					width: calc(50% - rem(11));
+				}
+				@media (min-width: $md4) {
+					height: 29.11213rem;
+				}
+				@media (min-width: $md2) {
+					height: 44.82569rem;
+					width: calc(50% - rem(15));
+				}
+				object-fit: cover;
+				&:first-child {
+					&:nth-last-child(2) {
+						width: 100%;
+						@media (max-width: $md4) {
+							height: auto;
+						}
+					}
+				}
+			}
+			& figcaption {
+				flex: 0 0 100%;
+				color: #9aa2a9;
+				line-height: 120%;
+				font-weight: 500;
+				font-size: 0.875rem;
+				@media (min-width: $md4) {
+					font-size: 1.125rem;
+				}
+				@media (min-width: $md2) {
+					font-size: 1.25rem;
+				}
+			}
+			&:not(:first-child) {
+				margin-top: 1.25rem;
+				@media (min-width: $md2) {
+					margin-top: 2.25rem;
+				}
+			}
+		}
+		& ol {
+			&:not(:first-child) {
+				margin-top: 1.75rem;
+			}
+			& li {
+				& strong {
+					font-weight: 600;
+					line-height: 160%;
+					@media (min-width: $md5) {
+						font-size: 1rem;
+					}
+					@media (min-width: $md2) {
+						font-size: 1.25rem;
+					}
+				}
+				counter-increment: num;
+				&:not(:last-child) {
+					margin-bottom: 1.5rem;
+					@media (min-width: $md5) {
+						margin-bottom: 1.75rem;
+					}
+					@media (min-width: $md2) {
+						margin-bottom: 1.4rem;
+					}
+				}
+				position: relative;
+				padding-left: em(1.75, 1.125);
+				font-size: 0.875rem;
+				line-height: 155%;
+				@media (min-width: $md4) {
+					line-height: 135%;
+				}
+				@media (min-width: $md2) {
+					line-height: 125%;
+					font-size: 1.125rem;
+				}
+				&::before {
+					content: counter(num) ".";
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+					font-weight: 600;
+					font-size: 1rem;
+					height: em(2, 1.25);
+					width: em(1.5, 1.25);
+					@media (min-width: $md2) {
+						font-size: 1.25rem;
+					}
+				}
+			}
+		}
+	}
+	// .article__share
+	&__share {
+		border-radius: 0.5rem;
+		background: #07f;
+		display: inline-flex;
+		width: 100%;
+		@media (min-width: $md5) {
+			width: auto;
+		}
+		align-items: center;
+		justify-content: center;
+		font-size: 1.125rem;
+		line-height: 140%;
+		gap: 0.75rem;
+		padding: 0.75rem 1.06rem;
+		transition: background-color 0.3s ease 0s;
+		margin-top: 1.25rem;
+		@media (min-width: $md2) {
+			margin-top: 3.75rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: darken($color: #07f, $amount: 10);
+			}
+		}
+	}
+}

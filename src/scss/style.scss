@@ -50,7 +50,9 @@ $ui-index-5: 5; // Для модалок
 $ui-index-6: 6; // Для элементов, перекрывающих все
 
 //ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ
-
+html {
+	scroll-padding-top: rem(102);
+}
 body {
 	font-family: $fontfamily, sans-serif;
 	color: $white;
@@ -131,3 +133,4 @@ body {
 @import "pages/project";
 @import "pages/about";
 @import "pages/blog";
+@import "pages/article";
