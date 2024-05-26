@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'ARUNA | Блог'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "className": "",
+            "active": 5
+            })
+            <main class="page">
+                <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Главная</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumbs__link active" itemprop="item">
+                                    <span itemprop="name">Блог</span>
+                                </a>
+                                <meta itemprop="position" content="2">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="blog">
+                    <div class="blog__container">
+                        <h1 class="blog__title title">
+                            Блог
+                        </h1>
+                        <div class="blog__body">
+                            <a href="" class="blog__caption">
+                                <span class="blog__item-image">
+                                    <img src="@img/blog/01.jpg" class="cover-image" alt="Постер статьи">
+                                </span>
+                                <span class="blog__item-name">Освещение для древних жителей </span>
+                                <span class="blog__item-desc">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
+                                <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                            </a>
+                            <div class="blog__items">
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/01.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Освещение для древних жителей </span>
+                                    <span class="blog__item-desc">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/02.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Здоровье</span>
+                                    <span class="blog__item-desc">В свете последних исследований было выявлено, что недостаточное освещение внутренних помещений может негативно сказываться </span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/03.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Уличные фонари</span>
+                                    <span class="blog__item-desc">Специалисты по освещению разработали новый дизайн для уличных фонарей, который позволяет значительно сократить энергопотребление </span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/04.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Тенденции внутреннего освещения</span>
+                                    <span class="blog__item-desc">Известный архитектурный обозреватель отметил, что тенденции в области внутреннего освещения все чаще включают в себя использование подвесных светильников и .</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/05.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Интерьерное освещение</span>
+                                    <span class="blog__item-desc">Специалисты по дизайну интерьера все чаще обращают внимание на роль освещения в организации пространства. Новые тренды</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-05-08">08 Май, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/01.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Освещение для древних жителей </span>
+                                    <span class="blog__item-desc">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/02.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Здоровье</span>
+                                    <span class="blog__item-desc">В свете последних исследований было выявлено, что недостаточное освещение внутренних помещений может негативно сказываться </span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/03.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Уличные фонари</span>
+                                    <span class="blog__item-desc">Специалисты по освещению разработали новый дизайн для уличных фонарей, который позволяет значительно сократить энергопотребление </span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/04.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Тенденции внутреннего освещения</span>
+                                    <span class="blog__item-desc">Известный архитектурный обозреватель отметил, что тенденции в области внутреннего освещения все чаще включают в себя использование подвесных светильников и .</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/05.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Интерьерное освещение</span>
+                                    <span class="blog__item-desc">Специалисты по дизайну интерьера все чаще обращают внимание на роль освещения в организации пространства. Новые тренды</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-05-08">08 Май, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/03.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Уличные фонари</span>
+                                    <span class="blog__item-desc">Специалисты по освещению разработали новый дизайн для уличных фонарей, который позволяет значительно сократить энергопотребление </span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                                <a href="" class="blog__item">
+                                    <span class="blog__item-image">
+                                        <img src="@img/blog/04.jpg" class="cover-image" alt="Постер статьи">
+                                    </span>
+                                    <span class="blog__item-name">Тенденции внутреннего освещения</span>
+                                    <span class="blog__item-desc">Известный архитектурный обозреватель отметил, что тенденции в области внутреннего освещения все чаще включают в себя использование подвесных светильников и .</span>
+                                    <time class="blog__item-time icon-calendar" datetime="2024-04-12">12 апреля, 2024</time>
+                                </a>
+                            </div>
+                            <div class="blog__pagination pagination">
+                                <a href="" aria-disabled="true" class="pagination__btn">
+                                    <span>Предыдущий</span>
+                                </a>
+                                <a href="" class="pagination__item active">01</a>
+                                <a href="" class="pagination__item">02</a>
+                                <a href="" class="pagination__item">03</a>
+                                <a href="" class="pagination__item">04</a>
+                                <a href="" class="pagination__item">05</a>
+                                <span class="pagination__item">...</span>
+                                <a href="" class="pagination__item">24</a>
+                                <a href="" class="pagination__btn">
+                                    <span>Следующий</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_feedback.html', {})
+            </main>
+            @@include('html/_footer.html', {
+            "active": 5
+            })
+        </div>
+        @@include('html/_modal.html', {})
+        @@include('html/_js.html', {})
+    </body>
+</html>
