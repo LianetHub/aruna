@@ -1,14 +1,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
   font-weight: 350;
   font-style: normal;
@@ -17,16 +9,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -41,8 +33,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -50,6 +42,14 @@
   font-family: "Inter";
   font-display: swap;
   src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -3620,6 +3620,69 @@ body.lock {
   margin-top: 1.25rem;
 }
 
+.contacts {
+  padding: 0em 0em 2rem 0em;
+}
+
+.contacts__list {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+}
+
+.contacts__item-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.contacts__item-link {
+  font-size: 1.125rem;
+  line-height: 140%;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.contacts__item-address {
+  font-size: 1.125rem;
+  line-height: 140%;
+}
+
+.contacts__item-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.contacts__map {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 1.75rem;
+  height: 17.875rem;
+}
+
 @media (min-width: 575.98px) {
   [class*=__container] {
     max-width: 33.75rem;
@@ -4209,6 +4272,15 @@ body.lock {
 
   .article__share {
     width: auto;
+  }
+
+  .contacts__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacts__map {
+    height: 31.25rem;
   }
 }
 
@@ -5197,6 +5269,20 @@ body.lock {
 
   .article__image {
     height: 30.85644rem;
+  }
+
+  .contacts__list {
+    margin-top: 4.75rem;
+    gap: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contacts__item:not(:last-child) {
+    border-right: 0.0625rem solid rgba(255, 255, 255, 0.3);
+    margin-right: 1.55rem;
+    padding-right: 1.55rem;
   }
 }
 
@@ -6795,11 +6881,40 @@ body.lock {
   .article__content {
     margin-right: -5.7rem;
   }
+
+  .contacts__body {
+    margin-right: -5.7rem;
+  }
+
+  .contacts__list {
+    margin-top: 2.1875rem;
+  }
+
+  .contacts__item:not(:last-child) {
+    padding-right: 2.87rem;
+    margin-right: 2.87rem;
+  }
+
+  .contacts__map {
+    margin-top: 3rem;
+    left: auto;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1199.98px) {
   .desktop-only {
     display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .contacts__item {
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 1rem;
   }
 }
 
@@ -6830,6 +6945,11 @@ body.lock {
 
   .blog__more.btn.btn-lg {
     font-size: 1.125rem;
+  }
+
+  .contacts__item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 }
 
@@ -6975,5 +7095,9 @@ body.lock {
 
   .article__share:hover {
     background-color: #005fcc;
+  }
+
+  .contacts__item-link:hover {
+    color: rgba(255, 255, 255, 0.3);
   }
 }

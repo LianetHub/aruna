@@ -250,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="our-projects__image">
-                                <img src="@img/our-projects.jpg" class="cover-image" alt="Изображение товара" itemprop="image">
+                                <img src="@img/projects.jpg" class="cover-image" alt="Изображение товара" itemprop="image">
                             </div>
                         </div>
                         <a href="" class="our-projects__more btn btn-lg btn-secondary icon-more">
@@ -493,6 +493,8 @@
             })
         </div>
         @@include('html/_modal.html', {})
-        @@include('html/_js.html', {})
+        @@include('html/_js.html', {
+        "map": false
+        })
     </body>
 </html>
