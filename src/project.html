@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'ARUNA | Проекты | Страница проекта'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "className": "",
+            "active": 3
+            })
+            <main class="page">
+                <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Главная</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/projects.html" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Проекты</span>
+                                </a>
+                                <meta itemprop="position" content="2">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumbs__link active" itemprop="item">
+                                    <span itemprop="name">Освещение для дома на ул. Тукая</span>
+                                </a>
+                                <meta itemprop="position" content="3">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="project">
+                    <div class="project__container">
+                        <h1 class="project__title title-lg">Освещение для дома на ул. Тукая</h1>
+                        <p class="project__desc">
+                            Расположенное по адресу ул. Тукая в Казани, это здание, принадлежащее фонду недвижимости, предназначено для коммерческих и офисных помещений и привлекает известных арендаторов. Здание площадью 2 400 квадратных метров и высотой в семь этажей с 8-м этажом, который скоро появится, занимает выгодное местоположение в самом центре города. В настоящее время этот район находится в стадии редевелопмента, вызывая живой интерес со стороны институциональных инвесторов благодаря близости к различным объектам инфраструктуры.
+                        </p>
+                        <ul class="project__props">
+                            <li class="project__props-item">
+                                <div class="project__props-name">Год</div>
+                                <div class="project__props-value">2023</div>
+                            </li>
+                            <li class="project__props-item">
+                                <div class="project__props-name">Локация</div>
+                                <div class="project__props-value">г. Казань, Россия</div>
+                            </li>
+                            <li class="project__props-item">
+                                <div class="project__props-name">Дизайн</div>
+                                <div class="project__props-value">АРУНА</div>
+                            </li>
+                            <li class="project__props-item">
+                                <div class="project__props-name">Спецификация</div>
+                                <div class="project__props-value">HI LITE NEXT SRL</div>
+                            </li>
+                        </ul>
+                        <div class="project__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="project__slide swiper-slide">
+                                    <img src="@img/projects/05.jpg" class="cover-image" alt="Изображение проекта">
+                                </div>
+                                <div class="project__slide swiper-slide">
+                                    <img src="@img/projects/04.png" class="cover-image" alt="Изображение проекта">
+                                </div>
+                                <div class="project__slide swiper-slide">
+                                    <img src="@img/projects/02.png" class="cover-image" alt="Изображение проекта">
+                                </div>
+                                <div class="project__slide swiper-slide">
+                                    <img src="@img/projects/03.png" class="cover-image" alt="Изображение проекта">
+                                </div>
+                                <div class="project__slide swiper-slide">
+                                    <img src="@img/projects/01.png" class="cover-image" alt="Изображение проекта">
+                                </div>
+                            </div>
+                            <button type="button" class="swiper-button-prev project__prev"></button>
+                            <button type="button" class="swiper-button-next project__next"></button>
+                        </div>
+                        <div class="project__pagination swiper-pagination"></div>
+                        <a href="https://www.youtube.com/watch?v=RWsXPy4g8Mw" data-fancybox class="project__video icon-play">
+                            <img src="@img/video.jpg" class="cover-image" alt="Постер видео">
+                        </a>
+                        <div class="project__compare before-slider">
+                            <div class="before-slider__image before-slider__before" style="background-image: url(https://i.imgur.com/s08MkXC.jpg)"></div>
+                            <div class="before-slider__image before-slider__after" style="background-image: url(https://i.imgur.com/PfIWek4.jpg)"></div>
+                            <input type="range" min="0" max="100" value="50" class="before-slider__input" name="slider" />
+                            <div class="before-slider__button"></div>
+                        </div>
+                        <div class="project__article">
+                            <p>
+                                Согласно выбранному дизайну освещения, оригинальная геометрия фасада здания требовала сбалансированного чередования линий яркого белого света, чтобы обеспечить привлекательный эффект по всей его поверхности. Для достижения этой цели были выбраны сверхкомпактные линейные профили серии nanoPARADE, отличающиеся чрезвычайной тонкостью и оптимальными характеристиками. Оснащенные отдельным блоком питания, nanoPARADE - идеальное решение для легкой наружной установки на балконах, окнах или фасадах, где ограниченное монтажное пространство резко ограничивает ассортимент подходящих изделий.
+                            </p>
+                            <p>
+                                Выбранные в двух вариантах длины - 620 мм и 1220 мм - и с настраиваемой конфигурацией белого цвета от 2300K до 8000K, они были установлены на различные текстуры поверхности здания с помощью специальных крепежных кронштейнов. Полученный световой рисунок повторяет архитектуру здания с ее чередованием массивных элементов и пустых пространств за счет чередования коротких и длинных элементов в виде перекрестий. Теперь геометрическое расположение элегантно подчеркивается горизонтальными линиями света, придавая новую индивидуальность окружающей территории в ночное время. Чтобы завершить схему освещения, несколько светильников MOON WALL в конфигурации tunabe white были установлены на поперечном обрамлении первого этажа, направленном вниз, чтобы осветить входы в магазины, занимающие эту зону.
+                            </p>
+                            <p>
+                                Благодаря встроенной электронике с независимым управлением кластерами пикселей длиной в один фут, nanoPARADE легко управляется через RDM или DMX для создания привлекательных световых шоу с помощью динамической визуализации любого графического рисунка или анимации. Выбранная настраиваемая белая версия позволяет создавать удивительные визуальные рендеры с меняющимися оттенками белого.
+                            </p>
+                            <h2>
+                                Установленное оборудование
+                            </h2>
+                            <ul>
+                                <li>7x MOON WALL DW 3000K - 6500K, Narrow optics, black RAL 9005</li>
+                                <li>1x NANOPARADE 4 DW 2300K - 8000K ACTIVE</li>
+                                <li>2x NANOPARADE 2 DW 2300K - 8000K PASSIVE</li>
+                                <li>1x NANOPARADE LINE END CAP</li>
+                                <li>1x NANOPARADE START LINE with connectors</li>
+                                <li>1x IP67 Power supply unit 120W</li>
+                                <li>3x NANOPARADE 4 DW 2300K - 8000K ACTIVE</li>
+                                <li>7x NANOPARADE 4 DW 2300K - 8000K PASSIVE</li>
+                                <li>40x NANOPARADE 4 DW 2300K - 8000K PASSIVE</li>
+                                <li>72 x NANOPARADE 2 DW OPALINE 2300K - 8000K PASSIVE</li>
+                                <li>274x NANOPARADE FIXING BRACKET</li>
+                                <li>42xNANOPARADE LINE END CAP</li>
+                                <li>42x NANOPARADE START LINE with connectors</li>
+                                <li>2x WALL-TSC</li>
+                                <li>2x IP65 4-channels SPLITTER DMX-RDM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+                @@include('./html/_feedback.html', {})
+            </main>
+            @@include('html/_footer.html', {
+            "active": 3
+            })
+        </div>
+        @@include('html/_modal.html', {})
+        @@include('html/_js.html', {})
+    </body>
+</html>

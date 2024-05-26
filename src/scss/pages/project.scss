@@ -1,0 +1,250 @@
+.project {
+	padding: 0 0 3rem;
+	@media (min-width: $md4) {
+		padding: 0 0 10rem;
+	}
+	@media (min-width: $md2) {
+		padding: 0.75rem 0 4rem;
+	}
+	// .project__container
+	&__container {
+	}
+	// .project__title
+	&__title {
+	}
+	// .project__desc
+	&__desc {
+		max-width: 49.95775rem;
+		margin-top: 1.5rem;
+		font-size: 0.875rem;
+		line-height: 156%;
+		@media (min-width: $md4) {
+			line-height: 120%;
+			font-size: 1rem;
+			margin-top: 2rem;
+		}
+		@media (min-width: $md2) {
+			line-height: 160%;
+			max-width: 60.5rem;
+			margin-top: 3.5rem;
+			font-size: 1.25rem;
+		}
+	}
+	// .project__props
+	&__props {
+		display: grid;
+		gap: 2.06rem;
+		row-gap: 1.6rem;
+		grid-template-columns: 0.6fr 1fr;
+		margin-top: 1.87rem;
+		@media (min-width: $md4) {
+			margin-top: 3.75rem;
+			gap: 3.25rem;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		@media (min-width: $md2) {
+			gap: 2.5rem;
+			margin-top: 4rem;
+		}
+	}
+	// .project__props-item
+	&__props-item {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		&:nth-child(odd) {
+			&:not(:last-child) {
+				@media (max-width: $md4) {
+					border-right: rem(1) solid rgba(255, 255, 255, 0.2);
+				}
+			}
+		}
+		&:not(:last-child) {
+			@media (min-width: $md4) {
+				padding-right: 3.25rem;
+				border-right: rem(1) solid rgba(255, 255, 255, 0.2);
+			}
+			@media (min-width: $md2) {
+				padding-right: 2.5rem;
+			}
+		}
+	}
+	// .project__props-name
+	&__props-name {
+		font-size: 0.75rem;
+		line-height: 110%;
+		text-transform: uppercase;
+	}
+	// .project__props-value
+	&__props-value {
+		line-height: 160%;
+		margin-top: 1rem;
+		font-size: 1.125rem;
+		@media (min-width: $md2) {
+			font-size: 1.25rem;
+			margin-top: 1.5rem;
+		}
+	}
+	// .project__slider
+	&__slider {
+		overflow: visible;
+		margin-top: 1.75rem;
+		@media (min-width: $md4) {
+			margin-top: 3.75rem;
+		}
+	}
+	// .project__slide
+	&__slide {
+		height: auto;
+		& img {
+			min-height: 12.42231rem;
+		}
+	}
+	// .project__prev
+	&__prev {
+		display: none;
+		@media (min-width: $md5) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -1.5rem;
+			background: #fff;
+			color: $dark;
+			border-color: #fff;
+			width: 3.06844rem;
+			height: 3.06844rem;
+		}
+		@media (min-width: $md2) {
+			width: 3.8125rem;
+			height: 3.8125rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #8a8e92;
+				border-color: #8a8e92;
+			}
+		}
+	}
+	// .project__next
+	&__next {
+		display: none;
+		@media (min-width: $md5) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: -1.5rem;
+			left: auto;
+			background: #fff;
+			color: $dark;
+			border-color: #fff;
+			width: 3.06844rem;
+			height: 3.06844rem;
+		}
+		@media (min-width: $md2) {
+			width: 3.8125rem;
+			height: 3.8125rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #8a8e92;
+				border-color: #8a8e92;
+			}
+		}
+	}
+	// .project__pagination
+	&__pagination {
+		margin-top: 0.5rem;
+		@media (min-width: $md4) {
+			margin-top: 1rem;
+		}
+	}
+	// .project__video
+	&__video {
+		position: relative;
+		display: block;
+		margin-top: 1rem;
+		@media (min-width: $md5) {
+			margin-top: 2rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 3.35rem;
+		}
+		&::before {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 3.547rem;
+			@media (min-width: $md5) {
+				font-size: 5rem;
+			}
+			@media (min-width: $md3) {
+				font-size: 7.52188rem;
+			}
+			@media (min-width: $md2) {
+				font-size: 10rem;
+			}
+		}
+		& img {
+			min-height: 12.42231rem;
+		}
+	}
+	// .project__compare
+	&__compare {
+		margin-top: 2rem;
+		@media (min-width: $md5) {
+			width: 100vw;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-top: 3rem;
+		}
+		@media (min-width: $md2) {
+			left: 0;
+			width: 100%;
+			transform: none;
+			margin-top: 4rem;
+		}
+	}
+	// .project__article
+	&__article {
+		margin-top: 2.75rem;
+		font-size: 1rem;
+		line-height: 120%;
+		max-width: 51.58106rem;
+		@media (min-width: $md2) {
+			max-width: 60.5rem;
+			line-height: 160%;
+			font-size: 1.25rem;
+			margin-top: 4.25rem;
+		}
+		& p {
+			&:not(:first-child) {
+				margin-top: 1rem;
+				@media (min-width: $md2) {
+					margin-top: 2rem;
+				}
+			}
+		}
+		& h2 {
+			font-size: 1.5rem;
+			@media (min-width: $md2) {
+				font-size: 2rem;
+			}
+			font-weight: 500;
+			line-height: 120%;
+			&:not(:first-child) {
+				margin-top: 2.75rem;
+				@media (min-width: $md2) {
+					margin-top: 3.5rem;
+				}
+			}
+		}
+		& ul {
+			margin-top: 1rem;
+			@media (min-width: $md2) {
+				margin-top: 2rem;
+			}
+		}
+	}
+}

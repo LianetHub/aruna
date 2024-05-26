@@ -1,6 +1,7 @@
 //============ МОДУЛИ ====================
 @import "modules/popup";
 @import "modules/breadcrumbs";
+@import "modules/before-slider";
 // @import "modules/datepicker";
 // @import "modules/select";
 // @import "modules/animation";
@@ -94,10 +95,7 @@
 }
 
 .swiper-pagination {
-	margin-top: 1.25rem;
-	@media (min-width: $md5) {
-		margin-top: 0.75rem;
-	}
+	margin-top: 0.5rem;
 	position: static;
 	bottom: auto;
 	padding: 0.75rem 0;
@@ -105,42 +103,21 @@
 	justify-content: center;
 	.swiper-pagination-bullet {
 		position: relative;
-		width: rem(5);
-		height: rem(5);
-		opacity: 1;
-		color: #737474;
-		transition: color 0.3s ease 0s;
-		background: currentColor;
-		--swiper-pagination-bullet-horizontal-gap: 0.625rem;
-		color: #737474;
-		display: block;
-		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: scale(0) translate(-50%, -50%);
-			border: 1px solid currentColor;
-			width: rem(21);
-			height: rem(21);
-			border-radius: 50%;
-			transition: transform 0.2s linear 0s;
-			transform-origin: 0 0;
+		width: 0.5rem;
+		height: 0.5rem;
+		--swiper-pagination-bullet-horizontal-gap: 0.22rem;
+		@media (min-width: $md5) {
+			--swiper-pagination-bullet-horizontal-gap: 0.28rem;
+			width: 0.625rem;
+			height: 0.625rem;
 		}
-		&::after {
-			content: "";
-			position: absolute;
-			width: rem(21);
-			height: rem(21);
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+		background: #fff;
+		opacity: 0.27;
+		transition: all 0.3s ease 0s;
 		&.swiper-pagination-bullet-active {
-			color: #1371d5;
-			&::before {
-				transform: scale(1) translate(-50%, -50%);
-			}
+			opacity: 1;
+			transform: scale(math.div(1, 0.625));
+			margin: 0 0.56rem;
 		}
 	}
 }

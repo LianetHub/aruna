@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.OS();
     devFunctions.isWebp();
     devFunctions.intInputMask();
+    devFunctions.beforeSlider()
 
 
 
@@ -112,6 +113,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     spaceBetween: 24,
                 }
             }
+        })
+    }
+    if (document.querySelector('.project__slider')) {
+        new Swiper('.project__slider', {
+            slidesPerView: 1,
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true,
+            },
+            navigation: {
+                nextEl: '.project__next',
+                prevEl: '.project__prev'
+            },
+            pagination: {
+                el: '.project__pagination',
+                clickable: true
+            },
+
         })
     }
 

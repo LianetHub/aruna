@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head itemscope itemtype="http://schema.org/WPHeader">
-  <title itemprop="headline">ARUNA | Каталог</title>
+  <title itemprop="headline">ARUNA | О компании</title>
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
 
   <!-- Open Graph  -->
   <meta property="og:type" content="business.business">
-  <meta property="og:title" content="ARUNA | Каталог">
+  <meta property="og:title" content="ARUNA | О компании">
   <meta property="og:description" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="/OG.png">
@@ -36,7 +36,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="ARUNA | Каталог">
+  <meta property="twitter:title" content="ARUNA | О компании">
   <meta property="twitter:description" content="">
   <meta property="twitter:site" content="">
   <meta property="twitter:url" content="">
@@ -72,12 +72,12 @@
                   </a>
                 </li>
                 <li class="menu__item" itemprop="name">
-                  <a href="/catalog.html" class="menu__link active" itemprop="url">
+                  <a href="/catalog.html" class="menu__link" itemprop="url">
                     Каталог
                   </a>
                 </li>
                 <li class="menu__item" itemprop="name">
-                  <a href="/projects.html" class="menu__link" itemprop="url">
+                  <a href="/projects.html" class="menu__link active" itemprop="url">
                     Проекты
                   </a>
                 </li>
@@ -124,77 +124,102 @@
               <meta itemprop="position" content="1">
             </li>
             <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <a href="" class="breadcrumbs__link" itemprop="item">
-                <span itemprop="name">Каталог</span>
+              <a class="breadcrumbs__link active" itemprop="item">
+                <span itemprop="name">Проекты</span>
               </a>
               <meta itemprop="position" content="2">
-            </li>
-            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <a class="breadcrumbs__link active" itemprop="item">
-                <span itemprop="name">Прожекторы</span>
-              </a>
-              <meta itemprop="position" content="3">
             </li>
           </ul>
         </div>
       </nav>
-      <section class="catalog">
-        <div class="catalog__container">
-          <div class="catalog__block">
-            <h2 class="catalog__block-title title">Прожекторы</h2>
-            <ul class="catalog__list">
-              <li class="catalog__item" itemscope itemtype="https://schema.org/Product">
-                <a href="" itemprop="url" class="product">
-                  <span class="product__image">
-                    <img src="img/products/spotlights/01.png" alt="Изображение товара" itemprop="image">
-                  </span>
-                  <span class="product__info">
-                    <span class="product__category">Прожекторы</span>
-                    <span class="product__name" itemprop="name">RAY 389</span>
-                    <span class="product__desc" itemprop="description">Высокопроизводительные наружные светильники для поверхностного монтажа</span>
-                  </span>
-                </a>
-              </li>
-              <li class="catalog__item" itemscope itemtype="https://schema.org/Product">
-                <a href="" itemprop="url" class="product">
-                  <span class="product__image">
-                    <img src="img/products/spotlights/02.png" alt="Изображение товара" itemprop="image">
-                  </span>
-                  <span class="product__info">
-                    <span class="product__category">Прожекторы</span>
-                    <span class="product__name" itemprop="name">RAY 590</span>
-                    <span class="product__desc" itemprop="description">Высокопроизводительные наружные светильники для поверхностного монтажа</span>
-                  </span>
-                </a>
-              </li>
-              <li class="catalog__item" itemscope itemtype="https://schema.org/Product">
-                <a href="" itemprop="url" class="product">
-                  <span class="product__image">
-                    <img src="img/products/spotlights/03.png" alt="Изображение товара" itemprop="image">
-                  </span>
-                  <span class="product__info">
-                    <span class="product__category">Прожекторы</span>
-                    <span class="product__name" itemprop="name">RAY 368</span>
-                    <span class="product__desc" itemprop="description">Высокопроизводительные наружные светильники для поверхностного монтажа</span>
-                  </span>
-                </a>
-              </li>
-              <li class="catalog__item" itemscope itemtype="https://schema.org/Product">
-                <a href="" itemprop="url" class="product">
-                  <span class="product__image">
-                    <img src="img/products/spotlights/04.png" alt="Изображение товара" itemprop="image">
-                  </span>
-                  <span class="product__info">
-                    <span class="product__category">Прожекторы</span>
-                    <span class="product__name" itemprop="name">RAY 689</span>
-                    <span class="product__desc" itemprop="description">Высокопроизводительные наружные светильники для поверхностного монтажа</span>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
+      <section class="projects">
+        <div class="projects__container">
+          <h1 class="projects__title title-lg">Проекты</h1>
+          <ul class="projects__list">
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/01.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">Коммерческая</div>
+                <a href="" class="projects__item-name">Освещение для дома на ул. Тукая</a>
+                <div class="projects__item-place">
+                  Казань, 2024
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/02.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">городская</div>
+                <a href="" class="projects__item-name">Освещение центрального парка</a>
+                <div class="projects__item-place">
+                  Казань, 2023
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/03.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">Коммерческая</div>
+                <a href="" class="projects__item-name">Освещение общественного пространства </a>
+                <div class="projects__item-place">
+                  Казань, 2023
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/04.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">жилая</div>
+                <a href="" class="projects__item-name">Освещение частного сада</a>
+                <div class="projects__item-place">
+                  Казань, 2023
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/01.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">Коммерческая</div>
+                <a href="" class="projects__item-name">Освещение для дома на ул. Тукая</a>
+                <div class="projects__item-place">
+                  Казань, 2024
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+            <li class="projects__item">
+              <a href="" class="projects__item-image">
+                <img src="img/projects/02.png" class="cover-image" alt="Изображение проекта">
+              </a>
+              <div class="projects__item-info">
+                <div class="projects__item-label">городская</div>
+                <a href="" class="projects__item-name">Освещение центрального парка</a>
+                <div class="projects__item-place">
+                  Казань, 2023
+                </div>
+              </div>
+              <a href="" class="projects__item-more icon-arrow-short">Читать подробнее</a>
+            </li>
+          </ul>
         </div>
       </section>
+
+
+
       <section class="feedback">
         <div class="feedback__container">
           <h2 class="feedback__title title">
@@ -242,10 +267,10 @@
                 <a href="/" class="footer__menu-link" itemprop="url">Главная</a>
               </li>
               <li class="footer__menu-item" itemprop="name">
-                <a href="/catalog.html" class="footer__menu-link active" itemprop="url">Каталог</a>
+                <a href="/catalog.html" class="footer__menu-link" itemprop="url">Каталог</a>
               </li>
               <li class="footer__menu-item" itemprop="name">
-                <a href="/projects.html" class="footer__menu-link" itemprop="url">Проекты</a>
+                <a href="/projects.html" class="footer__menu-link active" itemprop="url">Проекты</a>
               </li>
               <li class="footer__menu-item" itemprop="name">
                 <a href="" class="footer__menu-link" itemprop="url">О компании</a>
