@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?ap2vlm');
-  src:  url('fonts/icons.eot?ap2vlm#iefix') format('embedded-opentype'),
-    url('fonts/icons.ttf?ap2vlm') format('truetype'),
-    url('fonts/icons.woff?ap2vlm') format('woff'),
-    url('fonts/icons.svg?ap2vlm#icons') format('svg');
+  src:  url('fonts/icons.eot?381lpb');
+  src:  url('fonts/icons.eot?381lpb#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?381lpb') format('truetype'),
+    url('fonts/icons.woff?381lpb') format('woff'),
+    url('fonts/icons.svg?381lpb#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,24 +25,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron:before {
+  content: "\e908";
+}
+.icon-arrow-short:before {
+  content: "\e900";
+}
+.icon-check:before {
+  content: "\e901";
+}
+.icon-close:before {
+  content: "\e902";
+}
+.icon-left:before {
+  content: "\e903";
+}
 .icon-location:before {
+  content: "\e904";
+}
+.icon-more:before {
   content: "\e905";
 }
 .icon-phone:before {
   content: "\e906";
 }
-.icon-check:before {
-  content: "\e900";
-}
-.icon-left:before {
-  content: "\e901";
-}
-.icon-more:before {
-  content: "\e902";
-}
 .icon-right:before {
-  content: "\e903";
-}
-.icon-right-short:before {
-  content: "\e904";
+  content: "\e907";
 }

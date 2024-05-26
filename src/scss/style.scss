@@ -121,7 +121,10 @@ body {
 // =======================ОСНОВНОЙ БЛОК==================
 .page {
 	flex: 1 1 auto;
+	overflow-x: clip;
 }
 // ========================================================
 
 @import "pages/home";
+@import "pages/catalog";
+@import "pages/projects";

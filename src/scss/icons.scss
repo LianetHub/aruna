@@ -18,24 +18,30 @@
 	}
 }
 
+.icon-chevron:before {
+	content: "\e908";
+}
+.icon-arrow-short:before {
+	content: "\e900";
+}
+.icon-check:before {
+	content: "\e901";
+}
+.icon-close:before {
+	content: "\e902";
+}
+.icon-left:before {
+	content: "\e903";
+}
 .icon-location:before {
+	content: "\e904";
+}
+.icon-more:before {
 	content: "\e905";
 }
 .icon-phone:before {
 	content: "\e906";
 }
-.icon-check:before {
-	content: "\e900";
-}
-.icon-left:before {
-	content: "\e901";
-}
-.icon-more:before {
-	content: "\e902";
-}
 .icon-right:before {
-	content: "\e903";
-}
-.icon-right-short:before {
-	content: "\e904";
+	content: "\e907";
 }

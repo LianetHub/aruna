@@ -1,18 +1,32 @@
 .breadcrumbs {
-	&__items {
+	padding: 1.5rem 0;
+	@media (min-width: $md2) {
+		padding: 2rem 0;
+	}
+	// .breadcrumbs__container
+	&__container {
+	}
+	// .breadcrumbs__list
+	&__list {
 		display: flex;
-		gap: rem(8);
+		align-items: center;
+		gap: 0.25rem;
 	}
 	// .breadcrumbs__item
 	&__item {
 		display: flex;
 		align-items: center;
-
-		gap: rem(8);
-		color: #fff;
+		gap: 0.25rem;
+		color: #8a8e92;
 		&:not(:first-child) {
 			&::before {
-				@extend %ic, .icon-arrow-short;
+				font-size: 0.75rem;
+				width: 1rem;
+				height: 1rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@extend %ic, .icon-chevron;
 				flex-shrink: 0;
 			}
 		}
@@ -21,26 +35,19 @@
 	&__link {
 		transition: color 0.3s ease 0s;
 		white-space: nowrap;
-		font-weight: 600;
 		max-width: 100%;
 		overflow: hidden;
-		line-height: 120%;
+
 		text-overflow: ellipsis;
 		font-size: 0.875rem;
-		@media (min-width: $md5) {
-			font-size: 1.125rem;
-		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: #fff;
 			}
 		}
 		&.active {
 			pointer-events: none;
-			@media (min-width: $md5) {
-				font-size: 1rem;
-			}
-			font-weight: 400;
+			color: #fff;
 		}
 	}
 }
