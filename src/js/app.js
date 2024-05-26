@@ -130,7 +130,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: '.project__pagination',
                 clickable: true
             },
-
+        })
+    }
+    if (document.querySelector('.projects__slider')) {
+        new Swiper('.projects__slider', {
+            slidesPerView: "auto",
+            navigation: {
+                nextEl: '.projects__next',
+                prevEl: '.projects__prev'
+            },
+            spaceBetween: 12,
+            grabCursor: true,
+            breakpoints: {
+                767.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                },
+                1199.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 100,
+                }
+            }
         })
     }
 

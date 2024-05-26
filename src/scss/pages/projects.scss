@@ -3,6 +3,38 @@
 	@media (min-width: $md2) {
 		padding: 0.75rem 0 4rem;
 	}
+	// .projects__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__controls {
+		display: none;
+		@media (min-width: $md5) {
+			display: flex;
+			gap: 1.25rem;
+		}
+	}
+	&__slider {
+		margin-top: 1.5rem;
+		@media (min-width: $md5) {
+			margin-top: 2rem;
+		}
+		overflow: visible;
+		@media (min-width: $md4) {
+			overflow: hidden;
+		}
+		@media (min-width: $md2) {
+			margin-top: 5rem;
+		}
+		.projects__item {
+			width: rem(247);
+			@media (min-width: $md4) {
+				width: auto;
+			}
+		}
+	}
 	// .projects__container
 	&__container {
 	}
