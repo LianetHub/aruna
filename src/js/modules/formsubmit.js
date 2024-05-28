@@ -18,7 +18,9 @@ export const formSubmit = () => {
 
 		if (error === 0) {
 			try {
+
 				form.classList.add("_sending");
+
 				const response = await fetch(currentUrl, {
 					method: "POST",
 					body: new FormData(form),
@@ -28,8 +30,12 @@ export const formSubmit = () => {
 
 				form.reset();
 				closeAndShowSuccessModal();
+
 			} catch (error) {
+
 				alert(error.message);
+				closeAndShowSuccessModal();
+
 			} finally {
 				form.classList.remove("_sending");
 			}
@@ -71,16 +77,16 @@ export const formSubmit = () => {
 	function formAddError(input) {
 		input.classList.add("_error");
 		input.parentElement.classList.add("_error");
-		input.closest('.form')?.querySelector('.form__error-message')?.classList.add('visible');
+		// input.closest('.form')?.querySelector('.form__error-message')?.classList.add('visible');
 	}
 
 	function formRemoveError(input) {
 		input.classList.remove("_error");
 		input.parentElement.classList.remove("_error");
-		const form = input.closest('.form');
-		if (form && !form.querySelector('._error')) {
-			form.querySelector('.form__error-message')?.classList.remove('visible');
-		}
+		// const form = input.closest('.form');
+		// if (form && !form.querySelector('._error')) {
+		// 	form.querySelector('.form__error-message')?.classList.remove('visible');
+		// }
 	}
 
 	function emailTest(email) {

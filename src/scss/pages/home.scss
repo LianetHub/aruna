@@ -35,7 +35,7 @@
 		padding: 24rem 0 5rem;
 	}
 	@media (min-width: $md2) {
-		background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo.jpg") center 0 / cover no-repeat;
+		background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo.jpg") center center / cover no-repeat;
 		padding: 26rem 0 5.31rem;
 	}
 	// .promo__container

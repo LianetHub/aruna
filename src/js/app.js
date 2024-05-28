@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.OS();
     devFunctions.isWebp();
     devFunctions.intInputMask();
-    devFunctions.beforeSlider()
+    devFunctions.beforeSlider();
+    devFunctions.formSubmit()
 
 
 
@@ -179,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Fancybox.show([{
-    //     src: "#booking",
+    //     src: "#consult",
     //     type: "inline"
     // }]);
 

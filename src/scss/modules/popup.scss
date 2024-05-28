@@ -4,7 +4,7 @@
 }
 
 .fancybox__slide {
-	padding-block: 3.43rem;
+	padding-block: 4.75rem;
 	padding-inline: 0;
 	@media (min-width: $md4) {
 		padding-block: 2.5rem;
@@ -30,102 +30,66 @@
 	width: 100%;
 	padding: 0;
 	background: none;
-	max-width: rem(484);
-	&#gift {
-		.popup__body {
-			background: #f8f9ff;
-		}
-	}
-	&#success {
-		max-width: 27.25rem;
-		.popup__body {
-			padding: 1.97rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			// text-align: center;
-		}
-	}
-	&#booking {
-		max-width: 39.75rem;
-		.popup__body {
-			background: #f8f9ff;
-			padding: 2.25rem 1rem 3.05625rem;
-			border-radius: 1.75rem;
-			@media (min-width: $md5) {
-				border-radius: 2.5rem;
-				padding: 5.1rem 2rem;
-			}
-		}
-		.popup__form {
-			max-width: 25.39794rem;
-			margin: 0 auto;
-		}
-		.popup__close {
-			top: 0.35rem;
-			font-size: 1.5rem;
-			@media (min-width: $md4) {
-				font-size: 2.625rem;
-				top: 1.5rem;
-				right: 1.5rem;
-			}
-		}
-	}
+	max-width: rem(500);
+
 	// .popup__body
 	&__body {
 		position: relative;
 		width: 100%;
 		background: #ffffff;
-		border-radius: 1.5rem;
 		color: $dark;
 		padding: rem(30) rem(16);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 		@media (min-width: $md5) {
-			padding: 2.5rem;
+			padding: 2.69rem 2.25rem;
 		}
 	}
 	&__title {
-		font-weight: 600;
+		text-align: center;
+
+		font-weight: 500;
 		line-height: 120%;
-		font-size: 1.125rem;
+		font-size: 1.25rem;
 		@media (min-width: $md5) {
-			font-size: 1.5rem;
+			font-size: 2rem;
 		}
 	}
 	&__subtitle {
-		margin-top: 0.25rem;
+		margin-top: 1.5rem;
 		text-align: center;
 		font-size: 1.125rem;
 		line-height: 140%;
-		max-width: 16rem;
+		max-width: 21.20813rem;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	&__form {
-		margin-top: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin-top: 1rem;
+		@media (min-width: $md5) {
+			margin-top: 1.5rem;
+		}
+		.btn {
+			min-height: rem(76);
+		}
 	}
 	&__btn {
 		margin-top: 1.5rem;
-		&.btn.btn-sm {
-			min-width: 7.75rem;
-			mask-position: center;
-			mask-repeat: no-repeat;
-			mask-size: 100% auto;
-			mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='108' height='57' viewBox='0 0 108 57' fill='none'%3E%3Cpath d='M0 15.2485C0 8.93884 4.81919 3.66272 11.1079 3.14907C43.0952 0.536415 63.2572 0.256097 96.6335 2.26144C103.03 2.64578 108 7.96932 108 14.3777V41.5232C108 47.6952 103.376 52.9068 97.2398 53.5692C63.8048 57.1784 43.3138 57.2453 11.0267 54.4627C4.77242 53.9237 0 48.6604 0 42.3829V15.2485Z' fill='%234770FF'/%3E%3C/svg%3E");
-		}
+		min-width: 12.125rem;
 	}
 	&__close {
 		position: absolute;
-		width: 2.625rem;
-		height: 2.625rem;
-		font-size: 1.1rem;
+
+		font-size: 1.5rem;
 		top: 0.75rem;
 		right: 0.25rem;
 		background: none;
-		@media (min-width: $md5) {
-			top: 0.75rem;
-			right: 1rem;
-			font-size: 2.625rem;
-		}
+		top: 0.75rem;
+		right: 0.87rem;
 		color: #1f2b32;
 		transition: color 0.3s ease 0s;
 		&::before {
@@ -136,70 +100,5 @@
 				color: $accent;
 			}
 		}
-	}
-	// .popup__list
-	&__list {
-		margin-top: 1rem;
-		width: 100%;
-		padding-bottom: 1rem;
-		border-bottom: rem(1) solid #dfe0e1;
-	}
-	// .popup__item
-	&__item {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		text-align: left;
-		&:not(:last-child) {
-			margin-bottom: 1rem;
-		}
-	}
-	// .popup__item-caption
-	&__item-caption {
-		font-size: rem(14);
-		color: #768489;
-		font-size: 0.875rem;
-		line-height: 160%;
-	}
-	// .popup__item-text
-	&__item-text {
-		font-size: 1.125rem;
-		line-height: 140%;
-	}
-	// .popup__footer
-	&__footer {
-		margin-top: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-	// .popup__footer-text
-	&__footer-text {
-		font-size: 1.125rem;
-		line-height: 140%;
-	}
-	// .popup__footer-link
-	&__footer-link {
-		margin-top: 0.5rem;
-		display: flex;
-		align-items: center;
-		color: #4770ff;
-		font-size: 1rem;
-		line-height: 120%;
-		gap: 0.12rem;
-		transition: color 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				color: darken($color: #4770ff, $amount: 10);
-			}
-		}
-	}
-	&__footer-icon {
-		width: 1.125rem;
-		height: 1.125rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-shrink: 0;
 	}
 }
