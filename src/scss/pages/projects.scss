@@ -90,11 +90,11 @@
 	&__item-info {
 		flex: 1 1 auto;
 		margin-top: 1.33rem;
-		max-width: 15.4375rem;
+
 		padding-bottom: 1rem;
 		@media (min-width: $md5) {
 			padding-bottom: 1.5rem;
-			max-width: 100%;
+
 			margin-top: rem(27);
 		}
 		@media (min-width: $md2) {

@@ -5,7 +5,10 @@
     })
     <body>
         <div class="wrapper">
-
+            @@include('html/_header.html', {
+            "className": "",
+            "active": 0
+            })
             <main class="page">
                 <section class="error">
                     <div class="error__container">
@@ -18,7 +21,9 @@
                         <p class="error__subtitle">
                             Страница, которую вы пытаетесь открыть, не существует или была удалена
                         </p>
-                        <a href="/" class="error__btn btn btn-shadow icon-more"><span><span class="desktop-only">Перейти</span> на главную <span class="desktop-only">страницу</span></span></a>
+                        <a href="/" class="error__btn btn btn-shadow icon-more">
+                            <span><span class="desktop-only">Перейти</span> на главную <span class="desktop-only">страницу</span></span>
+                        </a>
                     </div>
                 </section>
             </main>

@@ -87,7 +87,7 @@
 	}
 }
 
-$serviceDuraion: 0.3s;
+$serviceDuraion: 0.45s;
 
 .services {
 	padding: 2.75rem 0 3rem;
@@ -379,13 +379,8 @@ $serviceDuraion: 0.3s;
 	// .products__more
 	&__more {
 		margin-top: 1.5rem;
-		margin-left: -1rem;
-		margin-right: -1rem;
-		width: calc(100% + 2rem);
+		width: 100%;
 		@media (min-width: $md5) {
-			width: 100%;
-			margin-left: 0;
-			margin-right: 0;
 			margin-top: 2.5rem;
 		}
 		@media (min-width: $md2) {
@@ -651,11 +646,12 @@ $serviceDuraion: 0.3s;
 		padding: 3rem 0;
 	}
 	@media (min-width: $md2) {
-		padding: 5.5rem 0;
+		padding: 4.75rem 0;
 	}
 	// .about-us__container
 	&__container {
 		display: grid;
+		align-items: center;
 		gap: 1.44rem;
 		@media (min-width: $md4) {
 			gap: 2.42rem;
@@ -671,6 +667,7 @@ $serviceDuraion: 0.3s;
 		border-bottom: rem(1) solid rgba(255, 255, 255, 0.2);
 		padding-bottom: 1.5rem;
 		@media (min-width: $md4) {
+			margin-top: 0.75rem;
 			padding-bottom: 0;
 			border-right: rem(1) solid rgba(255, 255, 255, 0.31);
 			border-bottom: 0;
@@ -698,7 +695,7 @@ $serviceDuraion: 0.3s;
 	}
 	// .about-us__item-text
 	&__item-text {
-		margin-top: 0.63rem;
+		margin-top: 0.5rem;
 		line-height: 140%;
 		font-size: 0.875rem;
 		@media (min-width: $md2) {
@@ -742,7 +739,7 @@ $serviceDuraion: 0.3s;
 	}
 	// .about-us__more
 	&__more {
-		margin-top: 1.25rem;
+		margin-top: 1.5rem;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.75rem;
@@ -1037,11 +1034,10 @@ $serviceDuraion: 0.3s;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		padding-bottom: 1rem;
 		&:not(:last-child) {
 			border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.31);
-			padding-bottom: 1rem;
 			@media (min-width: $md4) {
-				padding-bottom: 0;
 				border-bottom: 0;
 				border-right: 0.0625rem solid rgba(255, 255, 255, 0.31);
 			}

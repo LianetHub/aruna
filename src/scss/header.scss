@@ -35,7 +35,9 @@
 	&__logo {
 		margin-right: auto;
 		max-width: 4.5625rem;
+		margin-top: 0.5rem;
 		@media (min-width: $md5) {
+			margin-top: 0;
 			max-width: rem(117);
 		}
 	}
@@ -129,7 +131,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		width: rem(232);
-		padding: 8rem 1.5rem 3.6rem 2rem;
+		padding: 8rem 1.75rem 3.6rem;
 		@media (min-width: $md5) {
 			padding: 8rem 2.5rem 6.25rem;
 			width: 26.3125rem;
@@ -191,13 +193,14 @@
 		gap: 0.5rem;
 		line-height: 140%;
 		font-size: 1.125rem;
-		margin-top: 1rem;
+		margin-top: 4rem;
 		@media (min-width: $md5) {
 			margin-top: 1.5rem;
 			font-size: 1.5rem;
 		}
 		&::before {
 			font-size: 1.1875rem;
+
 			@media (min-width: $md5) {
 				font-size: 1.8125rem;
 			}
@@ -210,7 +213,11 @@
 	// .menu__btn
 	&__btn {
 		margin-top: 1rem;
+		padding: 0.8rem;
+		width: 100%;
 		@media (min-width: $md5) {
+			width: auto;
+			padding: 0.8rem 1.78rem;
 			margin-top: 1.5rem;
 			min-width: 14.375rem;
 		}

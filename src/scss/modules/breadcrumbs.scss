@@ -3,6 +3,16 @@
 	@media (min-width: $md2) {
 		padding: 2rem 0;
 	}
+	&.breadcrumbs_sm {
+		.breadcrumbs__item {
+		}
+		.breadcrumbs__link {
+			font-size: 0.65rem;
+			@media (min-width: $md4) {
+				font-size: 0.875rem;
+			}
+		}
+	}
 	// .breadcrumbs__container
 	&__container {
 	}
@@ -48,7 +58,7 @@
 		max-width: 100%;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		font-size: 0.65rem;
+		font-size: 0.75rem;
 		@media (min-width: $md4) {
 			font-size: 0.875rem;
 		}

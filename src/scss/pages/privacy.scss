@@ -67,6 +67,10 @@
 		& ul {
 			& li {
 				line-height: 120%;
+				font-size: 0.875rem;
+				@media (min-width: $md5) {
+					font-size: 1rem;
+				}
 				&::before {
 					content: "-";
 					margin-right: 0.25rem;

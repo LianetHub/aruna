@@ -5,7 +5,7 @@
 	}
 	// .error__container
 	&__container {
-		min-height: calc(100vh - rem(236));
+		min-height: calc(100vh - rem(420));
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -18,6 +18,7 @@
 		line-height: 120%;
 		letter-spacing: em(0.7, 17.5);
 		font-size: 6.25rem;
+
 		@media (min-width: $md4) {
 			font-size: 16.25rem;
 		}
@@ -28,7 +29,9 @@
 	// .error__title
 	&__title {
 		font-size: 1.5rem;
+		margin-top: 1.25rem;
 		@media (min-width: $md4) {
+			margin-top: 0;
 			font-size: 3.5rem;
 		}
 		@media (min-width: $md2) {
@@ -40,10 +43,12 @@
 	// .error__subtitle
 	&__subtitle {
 		position: relative;
-		margin-top: 1.5rem;
-		line-height: 140%;
 		font-size: 1rem;
+		margin-top: 1.25rem;
+		line-height: 120%;
 		@media (min-width: $md4) {
+			line-height: 140%;
+			margin-top: 1.5rem;
 			font-size: 1.25rem;
 		}
 		@media (min-width: $md2) {
@@ -67,6 +72,10 @@
 		position: relative;
 		z-index: 2;
 		margin-top: 1.88rem;
+		@media (max-width: $md5) {
+			width: 100%;
+			min-height: rem(75);
+		}
 		@media (min-width: $md4) {
 			margin-top: 3.75rem;
 		}
