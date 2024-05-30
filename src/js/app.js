@@ -255,15 +255,125 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', function (e) {
-        // if (scrollY > 0) {
-        //     document.querySelector('.header').classList.add('scroll')
-        // } else {
-        //     setTimeout(() => {
-        //         document.querySelector('.header').classList.remove('scroll')
-        //     }, 100)
-        // }
+        if (scrollY > 0) {
+            document.querySelector('.header').classList.add('scroll')
+        } else {
+            setTimeout(() => {
+                document.querySelector('.header').classList.remove('scroll')
+            }, 100)
+        }
         document.body.style.setProperty("--header-height", document.querySelector('.header').offsetHeight + "px")
     })
+
+
+
+    // configurator
+
+    if (document.querySelectorAll('.configurator__block-input').length > 0) {
+        let updateSidePanel = () => {
+            let configuratorProps = document.getElementById('configurator-props');
+            let anyChecked = document.querySelectorAll('.configurator__block-input:checked').length > 0;
+            if (anyChecked) {
+                configuratorProps.classList.add('active');
+            } else {
+                configuratorProps.classList.remove('active');
+            }
+        };
+
+        let updateProductNumber = () => {
+            let optics = document.querySelector('input[name="optics"]:checked')?.value || '';
+            let led = document.querySelector('input[name="led"]:checked')?.value || '';
+            let color = document.querySelector('input[name="color"]:checked')?.value || '';
+            let extras = document.querySelector('input[name="extras"]:checked')?.value || '';
+
+            let productNumber = [optics, led, color, extras].filter(Boolean).join('-');
+            document.querySelector('.configurator__number').textContent = productNumber;
+        };
+
+        let updateRowActiveState = (name) => {
+            let row = document.querySelector(`.configurator__side-item[data-row="${name}"]`);
+            let anyChecked = document.querySelectorAll(`input[name="${name}"]:checked`).length > 0;
+            if (anyChecked) {
+                row.classList.add('active');
+            } else {
+                row.classList.remove('active');
+                row.querySelector('.configurator__side-value').textContent = '';
+
+
+                let followingRow = row.nextElementSibling;
+                while (followingRow) {
+                    followingRow.classList.remove('active');
+                    followingRow.querySelector('.configurator__side-value').textContent = '';
+                    followingRow = followingRow.nextElementSibling;
+                }
+            }
+        };
+
+        document.querySelectorAll('.configurator__block-input').forEach(configuratorInput => {
+            configuratorInput.addEventListener('change', (e) => {
+                let checkbox = e.target;
+                let options = checkbox.closest('.configurator__block-options');
+                let stepCheckboxes = options.querySelectorAll('.configurator__block-input');
+                let parentBlock = checkbox.closest('.configurator__block');
+                let nextBlock = parentBlock.nextElementSibling;
+
+                if (checkbox.checked) {
+                    stepCheckboxes.forEach(stepCheckbox => {
+                        if (stepCheckbox !== checkbox) {
+                            stepCheckbox.disabled = true;
+                        }
+                    });
+                    if (nextBlock) {
+                        nextBlock.classList.add('active');
+                    }
+                } else {
+                    stepCheckboxes.forEach(stepCheckbox => {
+                        stepCheckbox.disabled = false;
+                    });
+
+                    let followingBlock = parentBlock.nextElementSibling;
+                    while (followingBlock) {
+                        let followingCheckboxes = followingBlock.querySelectorAll('.configurator__block-input');
+                        followingCheckboxes.forEach(followingCheckbox => {
+                            followingCheckbox.checked = false;
+                            followingCheckbox.disabled = false;
+                        });
+                        followingBlock.classList.remove('active');
+                        followingBlock = followingBlock.nextElementSibling;
+                    }
+                }
+
+                let name = checkbox.getAttribute('name');
+                let value = (name === "code") ? checkbox.value : checkbox.nextElementSibling.textContent;
+                let row = document.querySelector(`.configurator__side-item[data-row="${name}"]`);
+                if (name === 'code') {
+                    if (checkbox.checked) {
+                        document.getElementById('product-name').textContent = value;
+                        row.classList.add('active');
+                        row.querySelector('.configurator__side-value').textContent = value;
+                    }
+                } else if (name === 'optics') {
+                    if (checkbox.checked) {
+                        row.classList.add('active');
+                        row.querySelector('.configurator__side-value').textContent = checkbox.nextElementSibling.textContent;
+                    }
+                    updateProductNumber();
+                } else {
+                    if (checkbox.checked) {
+                        row.classList.add('active');
+                        row.querySelector('.configurator__side-value').textContent = value;
+                    }
+                    updateProductNumber();
+                }
+
+                updateRowActiveState(name);
+                updateSidePanel();
+            });
+        });
+    }
+
+
+
 
 
 
