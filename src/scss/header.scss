@@ -14,6 +14,12 @@
 			}
 		}
 	}
+	&.scroll {
+		.header__body {
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+		}
+	}
 	// .header__container
 	&__container {
 	}
@@ -24,6 +30,7 @@
 		display: flex;
 		align-items: center;
 		padding: 1rem 0rem;
+		transition: padding 0.3s linear 0s;
 		@media (min-width: $md4) {
 			padding: 1.25rem 1rem;
 		}

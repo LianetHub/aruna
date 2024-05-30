@@ -3,6 +3,11 @@
 	@media (min-width: $md2) {
 		padding: 0.75rem 0 4rem;
 	}
+	// &.projects_offset {
+	// 	padding: 3.6rem 0 6.22rem;
+	// 	scroll-margin-top: calc(var(--header-height) + rem(68));
+	// 	border-bottom: rem(1) solid #8a8e92;
+	// }
 	// .projects__header
 	&__header {
 		display: flex;

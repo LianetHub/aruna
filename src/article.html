@@ -39,9 +39,13 @@
                         <div class="article__content">
                             <time datetime="2024-04-12" class="article__time icon-calendar" itemprop="datePublished">12 апреля, 2024</time>
                             <h1 class="article__title title-lg" itemprop="headline">Архитектурное освещение</h1>
-                            <div class="article__image">
-                                <img src="@img/projects/05.jpg" class="cover-image" alt="Баннер статьи" itemprop="image">
-                            </div>
+
+                            <picture class="article__image">
+                                <source media="(min-width: 1920px)" srcset="@img/projects/05.jpg">
+                                <source media="(min-width: 1200px)" srcset="@img/projects/05.jpg">
+                                <source media="(min-width: 576px)" srcset="@img/projects/05.jpg">
+                                <img src="@img/projects/05.jpg" itemprop="image" data-fancybox data-fancybox-src="@img/projects/05.png" class="cover-image" alt="Баннер статьи">
+                            </picture>
                             <h2 class="article__caption">Оглавление</h2>
                             <nav aria-label="Оглавление статьи" class="article__nav">
                                 <ul class="article__nav-list">
@@ -95,8 +99,18 @@
                                     Важным аспектом архитектурного освещения является выбор светильников и лампочек. Они должны соответствовать стилю здания, его архитектуре и функциональным требованиям. Кроме того, освещение должно быть энергоэффективным и экологически безопасным.
                                 </p>
                                 <figure>
-                                    <img src="@img/projects/02.png" data-fancybox data-fancybox-src="@img/projects/02.png" alt="Описание фото 1">
-                                    <img src="@img/projects/03.png" data-fancybox data-fancybox-src="@img/projects/03.png" alt="Описание фото 2">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="@img/projects/02.png">
+                                        <source media="(min-width: 1200px)" srcset="@img/projects/02.png">
+                                        <source media="(min-width: 576px)" srcset="@img/projects/02.png">
+                                        <img src="@img/projects/02.png" data-fancybox data-fancybox-src="@img/projects/02.png" class="cover-image" alt="Изображение проекта">
+                                    </picture>
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="@img/projects/03.png">
+                                        <source media="(min-width: 1200px)" srcset="@img/projects/03.png">
+                                        <source media="(min-width: 576px)" srcset="@img/projects/03.png">
+                                        <img src="@img/projects/03.png" data-fancybox data-fancybox-src="@img/projects/03.png" class="cover-image" alt="Изображение проекта">
+                                    </picture>
                                     <figcaption>Фото: ландшафтные дизайны парковых зон</figcaption>
                                 </figure>
                                 <h2 id="requirements-for-architectural-lighting">
@@ -123,7 +137,12 @@
                                     </li>
                                 </ol>
                                 <figure>
-                                    <img src="@img/projects/04.png" data-fancybox data-fancybox-src="@img/projects/04.png" alt="Описание фото 3">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="@img/projects/04.png">
+                                        <source media="(min-width: 1200px)" srcset="@img/projects/04.png">
+                                        <source media="(min-width: 576px)" srcset="@img/projects/04.png">
+                                        <img src="@img/projects/04.png" data-fancybox data-fancybox-src="@img/projects/04.png" class="cover-image" alt="Изображение проекта">
+                                    </picture>
                                     <figcaption>Фото: освещение территории</figcaption>
                                 </figure>
                                 <h2>Заключение</h2>

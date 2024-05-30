@@ -43,6 +43,7 @@
 		margin-top: 1.125rem;
 		margin-right: -1rem;
 		margin-left: -1rem;
+		display: block;
 		@media (min-width: $md4) {
 			margin-left: 0;
 			margin-right: 0;
@@ -140,7 +141,7 @@
 			margin-top: 3.75rem;
 		}
 		& > * {
-			&:not(figure) {
+			&:not(figure, picture) {
 				max-width: 51.77063rem;
 				@media (min-width: $md2) {
 					max-width: 62.5rem;
@@ -235,6 +236,29 @@
 						width: 100%;
 						@media (max-width: $md4) {
 							height: auto;
+						}
+					}
+				}
+			}
+			& picture {
+				width: 100%;
+				@media (min-width: $md5) {
+					width: calc(50% - rem(11));
+				}
+				@media (min-width: $md2) {
+					width: calc(50% - rem(15));
+				}
+				object-fit: cover;
+				& img {
+					width: 100%;
+				}
+				&:first-child {
+					&:nth-last-child(2) {
+						width: 100%;
+						& img {
+							@media (max-width: $md4) {
+								height: auto;
+							}
 						}
 					}
 				}

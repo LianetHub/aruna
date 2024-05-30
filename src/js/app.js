@@ -47,29 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // if (document.querySelectorAll('.form__textarea').length > 0) {
-    //     document.querySelectorAll('.form__textarea').forEach(textarea => {
-    //         let parentBlock = textarea.closest('.form__row');
-    //         let maxLengthBox = parentBlock.querySelector('.form__maxlength');
-
-    //         if (!maxLengthBox) return;
-
-    //         let maxLengthCurrent = maxLengthBox.querySelector('.form__maxlength-current');
-    //         let maxLengthTotal = maxLengthBox.querySelector('.form__maxlength-total');
-
-    //         textarea.addEventListener('input', (e) => updateLength(e.target, maxLengthCurrent))
-
-    //         updateLength(textarea, maxLengthCurrent);
-    //     });
-
-    //     function updateLength(textarea, currentBlock) {
-    //         const currentLength = textarea.value.length;
-    //         currentBlock.textContent = currentLength;
-    //     }
-    // }
-
-
-
 
 
 
@@ -154,6 +131,152 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
+    if (document.querySelectorAll('.product-info__slider').length > 0) {
+
+        document.querySelectorAll('.product-info__slider').forEach(slider => {
+            let wrapper = slider.closest('.product-info__block');
+            let prev = wrapper.querySelector('.product-info__block-prev');
+            let next = wrapper.querySelector('.product-info__block-next');
+
+            new Swiper(slider, {
+                slidesPerView: "auto",
+                navigation: {
+                    nextEl: next,
+                    prevEl: prev
+                },
+                spaceBetween: 12,
+                grabCursor: true,
+                breakpoints: {
+                    767.98: {
+                        slidesPerView: "auto",
+                        spaceBetween: 20,
+                    },
+                    1199.98: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    }
+                }
+            })
+        })
+    }
+
+
+    if (document.querySelector('.product-info__nav')) {
+
+        const navLinks = document.querySelectorAll('.product-info__nav-link');
+        let swiperInstance;
+
+
+        function removeActiveClasses() {
+            navLinks.forEach(link => link.classList.remove('active'));
+        }
+
+        function addActiveClass(targetId) {
+            removeActiveClasses();
+            const activeLink = document.querySelector(`.product-info__nav-link[href="#${targetId}"]`);
+            activeLink.classList.add('active');
+
+
+            const activeIndex = Array.from(navLinks).indexOf(activeLink);
+            if (swiperInstance) {
+                swiperInstance.slideTo(activeIndex);
+            }
+        }
+
+        function getStickyHeaderHeight() {
+            const header = document.querySelector('header');
+            return header ? header.offsetHeight : 0;
+        }
+
+        function getNavbarHeight() {
+            const navbar = document.querySelector('.product-info__navbar');
+            return navbar ? navbar.offsetHeight : 0;
+        }
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+
+
+        const sections = document.querySelectorAll('.product-info__block');
+
+        sections.forEach(section => {
+            let trigger = ScrollTrigger.create({
+                trigger: section,
+                start: () => {
+
+                    return `top top+=${getStickyHeaderHeight() + getNavbarHeight()}`
+                },
+                end: `bottom top+=${getStickyHeaderHeight() + getNavbarHeight()} `,
+                onEnter: () => addActiveClass(section.id),
+                onEnterBack: () => addActiveClass(section.id),
+                // markers: true,
+                onLeave: ({ direction }) => {
+                    if (direction === 1) {
+                        const nextSection = sections[Array.from(sections).indexOf(section)];
+                        if (nextSection) addActiveClass(nextSection.id);
+                    }
+                },
+                onEnterBack: ({ direction }) => {
+
+                    if (direction === -1) {
+                        const prevSection = sections[Array.from(sections).indexOf(section)];
+                        if (prevSection) addActiveClass(prevSection.id);
+                    }
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                trigger.update()
+            })
+
+        });
+
+
+
+        window.addEventListener('scroll', () => {
+            const activeLink = document.querySelector('.product-info__nav-link.active');
+            if (activeLink) {
+                const activeIndex = Array.from(navLinks).indexOf(activeLink);
+                if (swiperInstance) {
+                    swiperInstance.slideTo(activeIndex, 0);
+                }
+            }
+        });
+
+
+        if (document.querySelector('.product-info__navbar')) {
+            swiperInstance = new Swiper('.product-info__navbar', {
+                slidesPerView: "auto",
+                grabCursor: true,
+                slideToClickedSlide: true
+            });
+        }
+    }
+
+    window.addEventListener('scroll', function (e) {
+        // if (scrollY > 0) {
+        //     document.querySelector('.header').classList.add('scroll')
+        // } else {
+        //     setTimeout(() => {
+        //         document.querySelector('.header').classList.remove('scroll')
+        //     }, 100)
+        // }
+        document.body.style.setProperty("--header-height", document.querySelector('.header').offsetHeight + "px")
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,10 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
 
-    // Fancybox.show([{
-    //     src: "#consult",
-    //     type: "inline"
-    // }]);
+
 
 
 
