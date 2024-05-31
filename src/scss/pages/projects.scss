@@ -66,6 +66,13 @@
 	&__item {
 		display: flex;
 		flex-direction: column;
+		@media (min-width: $md5) {
+			@for $i from 1 through 6 {
+				&:nth-child(6n + #{$i}) {
+					transition-delay: $i * 0.125s;
+				}
+			}
+		}
 	}
 	// .projects__item-image
 	&__item-image {

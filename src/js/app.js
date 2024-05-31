@@ -1,7 +1,6 @@
 "use strict";
 
 
-// import Swiper from 'swiper';
 import * as devFunctions from './modules/functions.js';
 
 //  init Fancybox
@@ -18,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.isWebp();
     devFunctions.intInputMask();
     devFunctions.beforeSlider();
-    devFunctions.formSubmit()
+    devFunctions.formSubmit();
+    devFunctions.animation()
 
 
 
@@ -370,6 +370,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSidePanel();
             });
         });
+    }
+
+    if (document.querySelector('[data-product-id]')) {
+
+        const caseColorInputs = document.querySelectorAll('input[name="case-color"]');
+        const ledColorInputs = document.querySelectorAll('input[name="led-color"]');
+        const productImage = document.querySelector('.product-card__image img');
+        const productId = productImage.getAttribute('data-product-id');
+
+        function updateProductImage() {
+            const caseColor = document.querySelector('input[name="case-color"]:checked').value;
+            const ledColor = document.querySelector('input[name="led-color"]:checked').value;
+            const newSrc = `img/products/spotlights/${productId}-${caseColor}-${ledColor}.png`;
+            productImage.setAttribute('src', newSrc);
+
+            productImage.classList.remove('fade-in');
+
+            setTimeout(() => {
+                productImage.src = newSrc;
+                productImage.classList.add('fade-in');
+            }, 300);
+
+        }
+
+        caseColorInputs.forEach(input => {
+            input.addEventListener('change', updateProductImage);
+        });
+
+        ledColorInputs.forEach(input => {
+            input.addEventListener('change', updateProductImage);
+        });
+
+
+        updateProductImage();
     }
 
 

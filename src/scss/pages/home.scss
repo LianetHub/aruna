@@ -129,6 +129,20 @@ $serviceDuraion: 0.45s;
 	}
 	// .services__item
 	&__item {
+		@media (min-width: $md4) and (max-width: $md3) {
+			@for $i from 1 through 2 {
+				&:nth-child(2n + #{$i}) {
+					transition-delay: $i * 0.25s;
+				}
+			}
+		}
+		@media (min-width: $md3) {
+			@for $i from 1 through 3 {
+				&:nth-child(3n + #{$i}) {
+					transition-delay: $i * 0.25s;
+				}
+			}
+		}
 	}
 	// .services__card
 	&__card {
@@ -848,6 +862,28 @@ $serviceDuraion: 0.45s;
 			}
 			@media (min-width: $md2) {
 				max-height: rem(109);
+			}
+		}
+		&.clients__item_sm {
+			& img {
+				max-height: 1.18119rem;
+				@media (min-width: $md5) {
+					max-height: 1.765rem;
+				}
+				@media (min-width: $md2) {
+					max-height: 2.21856rem;
+				}
+			}
+		}
+		&.clients__item_md {
+			& img {
+				max-height: 1.6875rem;
+				@media (min-width: $md5) {
+					max-height: 2.5rem;
+				}
+				@media (min-width: $md2) {
+					max-height: 3.125rem;
+				}
 			}
 		}
 	}

@@ -1,6 +1,14 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -9,32 +17,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  font-display: swap;
-  src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -49,8 +41,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -793,6 +793,70 @@ body.lock {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+[data-animate=bottom] {
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transform: translateY(40px);
+      -ms-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
+}
+
+[data-animate=bottom].animated {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  opacity: 1;
+}
+
+[data-animate=fade] {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+  -webkit-transition-property: opacity, visibility;
+  transition-property: opacity, visibility;
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-animate=fade].animated {
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-animate=scale] {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+[data-animate=scale].animated {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 .title-lg {
@@ -2396,6 +2460,14 @@ body.lock {
   max-height: 3.375rem;
 }
 
+.clients__item.clients__item_sm img {
+  max-height: 1.18119rem;
+}
+
+.clients__item.clients__item_md img {
+  max-height: 1.6875rem;
+}
+
 .reviews {
   padding: 2rem 0 1.5rem;
 }
@@ -2919,6 +2991,16 @@ body.lock {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+}
+
+.product-card__image img {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.product-card__image img.fade-in {
+  opacity: 1;
 }
 
 .product-info__nav {
@@ -4783,6 +4865,14 @@ body.lock {
     max-height: 5.875rem;
   }
 
+  .clients__item.clients__item_sm img {
+    max-height: 1.765rem;
+  }
+
+  .clients__item.clients__item_md img {
+    max-height: 2.5rem;
+  }
+
   .reviews {
     padding: 3.25rem 0;
   }
@@ -4893,6 +4983,36 @@ body.lock {
     row-gap: 2.5rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects__item:nth-child(6n+1) {
+    -webkit-transition-delay: 0.125s;
+            transition-delay: 0.125s;
+  }
+
+  .projects__item:nth-child(6n+2) {
+    -webkit-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+  }
+
+  .projects__item:nth-child(6n+3) {
+    -webkit-transition-delay: 0.375s;
+            transition-delay: 0.375s;
+  }
+
+  .projects__item:nth-child(6n+4) {
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+  }
+
+  .projects__item:nth-child(6n+5) {
+    -webkit-transition-delay: 0.625s;
+            transition-delay: 0.625s;
+  }
+
+  .projects__item:nth-child(6n+6) {
+    -webkit-transition-delay: 0.75s;
+            transition-delay: 0.75s;
   }
 
   .projects__item-image {
@@ -6216,6 +6336,21 @@ body.lock {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .services__item:nth-child(3n+1) {
+    -webkit-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+  }
+
+  .services__item:nth-child(3n+2) {
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+  }
+
+  .services__item:nth-child(3n+3) {
+    -webkit-transition-delay: 0.75s;
+            transition-delay: 0.75s;
+  }
+
   .production__content {
     margin-top: 1.88rem;
     -ms-grid-columns: 0.85fr 1fr 1.05fr;
@@ -6953,6 +7088,14 @@ body.lock {
 
   .clients__item img {
     max-height: 6.8125rem;
+  }
+
+  .clients__item.clients__item_sm img {
+    max-height: 2.21856rem;
+  }
+
+  .clients__item.clients__item_md img {
+    max-height: 3.125rem;
   }
 
   .reviews {
@@ -8219,6 +8362,18 @@ body.lock {
 
   .privacy__title {
     font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+  .services__item:nth-child(2n+1) {
+    -webkit-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+  }
+
+  .services__item:nth-child(2n+2) {
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
   }
 }
 
