@@ -154,6 +154,20 @@
 				}
 			}
 		}
+		@media (min-width: $md5) and (max-width: $md3) {
+			@for $i from 1 through 2 {
+				&:nth-child(2n + #{$i}) {
+					transition-delay: $i * 0.25s;
+				}
+			}
+		}
+		@media (min-width: $md3) {
+			@for $i from 1 through 3 {
+				&:nth-child(3n + #{$i}) {
+					transition-delay: $i * 0.2s;
+				}
+			}
+		}
 	}
 	// .blog__item-image
 	&__item-image {

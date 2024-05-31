@@ -30,7 +30,7 @@ export const animation = () => {
             const increment = target / 20;
             if (count < target) {
                 counter.innerText = `${Math.ceil(count + increment)}`;
-                setTimeout(updateCounter, 100);
+                setTimeout(updateCounter, 30);
             } else counter.innerText = target;
         };
         updateCounter();

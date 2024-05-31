@@ -21,9 +21,7 @@
 			flex-direction: row;
 			padding: em(0) em(0) 3.62rem em(0);
 		}
-		@media (min-width: $md3) {
-			align-items: center;
-		}
+
 		@media (min-width: $md2) {
 			align-items: flex-start;
 			padding: em(0) em(0) 5.56rem em(0);
@@ -176,13 +174,20 @@
 	&__colors-input {
 		&:checked {
 			& + .product-card__colors-btn {
-				box-shadow: 0 0 0 rem(3) #fff;
+				outline: rem(3) solid #fff;
+			}
+			&[value="white"] {
+				& + .product-card__colors-btn {
+					outline: rem(3) solid #8a8e92;
+				}
 			}
 		}
 	}
 	// .product-card__colors-btn
 	&__colors-btn {
+		position: relative;
 		border-radius: 50%;
+		overflow: hidden;
 		display: block;
 		cursor: pointer;
 		& img {
@@ -252,8 +257,11 @@
 		}
 		& img {
 			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
+			transform: scale(0.25);
+			transition: all 0.5s ease 0s;
 			&.fade-in {
+				transform: scale(1);
+				// transition: opacity 0.5s ease-in-out;
 				opacity: 1;
 			}
 		}
@@ -270,6 +278,23 @@
 		top: var(--header-height);
 		z-index: 5;
 		background: $dark;
+		@media (min-width: $md3) {
+			transform: translateY(rem(1));
+			&::before {
+				content: "";
+				position: absolute;
+				top: rem(-1);
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $dark;
+			}
+		}
+		&.scroll {
+			.product-info__nav-link {
+				font-size: 0.875rem;
+			}
+		}
 	}
 	// .product-info__container
 	&__container {
@@ -292,11 +317,11 @@
 		line-height: 140%;
 		display: flex;
 		align-items: center;
-		transition: color 0.3s ease 0s;
+		transition: color 0.3s ease 0s, font-size 0.3s ease 0s;
 		font-size: 0.875rem;
 		padding: 1.1rem 0.875rem;
 		@media (min-width: $md3) {
-			padding: 1.34rem 1.41rem;
+			padding: em(1.34, 1.125) em(1.41, 1.125);
 			font-size: 1.125rem;
 		}
 		&.active {
@@ -327,6 +352,7 @@
 		@media (min-width: $md2) {
 			padding: 3.75rem 0;
 		}
+
 		position: relative;
 		z-index: 1;
 		&::before {
@@ -339,8 +365,15 @@
 			height: rem(1);
 			background: #c2c5c6;
 		}
+		&#desc {
+			padding-bottom: 0;
+			&::before {
+				display: none;
+			}
+		}
 		.product-card__spec {
 			margin-top: 2.25rem;
+			padding-bottom: 0;
 			@media (min-width: $md2) {
 				padding-top: 2.5rem;
 				border-top: rem(1) solid #d6d8d9;
@@ -354,6 +387,7 @@
 			gap: 0.75rem;
 
 			padding-bottom: 0.6rem;
+
 			&:not(:last-child) {
 				margin-bottom: 1.25rem;
 			}
@@ -648,7 +682,10 @@
 			&::before {
 				content: "";
 				position: absolute;
-				top: rem(10);
+				top: rem(6);
+				@media (min-width: $md4) {
+					top: rem(10);
+				}
 				left: 0;
 				transform: rotate(45deg);
 				width: rem(7);
@@ -776,10 +813,13 @@
 	}
 	// .configurator__side
 	&__side {
+		position: sticky;
 		background: #f0f3f5;
 		flex-shrink: 0;
 		padding: 1.5rem 1rem 2rem 1rem;
+
 		@media (min-width: $md3) {
+			top: calc(var(--header-height) + rem(80));
 			width: 19.25rem;
 		}
 		@media (min-width: $md2) {

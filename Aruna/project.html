@@ -44,14 +44,14 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240531140206">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240531140206">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240531140206">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240531214600">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240531214600">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240531214600">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20240531140206">
-  <link rel="stylesheet" href="css/style.min.css?_v=20240531140206">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20240531214600">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240531214600">
 
 </head>
 
@@ -140,11 +140,11 @@
       </nav>
       <section class="project">
         <div class="project__container">
-          <h1 class="project__title title-lg">Освещение для дома на ул. Тукая</h1>
-          <p class="project__desc">
+          <h1 class="project__title title-lg" data-animate="bottom">Освещение для дома на ул. Тукая</h1>
+          <p class="project__desc" data-animate="bottom">
             Расположенное по адресу ул. Тукая в Казани, это здание, принадлежащее фонду недвижимости, предназначено для коммерческих и офисных помещений и привлекает известных арендаторов. Здание площадью 2 400 квадратных метров и высотой в семь этажей с 8-м этажом, который скоро появится, занимает выгодное местоположение в самом центре города. В настоящее время этот район находится в стадии редевелопмента, вызывая живой интерес со стороны институциональных инвесторов благодаря близости к различным объектам инфраструктуры.
           </p>
-          <ul class="project__props">
+          <ul class="project__props" data-animate="bottom">
             <li class="project__props-item">
               <div class="project__props-name">Год</div>
               <div class="project__props-value">2023</div>
@@ -162,23 +162,23 @@
               <div class="project__props-value">HI LITE NEXT SRL</div>
             </li>
           </ul>
-          <div class="project__slider swiper">
+          <div class="project__slider swiper" data-animate="bottom">
             <div class="swiper-wrapper">
-              <div class="project__slide swiper-slide">
+              <a href="img/projects/05.jpg" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <img src="img/projects/05.jpg" class="cover-image" alt="Изображение проекта">
-              </div>
-              <div class="project__slide swiper-slide">
+              </a>
+              <a href="img/projects/04.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <img src="img/projects/04.png" class="cover-image" alt="Изображение проекта">
-              </div>
-              <div class="project__slide swiper-slide">
+              </a>
+              <a href="img/projects/02.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <img src="img/projects/02.png" class="cover-image" alt="Изображение проекта">
-              </div>
-              <div class="project__slide swiper-slide">
+              </a>
+              <a href="img/projects/03.pngc" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <img src="img/projects/03.png" class="cover-image" alt="Изображение проекта">
-              </div>
-              <div class="project__slide swiper-slide">
+              </a>
+              <a href="img/projects/01.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <img src="img/projects/01.png" class="cover-image" alt="Изображение проекта">
-              </div>
+              </a>
             </div>
             <button type="button" class="swiper-button-prev project__prev"></button>
             <button type="button" class="swiper-button-next project__next"></button>
@@ -187,13 +187,13 @@
           <a href="https://www.youtube.com/watch?v=RWsXPy4g8Mw" data-fancybox class="project__video icon-play">
             <img src="img/video.jpg" class="cover-image" alt="Постер видео">
           </a>
-          <div class="project__compare before-slider">
+          <div class="project__compare before-slider" data-animate="bottom">
             <div class="before-slider__image before-slider__before" style="background-image: url(https://i.imgur.com/s08MkXC.jpg)"></div>
             <div class="before-slider__image before-slider__after" style="background-image: url(https://i.imgur.com/PfIWek4.jpg)"></div>
             <input type="range" min="0" max="100" value="50" class="before-slider__input" name="slider" />
             <div class="before-slider__button"></div>
           </div>
-          <div class="project__article">
+          <div class="project__article" data-animate="bottom">
             <p>
               Согласно выбранному дизайну освещения, оригинальная геометрия фасада здания требовала сбалансированного чередования линий яркого белого света, чтобы обеспечить привлекательный эффект по всей его поверхности. Для достижения этой цели были выбраны сверхкомпактные линейные профили серии nanoPARADE, отличающиеся чрезвычайной тонкостью и оптимальными характеристиками. Оснащенные отдельным блоком питания, nanoPARADE - идеальное решение для легкой наружной установки на балконах, окнах или фасадах, где ограниченное монтажное пространство резко ограничивает ассортимент подходящих изделий.
             </p>
@@ -225,9 +225,8 @@
             </ul>
           </div>
         </div>
-
       </section>
-      <section class="feedback">
+      <section id="feedback" class="feedback">
         <div class="feedback__container">
           <h2 class="feedback__title title">
             Начнем проект?
@@ -293,10 +292,10 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__contacts" itemscope itemtype="http://schema.org/Organization">
+            <a href="tel:+79663733434" class="footer__phone icon-phone" itemprop="telephone">+7 966 373-34-34</a>
             <address class="footer__location icon-location" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
               <span itemprop="addressLocality">г. Ростов-на-Дону</span>, <span itemprop="streetAddress">ул. Доватора, 163</span>
             </address>
-            <a href="tel:+79663733434" class="footer__phone icon-phone" itemprop="telephone">+7 966 373-34-34</a>
           </div>
           <a href="/privacy.html" class="footer__privacy">Политика конфиденциальности</a>
         </div>
@@ -337,17 +336,17 @@
   </div>
   </section>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20240531140206"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20240531140206"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20240531140206"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240531140206"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240531140206"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20240531214600"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20240531214600"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20240531214600"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240531214600"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240531214600"></script>
 
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20240531140206"></script>
+  <script src="js/app.min.js?_v=20240531214600"></script>
 </body>
 
 </html>

@@ -38,6 +38,39 @@ document.addEventListener('DOMContentLoaded', () => {
             target.closest('.banner').classList.add('banner-hidden');
         }
 
+        if (target.classList.contains('promo__btn')) {
+
+            const href = target.getAttribute('href');
+            const targetSection = document.querySelector(href);
+
+            if (!targetSection) return;
+
+            const firstInput = targetSection.querySelector('input');
+
+            if (!firstInput) return;
+
+            let scrolling = false;
+
+            function onScroll() {
+                scrolling = true;
+            }
+
+            function checkScroll() {
+                if (scrolling) {
+                    scrolling = false;
+                    window.requestAnimationFrame(checkScroll);
+                } else {
+                    window.removeEventListener('scroll', onScroll);
+                    firstInput.focus();
+                }
+            }
+
+            window.addEventListener('scroll', onScroll);
+            window.requestAnimationFrame(checkScroll);
+
+
+        }
+
 
     });
 
@@ -162,10 +195,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     if (document.querySelector('.product-info__nav')) {
-
+        const nav = document.querySelector('.product-info__nav');
+        const navOffset = nav.offsetTop;
         const navLinks = document.querySelectorAll('.product-info__nav-link');
         let swiperInstance;
-
+        let isScrollingByClick = false;
 
         function removeActiveClasses() {
             navLinks.forEach(link => link.classList.remove('active'));
@@ -174,14 +208,34 @@ document.addEventListener('DOMContentLoaded', () => {
         function addActiveClass(targetId) {
             removeActiveClasses();
             const activeLink = document.querySelector(`.product-info__nav-link[href="#${targetId}"]`);
-            activeLink.classList.add('active');
+            if (activeLink) {
+                activeLink.classList.add('active');
 
-
-            const activeIndex = Array.from(navLinks).indexOf(activeLink);
-            if (swiperInstance) {
-                swiperInstance.slideTo(activeIndex);
+                const activeIndex = Array.from(navLinks).indexOf(activeLink);
+                if (swiperInstance) {
+                    swiperInstance.slideTo(activeIndex);
+                }
             }
         }
+
+        function addStickyClass() {
+            nav.classList.add('scroll');
+        }
+
+        function removeStickyClass() {
+            nav.classList.remove('scroll');
+        }
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY >= navOffset) {
+
+                addStickyClass();
+            } else {
+
+                removeStickyClass();
+            }
+        });
 
         function getStickyHeaderHeight() {
             const header = document.querySelector('header');
@@ -193,57 +247,67 @@ document.addEventListener('DOMContentLoaded', () => {
             return navbar ? navbar.offsetHeight : 0;
         }
 
-
         gsap.registerPlugin(ScrollTrigger);
-
-
 
         const sections = document.querySelectorAll('.product-info__block');
 
         sections.forEach(section => {
             let trigger = ScrollTrigger.create({
                 trigger: section,
-                start: () => {
-
-                    return `top top+=${getStickyHeaderHeight() + getNavbarHeight()}`
-                },
-                end: `bottom top+=${getStickyHeaderHeight() + getNavbarHeight()} `,
-                onEnter: () => addActiveClass(section.id),
-                onEnterBack: () => addActiveClass(section.id),
-                // markers: true,
-                onLeave: ({ direction }) => {
-                    if (direction === 1) {
-                        const nextSection = sections[Array.from(sections).indexOf(section)];
-                        if (nextSection) addActiveClass(nextSection.id);
+                start: () => `top top+=${getStickyHeaderHeight() + getNavbarHeight()}`,
+                end: `bottom top+=${getStickyHeaderHeight() + getNavbarHeight()}`,
+                onEnter: () => {
+                    if (!isScrollingByClick) {
+                        addActiveClass(section.id);
                     }
                 },
-                onEnterBack: ({ direction }) => {
-
+                onEnterBack: () => {
+                    if (!isScrollingByClick) {
+                        addActiveClass(section.id);
+                    }
+                },
+                onLeave: ({ direction }) => {
+                    if (direction === 1) {
+                        const nextSection = sections[Array.from(sections).indexOf(section) + 1];
+                        if (nextSection && !isScrollingByClick) addActiveClass(nextSection.id);
+                    }
+                },
+                onLeaveBack: ({ direction }) => {
                     if (direction === -1) {
-                        const prevSection = sections[Array.from(sections).indexOf(section)];
-                        if (prevSection) addActiveClass(prevSection.id);
+                        const prevSection = sections[Array.from(sections).indexOf(section) - 1];
+                        if (prevSection && !isScrollingByClick) addActiveClass(prevSection.id);
                     }
                 }
             });
 
             window.addEventListener('scroll', () => {
-                trigger.update()
-            })
-
+                trigger.update();
+            });
         });
 
 
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                isScrollingByClick = true;
 
-        window.addEventListener('scroll', () => {
-            const activeLink = document.querySelector('.product-info__nav-link.active');
-            if (activeLink) {
-                const activeIndex = Array.from(navLinks).indexOf(activeLink);
-                if (swiperInstance) {
-                    swiperInstance.slideTo(activeIndex, 0);
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const offset = getStickyHeaderHeight() + getNavbarHeight();
+                    window.scrollTo({
+                        top: targetSection.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+
+                    addActiveClass(targetId);
+                    setTimeout(() => {
+                        isScrollingByClick = false;
+                    }, 1000);
                 }
-            }
+            });
         });
-
 
         if (document.querySelector('.product-info__navbar')) {
             swiperInstance = new Swiper('.product-info__navbar', {
@@ -254,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // animation header
     window.addEventListener('scroll', function (e) {
         if (scrollY > 0) {
             document.querySelector('.header').classList.add('scroll')
@@ -262,8 +327,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.header').classList.remove('scroll')
             }, 100)
         }
-        document.body.style.setProperty("--header-height", document.querySelector('.header').offsetHeight + "px")
+        document.body.style.setProperty("--header-height", Math.ceil(document.querySelector('.header').offsetHeight) + "px")
     })
+
+
+
 
 
 
@@ -383,14 +451,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const caseColor = document.querySelector('input[name="case-color"]:checked').value;
             const ledColor = document.querySelector('input[name="led-color"]:checked').value;
             const newSrc = `img/products/spotlights/${productId}-${caseColor}-${ledColor}.png`;
-            productImage.setAttribute('src', newSrc);
 
             productImage.classList.remove('fade-in');
 
             setTimeout(() => {
                 productImage.src = newSrc;
                 productImage.classList.add('fade-in');
-            }, 300);
+            }, 500);
 
         }
 
@@ -406,6 +473,35 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProductImage();
     }
 
+
+    const colorBlocks = document.querySelectorAll('.product-card__colors');
+    if (colorBlocks.length > 0) {
+
+        colorBlocks.forEach(block => {
+            const currentColorDisplay = block.querySelector('.product-card__colors-current');
+            const colorItems = block.querySelectorAll('.product-card__colors-item');
+
+            colorItems.forEach(item => {
+                const img = item.querySelector('img');
+                const input = item.querySelector('input');
+
+                img.addEventListener('mouseenter', function () {
+                    currentColorDisplay.textContent = img.getAttribute('title');
+                });
+
+                img.addEventListener('mouseleave', function () {
+                    const checkedInput = block.querySelector('.product-card__colors-input:checked');
+                    const checkedImg = checkedInput.nextElementSibling.querySelector('img');
+                    currentColorDisplay.textContent = checkedImg.getAttribute('title');
+                });
+
+                input.addEventListener('change', function () {
+                    const checkedImg = input.nextElementSibling.querySelector('img');
+                    currentColorDisplay.textContent = checkedImg.getAttribute('title');
+                });
+            });
+        });
+    }
 
 
 

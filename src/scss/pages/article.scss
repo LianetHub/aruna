@@ -218,6 +218,9 @@
 				gap: rem(30);
 			}
 			& img {
+				&[data-fancybox] {
+					cursor: pointer;
+				}
 				height: 17.58081rem;
 				width: 100%;
 				@media (min-width: $md5) {

@@ -274,6 +274,20 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		@media (min-width: $md5) and (max-width: $md4) {
+			@for $i from 1 through 2 {
+				&:nth-child(2n + #{$i}) {
+					transition-delay: $i * 0.25s;
+				}
+			}
+		}
+		@media (min-width: $md4) {
+			@for $i from 1 through 4 {
+				&:nth-child(4n + #{$i}) {
+					transition-delay: $i * 0.15s;
+				}
+			}
+		}
 	}
 	// .team__item-image
 	&__item-image {

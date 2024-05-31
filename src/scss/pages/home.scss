@@ -26,9 +26,10 @@
 			width: 78rem;
 		}
 	}
-	background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo.jpg") 23% 0 / cover no-repeat;
 	padding: 6.5rem 0 3.7rem;
+	background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo-mobile.jpg") 23% 0 / cover no-repeat;
 	@media (min-width: $md5) {
+		background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo.jpg") 23% 0 / cover no-repeat;
 		padding: 18rem 0 5rem;
 	}
 	@media (min-width: $md4) {
