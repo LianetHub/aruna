@@ -1,56 +1,58 @@
 <header class="header@@className" itemscope itemtype="http://schema.org/WPHeader">
-    <div class="header__container container-lg">
-        <div class="header__body">
-            <a href="/" class="header__logo" itemprop="url">
-                <img src="@img/logo.svg" alt="Логотип сайта" itemprop="logo">
-            </a>
-            <div class="header__menu menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                <nav aria-label="Меню в шапке" class="menu__body">
-                    <ul class="menu__list">
-                        <li class="menu__item" itemprop="name">
-                            <a href="/" class="menu__link@@if(active===1){ active}" itemprop="url">
-                                Главная
-                            </a>
-                        </li>
-                        <li class="menu__item" itemprop="name">
-                            <a href="/catalog.html" class="menu__link@@if(active===2){ active}" itemprop="url">
-                                Каталог
-                            </a>
-                        </li>
-                        <li class="menu__item" itemprop="name">
-                            <a href="/projects.html" class="menu__link@@if(active===3){ active}" itemprop="url">
-                                Проекты
-                            </a>
-                        </li>
-                        <li class="menu__item" itemprop="name">
-                            <a href="/about.html" class="menu__link@@if(active===4){ active}" itemprop="url">
-                                О компании
-                            </a>
-                        </li>
-                        <li class="menu__item" itemprop="name">
-                            <a href="/blog.html" class="menu__link@@if(active===5){ active}" itemprop="url">
-                                Блог
-                            </a>
-                        </li>
-                        <li class="menu__item" itemprop="name">
-                            <a href="/contacts.html" class="menu__link@@if(active===6){ active}" itemprop="url">
-                                Контакты
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="tel:+79663733434" class="menu__phone icon-thin-phone" itemprop="telephone">+7 966 373-34-34</a>
-                    <a href="#consult" data-fancybox class="menu__btn btn btn-primary">Консультация</a>
-                </nav>
+    <div class="header__wrapper">
+        <div class="header__container container-lg">
+            <div class="header__body">
+                <a href="/" class="header__logo" itemprop="url">
+                    <img src="@img/logo.svg" alt="Логотип сайта" itemprop="logo">
+                </a>
+                <div class="header__menu menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <nav aria-label="Меню в шапке" class="menu__body">
+                        <ul class="menu__list">
+                            <li class="menu__item" itemprop="name">
+                                <a href="/" class="menu__link@@if(active===1){ active}" itemprop="url">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="menu__item" itemprop="name">
+                                <a href="/catalog.html" class="menu__link@@if(active===2){ active}" itemprop="url">
+                                    Каталог
+                                </a>
+                            </li>
+                            <li class="menu__item" itemprop="name">
+                                <a href="/projects.html" class="menu__link@@if(active===3){ active}" itemprop="url">
+                                    Проекты
+                                </a>
+                            </li>
+                            <li class="menu__item" itemprop="name">
+                                <a href="/about.html" class="menu__link@@if(active===4){ active}" itemprop="url">
+                                    О компании
+                                </a>
+                            </li>
+                            <li class="menu__item" itemprop="name">
+                                <a href="/blog.html" class="menu__link@@if(active===5){ active}" itemprop="url">
+                                    Блог
+                                </a>
+                            </li>
+                            <li class="menu__item" itemprop="name">
+                                <a href="/contacts.html" class="menu__link@@if(active===6){ active}" itemprop="url">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="tel:+79663733434" class="menu__phone icon-thin-phone" itemprop="telephone">+7 966 373-34-34</a>
+                        <a href="#consult" data-fancybox class="menu__btn btn btn-primary">Консультация</a>
+                    </nav>
+                </div>
+                <a href="tel:+79663733434" class="header__phone" itemprop="telephone">+7 966 373-34-34</a>
+                <a href="#consult" data-fancybox class="header__btn btn btn-sm btn-primary-outline">
+                    Консультация
+                </a>
+                <button type="button" aria-label="Открыть мобильное меню" class="header__menu-btn icon-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <a href="tel:+79663733434" class="header__phone" itemprop="telephone">+7 966 373-34-34</a>
-            <a href="#consult" data-fancybox class="header__btn btn btn-sm btn-primary-outline">
-                Консультация
-            </a>
-            <button type="button" aria-label="Открыть мобильное меню" class="header__menu-btn icon-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </div>
 </header>

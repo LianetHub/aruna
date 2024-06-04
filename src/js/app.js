@@ -40,33 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (target.classList.contains('promo__btn')) {
 
-            const href = target.getAttribute('href');
-            const targetSection = document.querySelector(href);
+            const contactsBlock = document.getElementById('feedback');
+            const form = contactsBlock.querySelector('form');
+            const firstInput = form.querySelector('input');
 
-            if (!targetSection) return;
+            if (firstInput) {
 
-            const firstInput = targetSection.querySelector('input');
-
-            if (!firstInput) return;
-
-            let scrolling = false;
-
-            function onScroll() {
-                scrolling = true;
-            }
-
-            function checkScroll() {
-                if (scrolling) {
-                    scrolling = false;
-                    window.requestAnimationFrame(checkScroll);
-                } else {
-                    window.removeEventListener('scroll', onScroll);
+                setTimeout(() => {
                     firstInput.focus();
-                }
+                }, 1000)
             }
-
-            window.addEventListener('scroll', onScroll);
-            window.requestAnimationFrame(checkScroll);
 
 
         }
@@ -320,17 +303,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // animation header
     window.addEventListener('scroll', function (e) {
-        if (scrollY > 0) {
-            document.querySelector('.header').classList.add('scroll')
-        } else {
-            setTimeout(() => {
-                document.querySelector('.header').classList.remove('scroll')
-            }, 100)
-        }
-        document.body.style.setProperty("--header-height", Math.ceil(document.querySelector('.header').offsetHeight) + "px")
+
+        document.body.style.setProperty("--header-height", Math.ceil(document.querySelector('.header__wrapper').offsetHeight) + "px")
     })
 
 
+    const headerElement = document.querySelector('.header');
+
+    const callback = function (entries, observer) {
+        if (entries[0].isIntersecting) {
+            headerElement.classList.remove('scroll');
+        } else {
+            headerElement.classList.add('scroll');
+        }
+    };
+
+    const headerObserver = new IntersectionObserver(callback);
+    headerObserver.observe(headerElement);
 
 
 

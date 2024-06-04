@@ -1,18 +1,19 @@
 .header {
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 6;
-	background: #fff;
+	// position: sticky;
+	// top: 0;
+	// left: 0;
+	// z-index: 6;
+
 	transition: opacity 0.3s ease 0s;
-	@media (min-width: $md1) {
-		background: transparent;
-	}
+
 	&.header_main {
-		.header__body {
-			@media (min-width: $md1) {
-				margin-bottom: -100%;
-			}
+		// .header__body {
+		// 	@media (min-width: $md1) {
+		// 		margin-bottom: -100%;
+		// 	}
+		// }
+		& + .page {
+			padding-top: 0;
 		}
 	}
 	&.scroll {
@@ -25,6 +26,16 @@
 					background: #fff;
 				}
 			}
+		}
+	}
+	&__wrapper {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 6;
+		background: #fff;
+		@media (min-width: $md1) {
+			background: transparent;
 		}
 	}
 	// .header__container

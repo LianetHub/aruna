@@ -44,72 +44,74 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240531214600">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240531214600">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240531214600">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240604220513">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240604220513">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240604220513">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20240531214600">
-  <link rel="stylesheet" href="css/style.min.css?_v=20240531214600">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20240604220513">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240604220513">
 
 </head>
 
 <body>
   <div class="wrapper">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header__container container-lg">
-        <div class="header__body">
-          <a href="/" class="header__logo" itemprop="url">
-            <img src="img/logo.svg" alt="Логотип сайта" itemprop="logo">
-          </a>
-          <div class="header__menu menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <nav aria-label="Меню в шапке" class="menu__body">
-              <ul class="menu__list">
-                <li class="menu__item" itemprop="name">
-                  <a href="/" class="menu__link" itemprop="url">
-                    Главная
-                  </a>
-                </li>
-                <li class="menu__item" itemprop="name">
-                  <a href="/catalog.html" class="menu__link" itemprop="url">
-                    Каталог
-                  </a>
-                </li>
-                <li class="menu__item" itemprop="name">
-                  <a href="/projects.html" class="menu__link" itemprop="url">
-                    Проекты
-                  </a>
-                </li>
-                <li class="menu__item" itemprop="name">
-                  <a href="/about.html" class="menu__link" itemprop="url">
-                    О компании
-                  </a>
-                </li>
-                <li class="menu__item" itemprop="name">
-                  <a href="/blog.html" class="menu__link active" itemprop="url">
-                    Блог
-                  </a>
-                </li>
-                <li class="menu__item" itemprop="name">
-                  <a href="/contacts.html" class="menu__link" itemprop="url">
-                    Контакты
-                  </a>
-                </li>
-              </ul>
-              <a href="tel:+79663733434" class="menu__phone icon-thin-phone" itemprop="telephone">+7 966 373-34-34</a>
-              <a href="#consult" data-fancybox class="menu__btn btn btn-primary">Консультация</a>
-            </nav>
+      <div class="header__wrapper">
+        <div class="header__container container-lg">
+          <div class="header__body">
+            <a href="/" class="header__logo" itemprop="url">
+              <img src="img/logo.svg" alt="Логотип сайта" itemprop="logo">
+            </a>
+            <div class="header__menu menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <nav aria-label="Меню в шапке" class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item" itemprop="name">
+                    <a href="/" class="menu__link" itemprop="url">
+                      Главная
+                    </a>
+                  </li>
+                  <li class="menu__item" itemprop="name">
+                    <a href="/catalog.html" class="menu__link" itemprop="url">
+                      Каталог
+                    </a>
+                  </li>
+                  <li class="menu__item" itemprop="name">
+                    <a href="/projects.html" class="menu__link" itemprop="url">
+                      Проекты
+                    </a>
+                  </li>
+                  <li class="menu__item" itemprop="name">
+                    <a href="/about.html" class="menu__link" itemprop="url">
+                      О компании
+                    </a>
+                  </li>
+                  <li class="menu__item" itemprop="name">
+                    <a href="/blog.html" class="menu__link active" itemprop="url">
+                      Блог
+                    </a>
+                  </li>
+                  <li class="menu__item" itemprop="name">
+                    <a href="/contacts.html" class="menu__link" itemprop="url">
+                      Контакты
+                    </a>
+                  </li>
+                </ul>
+                <a href="tel:+79663733434" class="menu__phone icon-thin-phone" itemprop="telephone">+7 966 373-34-34</a>
+                <a href="#consult" data-fancybox class="menu__btn btn btn-primary">Консультация</a>
+              </nav>
+            </div>
+            <a href="tel:+79663733434" class="header__phone" itemprop="telephone">+7 966 373-34-34</a>
+            <a href="#consult" data-fancybox class="header__btn btn btn-sm btn-primary-outline">
+              Консультация
+            </a>
+            <button type="button" aria-label="Открыть мобильное меню" class="header__menu-btn icon-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
-          <a href="tel:+79663733434" class="header__phone" itemprop="telephone">+7 966 373-34-34</a>
-          <a href="#consult" data-fancybox class="header__btn btn btn-sm btn-primary-outline">
-            Консультация
-          </a>
-          <button type="button" aria-label="Открыть мобильное меню" class="header__menu-btn icon-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </div>
     </header>
@@ -140,7 +142,10 @@
           <div class="blog__body">
             <a href="" class="blog__caption" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <span class="blog__item-image">
-                <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                <picture>
+                  <source srcset="img/blog/01.webp" type="image/webp">
+                  <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                </picture>
               </span>
               <span class="blog__item-name" itemprop="headline">Освещение для древних жителей </span>
               <span class="blog__item-desc" itemprop="description">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
@@ -149,7 +154,10 @@
             <div class="blog__items">
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/01.webp" type="image/webp">
+                    <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Освещение для древних жителей </span>
                 <span class="blog__item-desc" itemprop="description">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
@@ -157,7 +165,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/02.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/02.webp" type="image/webp">
+                    <img src="img/blog/02.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Здоровье</span>
                 <span class="blog__item-desc" itemprop="description">В свете последних исследований было выявлено, что недостаточное освещение внутренних помещений может негативно сказываться</span>
@@ -165,7 +176,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/03.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/03.webp" type="image/webp">
+                    <img src="img/blog/03.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Уличные фонари</span>
                 <span class="blog__item-desc" itemprop="description">Специалисты по освещению разработали новый дизайн для уличных фонарей, который позволяет значительно сократить энергопотребление</span>
@@ -173,7 +187,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/04.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/04.webp" type="image/webp">
+                    <img src="img/blog/04.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Тенденции внутреннего освещения</span>
                 <span class="blog__item-desc" itemprop="description">Известный архитектурный обозреватель отметил, что тенденции в области внутреннего освещения все чаще включают в себя использование подвесных светильников и.</span>
@@ -181,7 +198,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/05.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/05.webp" type="image/webp">
+                    <img src="img/blog/05.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Интерьерное освещение</span>
                 <span class="blog__item-desc" itemprop="description">Специалисты по дизайну интерьера все чаще обращают внимание на роль освещения в организации пространства. Новые тренды</span>
@@ -189,7 +209,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/01.webp" type="image/webp">
+                    <img src="img/blog/01.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Освещение для древних жителей </span>
                 <span class="blog__item-desc" itemprop="description">Во время раскопок древнего поселения археологи обнаружили остатки жаркоохранных костров, которые, вероятно являлись</span>
@@ -197,7 +220,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/02.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/02.webp" type="image/webp">
+                    <img src="img/blog/02.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Здоровье</span>
                 <span class="blog__item-desc" itemprop="description">В свете последних исследований было выявлено, что недостаточное освещение внутренних помещений может негативно сказываться</span>
@@ -205,7 +231,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/03.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/03.webp" type="image/webp">
+                    <img src="img/blog/03.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Уличные фонари</span>
                 <span class="blog__item-desc" itemprop="description">Специалисты по освещению разработали новый дизайн для уличных фонарей, который позволяет значительно сократить энергопотребление</span>
@@ -213,7 +242,10 @@
               </a>
               <a href="" class="blog__item" data-animate="bottom" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                 <span class="blog__item-image">
-                  <img src="img/blog/04.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  <picture>
+                    <source srcset="img/blog/04.webp" type="image/webp">
+                    <img src="img/blog/04.jpg" class="cover-image" alt="Постер статьи" itemprop="image">
+                  </picture>
                 </span>
                 <span class="blog__item-name" itemprop="headline">Тенденции внутреннего освещения</span>
                 <span class="blog__item-desc" itemprop="description">Известный архитектурный обозреватель отметил, что тенденции в области внутреннего освещения все чаще включают в себя использование подвесных светильников и.</span>
@@ -336,6 +368,28 @@
       </form>
     </div>
   </div>
+  <div id="price" class="popup">
+    <div class="popup__body">
+      <button type="button" class="popup__close" data-fancybox-close></button>
+      <h3 class="popup__title">Запросить прайс-лист</h3>
+      <form action="#" class="popup__form form">
+        <input type="text" name="name" data-required class="form__input form__input_sm" placeholder="Имя">
+        <input type="tel" name="phone" data-required class="form__input form__input_sm" placeholder="Телефон">
+        <input type="email" name="email" data-required class="form__input form__input_sm" placeholder="Email">
+        <textarea name="message" class="form__textarea form__textare_sm" placeholder="Расскажите о проекте"></textarea>
+        <label class="checkbox checkbox_dark checkbox_sm">
+          <input type="checkbox" checked name="privacy" class="checkbox__input hidden" hidden>
+          <span class="checkbox__content">
+            Я согласен с
+            <a href="/privacy.html" class="checkbox__content-link">
+              правилами обработки персональных данных
+            </a>
+          </span>
+        </label>
+        <button type="submit" class="form__btn btn btn-primary icon-more">Отправить</button>
+      </form>
+    </div>
+  </div>
   <div id="success" class="popup">
     <div class="popup__body">
       <button type="button" class="popup__close" data-fancybox-close></button>
@@ -346,19 +400,18 @@
       <button type="button" data-fancybox-close class="popup__btn btn btn-primary">Закрыть</button>
     </div>
   </div>
-  </section>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20240531214600"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20240531214600"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20240531214600"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240531214600"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240531214600"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20240604220513"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20240604220513"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20240604220513"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240604220513"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240604220513"></script>
 
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20240531214600"></script>
+  <script src="js/app.min.js?_v=20240604220513"></script>
 </body>
 
 </html>

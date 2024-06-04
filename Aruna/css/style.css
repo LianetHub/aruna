@@ -1,6 +1,22 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -17,24 +33,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -532,7 +532,7 @@ body.lock {
   width: 100%;
   background: #ffffff;
   color: #10181d;
-  padding: 1.875rem 1rem;
+  padding: 2.5rem 1rem 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -586,9 +586,9 @@ body.lock {
 .popup__close {
   position: absolute;
   background: none;
-  font-size: 1.5rem;
-  top: 0.25rem;
-  right: 0.25rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.25rem;
   color: #1f2b32;
   -webkit-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
@@ -1167,8 +1167,8 @@ body.lock {
 
 .form__input {
   text-overflow: ellipsis;
-  -webkit-transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+  -webkit-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, outline 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, outline 0.3s ease 0s;
   width: 100%;
   background: #fff;
   color: #10181d;
@@ -1176,12 +1176,17 @@ body.lock {
   border-radius: 0.25rem;
   background: #f2f2f2;
   padding: 1.125rem 0.75rem;
+  outline: 0.125rem solid transparent;
   font-size: 0.875rem;
 }
 
 .form__input.form__input_sm {
   font-size: 0.875rem;
   padding: 1.15rem 0.75rem;
+}
+
+.form__input:focus {
+  outline: 0.125rem solid rgba(255, 255, 255, 0.75);
 }
 
 .form__input:hover,
@@ -1461,19 +1466,26 @@ body.lock {
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 6;
-  background: #fff;
   -webkit-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
+}
+
+.header.header_main + .page {
+  padding-top: 0;
 }
 
 .header.scroll .header__body {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background: rgba(255, 255, 255, 0.9);
+}
+
+.header__wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 6;
+  background: #fff;
 }
 
 .header__body {
@@ -1855,14 +1867,17 @@ body.lock {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow-x: clip;
+  padding-top: 3.75rem;
 }
+
+.no-webp .promo {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url("../img/promo-mobile.jpg") 23% 0/cover no-repeat;
+  background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo-mobile.jpg") 23% 0/cover no-repeat; }
 
 .promo {
   position: relative;
   z-index: 1;
   padding: 6.5rem 0 3.7rem;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url("../img/promo-mobile.jpg") 23% 0/cover no-repeat;
-  background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo-mobile.jpg") 23% 0/cover no-repeat;
 }
 
 .promo::before {
@@ -2795,13 +2810,8 @@ body.lock {
 }
 
 .product-card__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
 }
 
 .product-card__main {
@@ -2948,6 +2958,9 @@ body.lock {
 }
 
 .product-card__footer {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3001,17 +3014,11 @@ body.lock {
 
 .product-card__image img {
   opacity: 0;
-  -webkit-transform: scale(0.25);
-      -ms-transform: scale(0.25);
-          transform: scale(0.25);
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .product-card__image img.fade-in {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
   opacity: 1;
 }
 
@@ -3024,6 +3031,10 @@ body.lock {
 
 .product-info__nav.scroll .product-info__nav-link {
   font-size: 0.875rem;
+}
+
+.product-info__nav.scroll::before {
+  display: none;
 }
 
 .product-info__nav-list {
@@ -4743,13 +4754,19 @@ body.lock {
     font-size: 1rem;
   }
 
+  .page {
+    padding-top: 5rem;
+  }
+
   .promo::before {
     width: 33.75rem;
   }
 
-  .promo {
+  .no-webp .promo {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url("../img/promo.jpg") 23% 0/cover no-repeat;
-    background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo.jpg") 23% 0/cover no-repeat;
+    background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo.jpg") 23% 0/cover no-repeat; }
+
+  .promo {
     padding: 18rem 0 5rem;
   }
 
@@ -5524,6 +5541,7 @@ body.lock {
   }
 
   .popup__close {
+    font-size: 1.5rem;
     top: 0.75rem;
     right: 0.87rem;
   }
@@ -5707,21 +5725,12 @@ body.lock {
 
   .product-card__content {
     gap: 1.96rem;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     padding: 0em 0em 3.62rem 0em;
-  }
-
-  .product-card__main {
-    display: block;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 20rem;
-            flex: 0 0 20rem;
   }
 
   .product-card__spec {
@@ -5752,6 +5761,11 @@ body.lock {
 
   .product-card__colors-current {
     font-size: 1rem;
+  }
+
+  .product-card__footer {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
   }
 
   .product-card__image {
@@ -6391,6 +6405,10 @@ body.lock {
     margin-top: 0;
   }
 
+  .page {
+    padding-top: 6.25rem;
+  }
+
   .promo::before {
     width: 60rem;
   }
@@ -6457,7 +6475,18 @@ body.lock {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .product-card__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .product-card__main {
+    display: block;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 31.6875rem;
             flex: 0 0 31.6875rem;
@@ -6483,6 +6512,7 @@ body.lock {
   }
 
   .product-card__footer {
+    grid-column: auto;
     gap: 1.7rem;
     margin-top: 3.25rem;
     margin-right: -1.25rem;
@@ -6490,20 +6520,14 @@ body.lock {
         flex-wrap: nowrap;
   }
 
-  .product-info__nav {
-    -webkit-transform: translateY(0.0625rem);
-        -ms-transform: translateY(0.0625rem);
-            transform: translateY(0.0625rem);
-  }
-
   .product-info__nav::before {
     content: "";
     position: absolute;
-    top: -0.0625rem;
     left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background: #10181d;
+    height: 0.0625rem;
+    background: #fff;
   }
 
   .product-info__nav-link {
@@ -7009,9 +7033,11 @@ body.lock {
     width: 71.25rem;
   }
 
-  .promo {
+  .no-webp .promo {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url("../img/promo.jpg") center center/cover no-repeat;
-    background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo.jpg") center center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo.jpg") center center/cover no-repeat; }
+
+  .promo {
     padding: 26rem 0 5.31rem;
   }
 
@@ -7720,7 +7746,7 @@ body.lock {
   }
 
   .error {
-    padding: 2rem 0;
+    padding: 2rem 0 5rem;
   }
 
   .error__status {
@@ -8273,12 +8299,8 @@ body.lock {
     max-width: 78.125rem;
   }
 
-  .header {
+  .header__wrapper {
     background: transparent;
-  }
-
-  .header.header_main .header__body {
-    margin-bottom: -100%;
   }
 
   .header__body {
@@ -8670,4 +8692,16 @@ body.lock {
   .contacts__item-link:hover {
     color: rgba(255, 255, 255, 0.3);
   }
+}
+
+.webp .promo { background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url(../img/promo-mobile.webp) 23% 0/cover no-repeat; background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url(../img/promo-mobile.webp) 23% 0/cover no-repeat; }
+
+@media (min-width: 575.98px) {
+
+  .webp .promo { background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url(../img/promo.webp) 23% 0/cover no-repeat; background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url(../img/promo.webp) 23% 0/cover no-repeat; }
+}
+
+@media (min-width: 1199.98px) {
+
+  .webp .promo { background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url(../img/promo.webp) center center/cover no-repeat; background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url(../img/promo.webp) center center/cover no-repeat; }
 }

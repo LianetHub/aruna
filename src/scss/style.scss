@@ -125,6 +125,13 @@ body {
 .page {
 	flex: 1 1 auto;
 	overflow-x: clip;
+	padding-top: rem(60);
+	@media (min-width: $md5) {
+		padding-top: rem(80);
+	}
+	@media (min-width: $md3) {
+		padding-top: rem(100);
+	}
 }
 // ========================================================
 
