@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -17,15 +17,15 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Cygre";
+  font-family: "Inter";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -39,17 +39,17 @@
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -1251,6 +1251,10 @@ body.lock {
   height: 6.6875rem;
 }
 
+.form__textarea:focus {
+  outline: 0.125rem solid rgba(255, 255, 255, 0.75);
+}
+
 .form__textarea:hover,
 .form__textarea:focus {
   border-color: #039;
@@ -1472,6 +1476,10 @@ body.lock {
 
 .header.header_main + .page {
   padding-top: 0;
+}
+
+.header.header_product.scroll .header__body {
+  background: #fff;
 }
 
 .header.scroll .header__body {
@@ -2945,9 +2953,8 @@ body.lock {
   overflow: hidden;
   display: block;
   cursor: pointer;
-}
-
-.product-card__colors-btn img {
+  width: 2.375rem;
+  height: 2.375rem;
   border-radius: 50%;
 }
 
@@ -3033,16 +3040,11 @@ body.lock {
   font-size: 0.875rem;
 }
 
-.product-info__nav.scroll::before {
-  display: none;
-}
-
-.product-info__nav-list {
-  background: #10181d;
-}
-
 .product-info__nav-item {
   width: auto;
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
 }
 
 .product-info__nav-link {
@@ -3064,6 +3066,17 @@ body.lock {
 .product-info__nav-link.active {
   background: #fff;
   color: #232c32;
+}
+
+.product-info__nav-link.active::before {
+  content: "";
+  position: absolute;
+  bottom: -0.0625rem;
+  left: 0;
+  width: 100%;
+  height: 0.0625rem;
+  background: #fff;
+  z-index: 1;
 }
 
 .product-info__content {
@@ -4474,7 +4487,7 @@ body.lock {
 }
 
 .error__container {
-  min-height: calc(100vh - 26.25rem);
+  min-height: calc(100vh - 28.75rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6518,16 +6531,6 @@ body.lock {
     margin-right: -1.25rem;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-  }
-
-  .product-info__nav::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0.0625rem;
-    background: #fff;
   }
 
   .product-info__nav-link {

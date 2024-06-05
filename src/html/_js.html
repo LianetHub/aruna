@@ -4,35 +4,8 @@
 <script src="js/libs/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
-@@if(map===true){
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<script type="text/javascript">
-    ymaps.ready(init);
-    function init() {
-        var myMap = new ymaps.Map("map", {
-            center: [55.81381894674249, 37.6901111454773],
-            zoom: 17,
-            controls: ['zoomControl']
-        }, {
-            suppressMapOpenBlock: true
-        });
 
-        var myPlacemark = new ymaps.Placemark([55.81381894674249, 37.6901111454773], {
-            hintContent: 'г. Москва ул. Краснобогатырская, дом 2',
-            balloonContent: 'г. Москва ул. Краснобогатырская, дом 2'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: '@img/icons/placemark.svg',
-            iconImageSize: [70, 80],
-            iconImageOffset: [-15, -42]
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-        myMap.controls.remove('routeEditor');
-    }
-</script>
-}
 <!-- plugnis -->
 
 

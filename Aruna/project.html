@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head itemscope itemtype="http://schema.org/WPHeader">
+<head itemscope="" itemtype="http://schema.org/WPHeader">
   <title itemprop="headline">ARUNA | Проекты | Страница проекта</title>
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
@@ -44,27 +44,27 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240604220513">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240604220513">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240604220513">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240605120007">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240605120007">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240605120007">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20240604220513">
-  <link rel="stylesheet" href="css/style.min.css?_v=20240604220513">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20240605120007">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240605120007">
 
 </head>
 
 <body>
   <div class="wrapper">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header__wrapper">
         <div class="header__container container-lg">
           <div class="header__body">
             <a href="/" class="header__logo" itemprop="url">
               <img src="img/logo.svg" alt="Логотип сайта" itemprop="logo">
             </a>
-            <div class="header__menu menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <div class="header__menu menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
               <nav aria-label="Меню в шапке" class="menu__body">
                 <ul class="menu__list">
                   <li class="menu__item" itemprop="name">
@@ -99,11 +99,11 @@
                   </li>
                 </ul>
                 <a href="tel:+79663733434" class="menu__phone icon-thin-phone" itemprop="telephone">+7 966 373-34-34</a>
-                <a href="#consult" data-fancybox class="menu__btn btn btn-primary">Консультация</a>
+                <a href="#consult" data-fancybox="" class="menu__btn btn btn-primary">Консультация</a>
               </nav>
             </div>
             <a href="tel:+79663733434" class="header__phone" itemprop="telephone">+7 966 373-34-34</a>
-            <a href="#consult" data-fancybox class="header__btn btn btn-sm btn-primary-outline">
+            <a href="#consult" data-fancybox="" class="header__btn btn btn-sm btn-primary-outline">
               Консультация
             </a>
             <button type="button" aria-label="Открыть мобильное меню" class="header__menu-btn icon-menu">
@@ -118,20 +118,20 @@
     <main class="page">
       <nav aria-label="Хлебные крошки" class="breadcrumbs breadcrumbs_sm">
         <div class="breadcrumbs__container">
-          <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <ul class="breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
               <a href="/" class="breadcrumbs__link" itemprop="item">
                 <span itemprop="name">Главная</span>
               </a>
               <meta itemprop="position" content="1">
             </li>
-            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
               <a href="/projects.html" class="breadcrumbs__link" itemprop="item">
                 <span itemprop="name">Проекты</span>
               </a>
               <meta itemprop="position" content="2">
             </li>
-            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
               <a class="breadcrumbs__link active" itemprop="item">
                 <span itemprop="name">Освещение для дома на ул. Тукая</span>
               </a>
@@ -168,32 +168,62 @@
             <div class="swiper-wrapper">
               <a href="img/projects/05.jpg" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <picture>
-                  <source srcset="img/projects/05.webp" type="image/webp">
-                  <img src="img/projects/05.jpg" class="cover-image" alt="Изображение проекта">
+                  <source type="image/webp" media="(min-width: 1920px)" srcset="img/projects/05.webp">
+                  <source media="(min-width: 1920px)" srcset="img/projects/05.jpg">
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/projects/05.webp">
+                  <source media="(min-width: 1200px)" srcset="img/projects/05.jpg">
+                  <source type="image/webp" media="(min-width: 576px)" srcset="img/projects/05.webp">
+                  <source media="(min-width: 576px)" srcset="img/projects/05.jpg">
+                  <source type="image/webp" srcset="img/projects/05.webp">
+                  <img src="img/projects/05.jpg" class="cover-image" alt="Изображение проекта" itemprop="image">
                 </picture>
               </a>
               <a href="img/projects/04.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <picture>
-                  <source srcset="img/projects/04.webp" type="image/webp">
-                  <img src="img/projects/04.png" class="cover-image" alt="Изображение проекта">
+                  <source type="image/webp" media="(min-width: 1920px)" srcset="img/projects/04.png">
+                  <source media="(min-width: 1920px)" srcset="img/projects/04.png">
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/projects/04.png">
+                  <source media="(min-width: 1200px)" srcset="img/projects/04.png">
+                  <source type="image/webp" media="(min-width: 576px)" srcset="img/projects/04.png">
+                  <source media="(min-width: 576px)" srcset="img/projects/04.png">
+                  <source type="image/webp" srcset="img/projects/04.png">
+                  <img src="img/projects/04.png" class="cover-image" alt="Изображение проекта" itemprop="image">
+                </picture>
+              </a>
+              <a href="img/projects/03.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1920px)" srcset="img/projects/03.png">
+                  <source media="(min-width: 1920px)" srcset="img/projects/03.png">
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/projects/03.png">
+                  <source media="(min-width: 1200px)" srcset="img/projects/03.png">
+                  <source type="image/webp" media="(min-width: 576px)" srcset="img/projects/03.png">
+                  <source media="(min-width: 576px)" srcset="img/projects/03.png">
+                  <source type="image/webp" srcset="img/projects/03.png">
+                  <img src="img/projects/03.png" class="cover-image" alt="Изображение проекта" itemprop="image">
                 </picture>
               </a>
               <a href="img/projects/02.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <picture>
-                  <source srcset="img/projects/02.webp" type="image/webp">
-                  <img src="img/projects/02.png" class="cover-image" alt="Изображение проекта">
-                </picture>
-              </a>
-              <a href="img/projects/03.pngc" data-fancybox="project-gallery" class="project__slide swiper-slide">
-                <picture>
-                  <source srcset="img/projects/03.webp" type="image/webp">
-                  <img src="img/projects/03.png" class="cover-image" alt="Изображение проекта">
+                  <source type="image/webp" media="(min-width: 1920px)" srcset="img/projects/02.png">
+                  <source media="(min-width: 1920px)" srcset="img/projects/02.png">
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/projects/02.png">
+                  <source media="(min-width: 1200px)" srcset="img/projects/02.png">
+                  <source type="image/webp" media="(min-width: 576px)" srcset="img/projects/02.png">
+                  <source media="(min-width: 576px)" srcset="img/projects/02.png">
+                  <source type="image/webp" srcset="img/projects/02.png">
+                  <img src="img/projects/02.png" class="cover-image" alt="Изображение проекта" itemprop="image">
                 </picture>
               </a>
               <a href="img/projects/01.png" data-fancybox="project-gallery" class="project__slide swiper-slide">
                 <picture>
-                  <source srcset="img/projects/01.webp" type="image/webp">
-                  <img src="img/projects/01.png" class="cover-image" alt="Изображение проекта">
+                  <source type="image/webp" media="(min-width: 1920px)" srcset="img/projects/01.png">
+                  <source media="(min-width: 1920px)" srcset="img/projects/01.png">
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/projects/01.png">
+                  <source media="(min-width: 1200px)" srcset="img/projects/01.png">
+                  <source type="image/webp" media="(min-width: 576px)" srcset="img/projects/01.png">
+                  <source media="(min-width: 576px)" srcset="img/projects/01.png">
+                  <source type="image/webp" srcset="img/projects/01.png">
+                  <img src="img/projects/01.png" class="cover-image" alt="Изображение проекта" itemprop="image">
                 </picture>
               </a>
             </div>
@@ -201,7 +231,7 @@
             <button type="button" class="swiper-button-next project__next"></button>
           </div>
           <div class="project__pagination swiper-pagination"></div>
-          <a href="https://www.youtube.com/watch?v=RWsXPy4g8Mw" data-fancybox class="project__video icon-play">
+          <a href="https://www.youtube.com/watch?v=RWsXPy4g8Mw" data-fancybox="" class="project__video icon-play">
             <picture>
               <source srcset="img/video.webp" type="image/webp">
               <img src="img/video.jpg" class="cover-image" alt="Постер видео">
@@ -210,7 +240,7 @@
           <div class="project__compare before-slider" data-animate="bottom">
             <div class="before-slider__image before-slider__before" style="background-image: url(https://i.imgur.com/s08MkXC.jpg)"></div>
             <div class="before-slider__image before-slider__after" style="background-image: url(https://i.imgur.com/PfIWek4.jpg)"></div>
-            <input type="range" min="0" max="100" value="50" class="before-slider__input" name="slider" />
+            <input type="range" min="0" max="100" value="50" class="before-slider__input" name="slider">
             <div class="before-slider__button"></div>
           </div>
           <div class="project__article" data-animate="bottom">
@@ -256,14 +286,14 @@
           </p>
           <form action="#" class="feedback__form form">
             <div class="form__row">
-              <input type="text" name="name" data-required class="form__input" placeholder="Имя">
-              <input type="tel" name="phone" data-required class="form__input" placeholder="Телефон">
-              <input type="email" name="email" data-required class="form__input" placeholder="Email">
+              <input type="text" name="name" data-required="" class="form__input" placeholder="Имя">
+              <input type="tel" name="phone" data-required="" class="form__input" placeholder="Телефон">
+              <input type="email" name="email" data-required="" class="form__input" placeholder="Email">
             </div>
             <textarea name="message" class="form__textarea" placeholder="Расскажите о проекте"></textarea>
             <div class="form__footer">
               <label class="checkbox">
-                <input type="checkbox" checked name="privacy" class="checkbox__input hidden" hidden>
+                <input type="checkbox" checked="" name="privacy" class="checkbox__input hidden" hidden="">
                 <span class="checkbox__content">
                   Я согласен с
                   <a href="/privacy.html" class="checkbox__content-link">
@@ -277,17 +307,17 @@
         </div>
       </section>
     </main>
-    <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
       <div class="footer__container">
         <div class="footer__top">
           <a href="/" class="footer__logo" itemprop="url">
             <img src="img/logo-white.svg" alt="Логотип ООО 'Аруна'" itemprop="logo">
           </a>
           <div class="footer__copyright">
-            © <span itemprop="copyrightHolder">ООО «Аруна»</span>
+            ©&nbsp;<span itemprop="copyrightHolder">ООО «Аруна»</span>
             <meta itemprop="copyrightYear" content="2024">
           </div>
-          <nav class="footer__menu" aria-label="Меню в подвале" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <nav class="footer__menu" aria-label="Меню в подвале" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
             <ul class="footer__menu-list">
               <li class="footer__menu-item" itemprop="name">
                 <a href="/" class="footer__menu-link" itemprop="url">Главная</a>
@@ -311,9 +341,9 @@
           </nav>
         </div>
         <div class="footer__bottom">
-          <div class="footer__contacts" itemscope itemtype="http://schema.org/Organization">
+          <div class="footer__contacts" itemscope="" itemtype="http://schema.org/Organization">
             <a href="tel:+79663733434" class="footer__phone icon-phone" itemprop="telephone">+7 966 373-34-34</a>
-            <address class="footer__location icon-location" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <address class="footer__location icon-location" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
               <span itemprop="addressLocality">г. Ростов-на-Дону</span>, <span itemprop="streetAddress">ул. Доватора, 163</span>
             </address>
           </div>
@@ -324,15 +354,15 @@
   </div>
   <div id="consult" class="popup">
     <div class="popup__body">
-      <button type="button" class="popup__close" data-fancybox-close></button>
+      <button type="button" class="popup__close" data-fancybox-close=""></button>
       <h3 class="popup__title ">Заполните форму и мы свяжемся с вами, чтобы уточнить детали!</h3>
       <form action="#" class="popup__form form">
-        <input type="text" name="name" data-required class="form__input form__input_sm" placeholder="Имя">
-        <input type="tel" name="phone" data-required class="form__input form__input_sm" placeholder="Телефон">
-        <input type="email" name="email" data-required class="form__input form__input_sm" placeholder="Email">
+        <input type="text" name="name" data-required="" class="form__input form__input_sm" placeholder="Имя">
+        <input type="tel" name="phone" data-required="" class="form__input form__input_sm" placeholder="Телефон">
+        <input type="email" name="email" data-required="" class="form__input form__input_sm" placeholder="Email">
         <textarea name="message" class="form__textarea form__textare_sm" placeholder="Расскажите о проекте"></textarea>
         <label class="checkbox checkbox_dark checkbox_sm">
-          <input type="checkbox" checked name="privacy" class="checkbox__input hidden" hidden>
+          <input type="checkbox" checked="" name="privacy" class="checkbox__input hidden" hidden="">
           <span class="checkbox__content">
             Я согласен с
             <a href="/privacy.html" class="checkbox__content-link">
@@ -346,15 +376,15 @@
   </div>
   <div id="price" class="popup">
     <div class="popup__body">
-      <button type="button" class="popup__close" data-fancybox-close></button>
+      <button type="button" class="popup__close" data-fancybox-close=""></button>
       <h3 class="popup__title">Запросить прайс-лист</h3>
       <form action="#" class="popup__form form">
-        <input type="text" name="name" data-required class="form__input form__input_sm" placeholder="Имя">
-        <input type="tel" name="phone" data-required class="form__input form__input_sm" placeholder="Телефон">
-        <input type="email" name="email" data-required class="form__input form__input_sm" placeholder="Email">
+        <input type="text" name="name" data-required="" class="form__input form__input_sm" placeholder="Имя">
+        <input type="tel" name="phone" data-required="" class="form__input form__input_sm" placeholder="Телефон">
+        <input type="email" name="email" data-required="" class="form__input form__input_sm" placeholder="Email">
         <textarea name="message" class="form__textarea form__textare_sm" placeholder="Расскажите о проекте"></textarea>
         <label class="checkbox checkbox_dark checkbox_sm">
-          <input type="checkbox" checked name="privacy" class="checkbox__input hidden" hidden>
+          <input type="checkbox" checked="" name="privacy" class="checkbox__input hidden" hidden="">
           <span class="checkbox__content">
             Я согласен с
             <a href="/privacy.html" class="checkbox__content-link">
@@ -368,26 +398,28 @@
   </div>
   <div id="success" class="popup">
     <div class="popup__body">
-      <button type="button" class="popup__close" data-fancybox-close></button>
+      <button type="button" class="popup__close" data-fancybox-close=""></button>
       <h3 class="popup__title">Спасибо!</h3>
       <p class="popup__subtitle">
         Мы получили ваш запрос и свяжемся с вами в ближайшее время
       </p>
-      <button type="button" data-fancybox-close class="popup__btn btn btn-primary">Закрыть</button>
+      <button type="button" data-fancybox-close="" class="popup__btn btn btn-primary">Закрыть</button>
     </div>
   </div>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20240604220513"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20240604220513"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20240604220513"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240604220513"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240604220513"></script>
-
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20240605120007"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20240605120007"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20240605120007"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240605120007"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240605120007"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20240605120007" type="text/javascript"></script>
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20240604220513"></script>
+  <script src="js/app.min.js?_v=20240605120007"></script>
+
+
 </body>
 
 </html>

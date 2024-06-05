@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function getStickyHeaderHeight() {
-            const header = document.querySelector('header');
+            const header = document.querySelector('.header__wrapper');
             return header ? header.offsetHeight : 0;
         }
 
@@ -471,21 +471,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const colorItems = block.querySelectorAll('.product-card__colors-item');
 
             colorItems.forEach(item => {
-                const img = item.querySelector('img');
+                const btn = item.querySelector('.product-card__colors-btn');
                 const input = item.querySelector('input');
 
-                img.addEventListener('mouseenter', function () {
-                    currentColorDisplay.textContent = img.getAttribute('title');
+                btn.addEventListener('mouseenter', function () {
+                    currentColorDisplay.textContent = btn.getAttribute('title');
                 });
 
-                img.addEventListener('mouseleave', function () {
+                btn.addEventListener('mouseleave', function () {
                     const checkedInput = block.querySelector('.product-card__colors-input:checked');
-                    const checkedImg = checkedInput.nextElementSibling.querySelector('img');
+                    const checkedImg = checkedInput.nextElementSibling;
                     currentColorDisplay.textContent = checkedImg.getAttribute('title');
                 });
 
                 input.addEventListener('change', function () {
-                    const checkedImg = input.nextElementSibling.querySelector('img');
+                    const checkedImg = input.nextElementSiblingж
                     currentColorDisplay.textContent = checkedImg.getAttribute('title');
                 });
             });
@@ -493,6 +493,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+    if (document.getElementById('map')) {
+        ymaps.ready(init);
+        let map = document.getElementById('map');
+        let centerCoods = map.getAttribute('data-center').split(',').map(Number);
+        let placemarkCoods = map.getAttribute('data-placemark').split(',').map(Number);;
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: centerCoods,
+                zoom: 17,
+                controls: ['zoomControl']
+            }, {
+                suppressMapOpenBlock: true
+            });
+
+            var myPlacemark = new ymaps.Placemark(placemarkCoods, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/icons/placemark.svg',
+                iconImageSize: [70, 80],
+                iconImageOffset: [-15, -42]
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.controls.remove('routeEditor');
+        }
+    }
 
 
 

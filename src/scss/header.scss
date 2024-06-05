@@ -16,6 +16,13 @@
 			padding-top: 0;
 		}
 	}
+	&.header_product {
+		&.scroll {
+			.header__body {
+				background: #fff;
+			}
+		}
+	}
 	&.scroll {
 		.header__body {
 			padding-top: 0.5rem;
