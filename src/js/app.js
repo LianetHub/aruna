@@ -50,6 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     firstInput.focus();
                 }, 1000)
             }
+        }
+
+        if (target.classList.contains('product-info__nav-link')) {
+            document.querySelectorAll('.product-info__nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.product-info__block').forEach(content => content.classList.remove('active'));
+
+            let currentIndex = getIndexInParent(target.parentNode);
+            document.querySelectorAll('.product-info__nav-link')[currentIndex].classList.add('active')
+            document.querySelectorAll('.product-info__block')[currentIndex].classList.add('active')
 
 
         }
@@ -62,6 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.header').classList.toggle('open-menu');
     }
 
+
+    function getIndexInParent(node) {
+        var children = node.parentNode.childNodes;
+        var num = 0;
+        for (var i = 0; i < children.length; i++) {
+            if (children[i] == node) return num;
+            if (children[i].nodeType == 1) num++;
+        }
+        return -1;
+    }
 
 
 

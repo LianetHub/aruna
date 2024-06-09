@@ -348,31 +348,39 @@
 	&__content {
 		background: #fff;
 		color: #232c32;
-	}
-	// .product-info__block
-	&__block {
-		scroll-margin-top: calc(var(--header-height) + rem(50));
 		padding: 2.65rem 0;
 		@media (min-width: $md3) {
 			padding: 3.12rem 0;
-			scroll-margin-top: calc(var(--header-height) + rem(60));
 		}
 		@media (min-width: $md2) {
 			padding: 3.75rem 0;
 		}
-
-		position: relative;
-		z-index: 1;
-		&::before {
-			content: "";
-			position: absolute;
-			bottom: rem(0);
-			left: 50%;
-			width: 100vw;
-			transform: translateX(-50%);
-			height: rem(1);
-			background: #c2c5c6;
+	}
+	// .product-info__block
+	&__block {
+		// scroll-margin-top: calc(var(--header-height) + rem(50));
+		// padding: 2.65rem 0;
+		@media (min-width: $md3) {
+			// padding: 3.12rem 0;
+			// scroll-margin-top: calc(var(--header-height) + rem(60));
 		}
+
+		display: none;
+		&.active {
+			display: block;
+		}
+		// position: relative;
+		// z-index: 1;
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	bottom: rem(0);
+		// 	left: 50%;
+		// 	width: 100vw;
+		// 	transform: translateX(-50%);
+		// 	height: rem(1);
+		// 	background: #c2c5c6;
+		// }
 		&#desc {
 			padding-bottom: 0;
 			&::before {

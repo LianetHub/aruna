@@ -1,14 +1,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
   font-weight: 350;
   font-style: normal;
@@ -17,16 +9,24 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -49,8 +49,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -3082,26 +3082,15 @@ body.lock {
 .product-info__content {
   background: #fff;
   color: #232c32;
+  padding: 2.65rem 0;
 }
 
 .product-info__block {
-  scroll-margin-top: calc(var(--header-height) + 3.125rem);
-  padding: 2.65rem 0;
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
-.product-info__block::before {
-  content: "";
-  position: absolute;
-  bottom: 0rem;
-  left: 50%;
-  width: 100vw;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 0.0625rem;
-  background: #c2c5c6;
+.product-info__block.active {
+  display: block;
 }
 
 .product-info__block#desc {
@@ -6538,9 +6527,8 @@ body.lock {
     font-size: 1.125rem;
   }
 
-  .product-info__block {
+  .product-info__content {
     padding: 3.12rem 0;
-    scroll-margin-top: calc(var(--header-height) + 3.75rem);
   }
 
   .product-info__docs {
@@ -7332,7 +7320,7 @@ body.lock {
     gap: 2.25rem;
   }
 
-  .product-info__block {
+  .product-info__content {
     padding: 3.75rem 0;
   }
 
