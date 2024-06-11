@@ -448,17 +448,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (document.querySelector('[data-product-id]')) {
+    if (document.querySelector('[data-product-name]')) {
 
         const caseColorInputs = document.querySelectorAll('input[name="case-color"]');
         const ledColorInputs = document.querySelectorAll('input[name="led-color"]');
         const productImage = document.querySelector('.product-card__image img');
-        const productId = productImage.getAttribute('data-product-id');
+        const productName = productImage.getAttribute('data-product-name');
 
         function updateProductImage() {
             const caseColor = document.querySelector('input[name="case-color"]:checked').value;
             const ledColor = document.querySelector('input[name="led-color"]:checked').value;
-            const newSrc = `img/products/spotlights/${productId}-${caseColor}-${ledColor}.png`;
+            const newSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
 
             productImage.classList.remove('fade-in');
 
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 input.addEventListener('change', function () {
-                    const checkedImg = input.nextElementSiblingж
+                    const checkedImg = input.nextElementSibling;
                     currentColorDisplay.textContent = checkedImg.getAttribute('title');
                 });
             });
