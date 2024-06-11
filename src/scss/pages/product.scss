@@ -261,7 +261,8 @@
 			flex: 0 1 auto;
 			order: 0;
 		}
-		& img {
+		& img,
+		& source {
 			opacity: 0;
 			// transform: scale(0.25);
 			transition: all 0.3s ease 0s;

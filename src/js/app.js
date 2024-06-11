@@ -463,11 +463,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const newWebpSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
 
             productImage.classList.remove('fade-in');
+            productSource.classList.remove('fade-in');
 
             setTimeout(() => {
                 productImage.src = newSrc;
                 productSource.srcset = newWebpSrc;
                 productImage.classList.add('fade-in');
+                productSource.classList.add('fade-in');
             }, 500);
 
         }
