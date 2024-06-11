@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -25,8 +25,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -41,8 +41,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -3017,17 +3017,12 @@ body.lock {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-}
-
-.product-card__image img,
-.product-card__image source {
   opacity: 0;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-.product-card__image img.fade-in,
-.product-card__image source.fade-in {
+.product-card__image.fade-in {
   opacity: 1;
 }
 

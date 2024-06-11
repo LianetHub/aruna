@@ -462,14 +462,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
             const newWebpSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
 
-            productImage.classList.remove('fade-in');
-            productSource.classList.remove('fade-in');
+            document.querySelector('.product-card__image').classList.remove('fade-in');
+
 
             setTimeout(() => {
                 productImage.src = newSrc;
-                productSource.srcset = newWebpSrc;
-                productImage.classList.add('fade-in');
-                productSource.classList.add('fade-in');
+                if (productSource) productSource.srcset = newWebpSrc;
+                document.querySelector('.product-card__image').classList.add('fade-in');
             }, 500);
 
         }
