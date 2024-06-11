@@ -453,17 +453,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const caseColorInputs = document.querySelectorAll('input[name="case-color"]');
         const ledColorInputs = document.querySelectorAll('input[name="led-color"]');
         const productImage = document.querySelector('.product-card__image img');
+        const productSource = document.querySelector('.product-card__image source');
         const productName = productImage.getAttribute('data-product-name');
 
         function updateProductImage() {
             const caseColor = document.querySelector('input[name="case-color"]:checked').value;
             const ledColor = document.querySelector('input[name="led-color"]:checked').value;
             const newSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
+            const newWebpSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
 
             productImage.classList.remove('fade-in');
 
             setTimeout(() => {
                 productImage.src = newSrc;
+                productSource.srcset = newWebpSrc;
                 productImage.classList.add('fade-in');
             }, 500);
 
