@@ -847,12 +847,12 @@
 	}
 	// .configurator__side
 	&__side {
-		position: sticky;
 		background: #f0f3f5;
 		flex-shrink: 0;
 		padding: 1.5rem 1rem 2rem 1rem;
 
 		@media (min-width: $md3) {
+			position: sticky;
 			top: calc(var(--header-height) + rem(80));
 			width: 19.25rem;
 		}

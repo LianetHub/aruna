@@ -77,6 +77,9 @@ body {
 	flex-direction: column;
 	// overflow: hidden;
 	overflow-x: clip;
+	@media (max-width: $md4) {
+		overflow: hidden;
+	}
 }
 
 //================== ОБОЛОЧКА==================================
