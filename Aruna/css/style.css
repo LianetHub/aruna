@@ -1,16 +1,24 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -25,8 +33,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -35,14 +43,6 @@
   font-display: swap;
   src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
   font-style: normal;
 }
 
@@ -2935,16 +2935,18 @@ body.lock {
 .product-card__colors-item {
   width: 2.00825rem;
   height: 2.0625rem;
+  border-radius: 50%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
 .product-card__colors-input:checked + .product-card__colors-btn {
-  outline: 0.1875rem solid #fff;
+  border: 0.1875rem solid #fff;
+  background: #fff;
 }
 
 .product-card__colors-input:checked[value=white] + .product-card__colors-btn {
-  outline: 0.1875rem solid #8a8e92;
+  border: 0.1875rem solid #8a8e92;
 }
 
 .product-card__colors-btn {
@@ -2955,7 +2957,10 @@ body.lock {
   cursor: pointer;
   width: 2.375rem;
   height: 2.375rem;
+  border: 0.1875rem solid transparent;
+  background-clip: padding-box;
   border-radius: 50%;
+  background-position: center;
 }
 
 .product-card__colors-current {
@@ -3017,13 +3022,7 @@ body.lock {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.product-card__image.fade-in {
-  opacity: 1;
+  padding: 2.5rem;
 }
 
 .product-info__nav {

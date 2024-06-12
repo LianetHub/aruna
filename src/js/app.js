@@ -462,15 +462,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
             const newWebpSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
 
-            document.querySelector('.product-card__image').classList.remove('fade-in');
+            productImage.src = newSrc;
+            if (productSource) productSource.srcset = newWebpSrc;
 
+        }
+
+        function preloadImages() {
+            const caseColors = Array.from(caseColorInputs).map(input => input.value);
+            const ledColors = Array.from(ledColorInputs).map(input => input.value);
+            const hiddenContainer = document.createElement('div');
+            hiddenContainer.style.display = 'none';
+            document.body.appendChild(hiddenContainer);
+
+            caseColors.forEach(caseColor => {
+                ledColors.forEach(ledColor => {
+                    const img = document.createElement('img');
+                    img.src = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
+                    hiddenContainer.appendChild(img);
+                });
+            });
 
             setTimeout(() => {
-                productImage.src = newSrc;
-                if (productSource) productSource.srcset = newWebpSrc;
-                document.querySelector('.product-card__image').classList.add('fade-in');
-            }, 500);
-
+                document.body.removeChild(hiddenContainer);
+            }, 3000);
         }
 
         caseColorInputs.forEach(input => {
@@ -483,6 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         updateProductImage();
+        preloadImages();
     }
 
 
@@ -543,45 +558,6 @@ document.addEventListener('DOMContentLoaded', () => {
             myMap.controls.remove('routeEditor');
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // function getTabletSlider(sliderName, options) {
-
-    //     let init = false;
-    //     let swiper = null;
-
-    //     function getSwiper() {
-    //         if (window.innerWidth <= 1200) {
-    //             if (!init) {
-    //                 init = true;
-    //                 swiper = new Swiper(sliderName, options);
-    //             }
-    //         } else if (init) {
-    //             swiper.destroy();
-    //             swiper = null;
-    //             init = false;
-    //         }
-    //     }
-    //     getSwiper();
-    //     window.addEventListener("resize", getSwiper);
-    // }
-
-
-
 
 
 
