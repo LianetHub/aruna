@@ -195,129 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    if (document.querySelector('.product-info__navbar')) {
 
-    if (document.querySelector('.product-info__nav')) {
-        const nav = document.querySelector('.product-info__nav');
-        const navOffset = nav.offsetTop;
-        const navLinks = document.querySelectorAll('.product-info__nav-link');
-        let swiperInstance;
-        let isScrollingByClick = false;
-
-        function removeActiveClasses() {
-            navLinks.forEach(link => link.classList.remove('active'));
-        }
-
-        function addActiveClass(targetId) {
-            removeActiveClasses();
-            const activeLink = document.querySelector(`.product-info__nav-link[href="#${targetId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-
-                const activeIndex = Array.from(navLinks).indexOf(activeLink);
-                if (swiperInstance) {
-                    swiperInstance.slideTo(activeIndex);
-                }
-            }
-        }
-
-        function addStickyClass() {
-            nav.classList.add('scroll');
-        }
-
-        function removeStickyClass() {
-            nav.classList.remove('scroll');
-        }
-
-        window.addEventListener('scroll', () => {
-
-            if (window.scrollY >= navOffset) {
-
-                addStickyClass();
-            } else {
-
-                removeStickyClass();
-            }
+        new Swiper('.product-info__navbar', {
+            slidesPerView: "auto",
+            grabCursor: true,
+            slideToClickedSlide: true
         });
-
-        function getStickyHeaderHeight() {
-            const header = document.querySelector('.header__wrapper');
-            return header ? header.offsetHeight : 0;
-        }
-
-        function getNavbarHeight() {
-            const navbar = document.querySelector('.product-info__navbar');
-            return navbar ? navbar.offsetHeight : 0;
-        }
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        const sections = document.querySelectorAll('.product-info__block');
-
-        sections.forEach(section => {
-            let trigger = ScrollTrigger.create({
-                trigger: section,
-                start: () => `top top+=${getStickyHeaderHeight() + getNavbarHeight()}`,
-                end: `bottom top+=${getStickyHeaderHeight() + getNavbarHeight()}`,
-                onEnter: () => {
-                    if (!isScrollingByClick) {
-                        addActiveClass(section.id);
-                    }
-                },
-                onEnterBack: () => {
-                    if (!isScrollingByClick) {
-                        addActiveClass(section.id);
-                    }
-                },
-                onLeave: ({ direction }) => {
-                    if (direction === 1) {
-                        const nextSection = sections[Array.from(sections).indexOf(section) + 1];
-                        if (nextSection && !isScrollingByClick) addActiveClass(nextSection.id);
-                    }
-                },
-                onLeaveBack: ({ direction }) => {
-                    if (direction === -1) {
-                        const prevSection = sections[Array.from(sections).indexOf(section) - 1];
-                        if (prevSection && !isScrollingByClick) addActiveClass(prevSection.id);
-                    }
-                }
-            });
-
-            window.addEventListener('scroll', () => {
-                trigger.update();
-            });
-        });
-
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                isScrollingByClick = true;
-
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-                    const offset = getStickyHeaderHeight() + getNavbarHeight();
-                    window.scrollTo({
-                        top: targetSection.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-
-                    addActiveClass(targetId);
-                    setTimeout(() => {
-                        isScrollingByClick = false;
-                    }, 1000);
-                }
-            });
-        });
-
-        if (document.querySelector('.product-info__navbar')) {
-            swiperInstance = new Swiper('.product-info__navbar', {
-                slidesPerView: "auto",
-                grabCursor: true,
-                slideToClickedSlide: true
-            });
-        }
     }
 
     // animation header
@@ -346,6 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // configurator
 
     if (document.querySelectorAll('.configurator__block-input').length > 0) {
+        document.querySelectorAll('.configurator__block-input').forEach(input => {
+            input.checked = false;
+        })
+
         let updateSidePanel = () => {
             let configuratorProps = document.getElementById('configurator-props');
             let anyChecked = document.querySelectorAll('.configurator__block-input:checked').length > 0;
