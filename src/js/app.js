@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Показать/скрыть блок со спецификацией
-            let lastBlockChecked = document.querySelector('.configurator__block:last-of-type .configurator__block-input:checked');
+            let lastBlockChecked = document.querySelector('.configurator__block:nth-last-child(2) .configurator__block-input:checked');
             let specification = document.querySelector('[data-specification]');
 
             if (lastBlockChecked) {
