@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // configurator
 
     if (document.querySelectorAll('.configurator__block-input').length > 0) {
+
         document.querySelectorAll('.configurator__block-input').forEach(input => {
             input.checked = false;
         })
@@ -242,15 +243,70 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 configuratorProps.classList.remove('active');
             }
+
+            // Показать/скрыть блок с фотометрическими данными
+            let codeChecked = document.querySelector('input[name="code"]:checked');
+            let opticsChecked = document.querySelector('input[name="optics"]:checked');
+            let ledChecked = document.querySelector('input[name="led"]:checked');
+            let photometricData = document.querySelector('[data-photometric]');
+
+            if (codeChecked && opticsChecked && ledChecked) {
+                photometricData.classList.remove('hidden');
+                photometricData.closest('.configurator__side-list').classList.remove('hidden');
+            } else {
+                photometricData.classList.add('hidden');
+                photometricData.closest('.configurator__side-list').classList.add('hidden');
+            }
+
+            // Показать/скрыть блок со спецификацией
+            let lastBlockChecked = document.querySelector('.configurator__block:last-of-type .configurator__block-input:checked');
+            let specification = document.querySelector('[data-specification]');
+
+            if (lastBlockChecked) {
+                specification.classList.remove('hidden');
+            } else {
+                specification.classList.add('hidden');
+            }
+        };
+
+        let filterLEDs = (checkbox = null) => {
+
+            resetLEDs()
+            if (!checkbox || !checkbox.checked) return;
+
+            let filterValues = checkbox.getAttribute('data-filter');
+            if (!filterValues || filterValues === '' || filterValues === '[]') return;
+
+            filterValues = filterValues.replace(/[\[\]]/g, '').split(',').map(v => v.trim());
+
+            document.querySelectorAll('input[name="led"]').forEach(ledInput => {
+                let ledOpticsType = ledInput.getAttribute('data-optics-type');
+                if (filterValues.includes(ledOpticsType)) {
+                    ledInput.parentNode.classList.add('hidden');
+                } else {
+                    ledInput.parentNode.classList.remove('hidden');
+                }
+            });
+        };
+
+        let resetLEDs = () => {
+            document.querySelectorAll('input[name="led"]').forEach(ledInput => {
+                ledInput.parentNode.classList.remove('hidden');
+            });
         };
 
         let updateProductNumber = () => {
-            let optics = document.querySelector('input[name="optics"]:checked')?.value || '';
-            let led = document.querySelector('input[name="led"]:checked')?.value || '';
-            let color = document.querySelector('input[name="color"]:checked')?.value || '';
-            let extras = document.querySelector('input[name="extras"]:checked')?.value || '';
+            let activeBlocks = document.querySelectorAll('.configurator__block.active');
+            let productNumberParts = [];
 
-            let productNumber = [optics, led, color, extras].filter(Boolean).join('-');
+            activeBlocks.forEach(block => {
+                let checkedInput = block.querySelector('.configurator__block-input:checked');
+                if (checkedInput) {
+                    productNumberParts.push(checkedInput.value);
+                }
+            });
+
+            let productNumber = productNumberParts.filter(Boolean).join('-');
             document.querySelector('.configurator__number').textContent = productNumber;
         };
 
@@ -305,6 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         followingBlock.classList.remove('active');
                         followingBlock = followingBlock.nextElementSibling;
                     }
+
+
                 }
 
                 let name = checkbox.getAttribute('name');
@@ -316,12 +374,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = value;
                     }
+                    resetLEDs()
                 } else if (name === 'optics') {
                     if (checkbox.checked) {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = checkbox.nextElementSibling.textContent;
                     }
                     updateProductNumber();
+                    if (checkbox.hasAttribute('data-filter')) {
+                        filterLEDs(checkbox);
+                    }
                 } else {
                     if (checkbox.checked) {
                         row.classList.add('active');
@@ -335,6 +397,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // end configurator
+
+
+    // selecting colors
 
     if (document.querySelector('[data-product-name]')) {
 
@@ -417,6 +484,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // end selecting colors
 
 
 

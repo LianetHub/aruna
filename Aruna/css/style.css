@@ -31,10 +31,10 @@
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -47,10 +47,10 @@
 }
 
 @font-face {
-  font-family: "Cygre";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1132,10 +1132,15 @@ body.lock {
 
 .hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .cover-image {
@@ -3539,6 +3544,7 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   font-size: 0.875rem;
+  width: 100%;
 }
 
 .configurator__side-link::before {

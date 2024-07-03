@@ -44,14 +44,14 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240624114808">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240624114808">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240624114808">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240703143248">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240703143248">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240703143248">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20240624114808">
-  <link rel="stylesheet" href="css/style.min.css?_v=20240624114808">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20240703143248">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240703143248">
 
 </head>
 
@@ -291,7 +291,7 @@
         </div>
         <div class="product-info__content">
           <div class="product-info__container">
-            <div id="characteristics" class="product-info__block active">
+            <div id="characteristics" class="product-info__block ">
               <h3 class="product-info__block-caption" data-animate="bottom">
                 Описание
               </h3>
@@ -379,19 +379,20 @@
               </ul>
             </div>
 
-            <div id="configurator" class="product-info__block">
+            <div id="configurator" class="product-info__block active">
               <div class="product-info__configurator configurator">
                 <div class="configurator__body">
                   <h3 class="product-info__block-caption" data-animate="bottom">Конфигуратор</h3>
                   <div class="configurator__blocks">
+                    <!-- КОД -->
                     <div class="configurator__block active" data-animate="bottom">
                       <div class="configurator__block-title">
                         Код
                       </div>
                       <div class="configurator__block-options">
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="code" value="SLIM 389" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">389</span>
+                          <input type="checkbox" name="code" value="Ray 50" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Ray 50</span>
                         </label>
                         <label class="configurator__block-option">
                           <input type="checkbox" name="code" value="SLIM 378" class="configurator__block-input hidden" hidden="">
@@ -399,44 +400,160 @@
                         </label>
                       </div>
                     </div>
+
+                    <!-- ОПТИКА -->
                     <div class="configurator__block" data-animate="bottom">
                       <div class="configurator__block-title">
                         Оптика
                       </div>
                       <div class="configurator__block-options">
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="optics" value="SP" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Spot 8°</span>
+                          <input type="checkbox" name="optics" value="K3" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 3°</span>
                         </label>
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="optics" value="NA" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Narrow 10°</span>
+                          <input type="checkbox" name="optics" value="K9" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 9°</span>
                         </label>
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="optics" value="ME" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Medium 24°</span>
+                          <input type="checkbox" name="optics" value="K15" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 15°</span>
                         </label>
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="optics" value="WI" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Wide 37°</span>
+                          <input type="checkbox" name="optics" value="K25" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 25°</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="optics" value="K29" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 29°</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="optics" data-filter="2" value="K50" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 50°</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="optics" data-filter="2" value="K79" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">К 79°</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="optics" data-filter="2" value="Assymetric" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Assymetric</span>
                         </label>
                       </div>
                     </div>
+
+                    <!-- ТИП LED -->
                     <div class="configurator__block" data-animate="bottom">
                       <div class="configurator__block-title">
-                        Тип LED
+                        Тип светодиода
                       </div>
                       <div class="configurator__block-options">
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="led" value="4500" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">от 2000K до 4500K</span>
+                          <input type="checkbox" name="led" data-optics-type="1" value="Amber" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Amber</span>
                         </label>
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="led" value="6500" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">от 3000K до 6500K</span>
+                          <input type="checkbox" name="led" data-optics-type="1" value="Red" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Red</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="Green" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Green</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="Blue" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Blue</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="Purple" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Purple</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="2700К" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">2700К</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="3000К" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">3000К</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="4000К" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">4000К</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="5000К" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">5000К</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="1" value="SPORT" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">SPORT</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="2" value="6000К" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">2700К-6000К</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="2" value="RGBW3000K" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">RGBW(3000K)</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="2" value="RGBW4000K" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">RGBW(4000K)</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="led" data-optics-type="2" value="RGBW5000K" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">RGBW(5000K)</span>
                         </label>
                       </div>
                     </div>
+
+                    <!-- СИСТЕМА УПРАВЛЕНИЯ -->
+                    <div class="configurator__block" data-animate="bottom">
+                      <div class="configurator__block-title">
+                        Cистема управления
+                      </div>
+                      <div class="configurator__block-options">
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="cs" value="nocs" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Нет</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="cs" value="PWM" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">ШИМ (PWM)</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="cs" value="DALI" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">DALI</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="cs" value="DMX512" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">DMX512</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="cs" value="sk" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Сухой контакт</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- ТИП ПОДКЛЮЧЕНИЯ -->
+                    <div class="configurator__block" data-animate="bottom">
+                      <div class="configurator__block-title">
+                        Тип подключения
+                      </div>
+                      <div class="configurator__block-options">
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="ct" value="el" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Прямой (Easy lock)</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="ct" value="pp" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Каскад (plug and play)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- ЦВЕТ КОРПУСА -->
                     <div class="configurator__block" data-animate="bottom">
                       <div class="configurator__block-title">
                         Цвет корпуса
@@ -447,37 +564,46 @@
                           <span class="configurator__block-value">Черный</span>
                         </label>
                         <label class="configurator__block-option">
+                          <input type="checkbox" name="color" value="Grey" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Серый</span>
+                        </label>
+                        <label class="configurator__block-option">
                           <input type="checkbox" name="color" value="White" class="configurator__block-input hidden" hidden="">
                           <span class="configurator__block-value">Белый</span>
                         </label>
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="color" value="Blue" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Синий</span>
-                        </label>
-                        <label class="configurator__block-option">
-                          <input type="checkbox" name="color" value="Yellow" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Желтый</span>
-                        </label>
-                        <label class="configurator__block-option">
-                          <input type="checkbox" name="color" value="Green" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Зеленый</span>
-                        </label>
-                        <label class="configurator__block-option">
-                          <input type="checkbox" name="color" value="All" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Разноцветный</span>
+                          <input type="checkbox" name="color" value="Custom" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Свой</span>
                         </label>
                       </div>
                     </div>
+
+                    <!-- ДОПОЛНИТЕЛЬНО -->
                     <div class="configurator__block" data-animate="bottom">
                       <div class="configurator__block-title">
                         Дополнительно
                       </div>
                       <div class="configurator__block-options">
                         <label class="configurator__block-option">
-                          <input type="checkbox" name="extras" value="AS" class="configurator__block-input hidden" hidden="">
-                          <span class="configurator__block-value">Противоскользящая обработка</span>
+                          <input type="checkbox" name="extras" value="noext" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Нет</span>
                         </label>
-
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="extras" value="akext" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Антибликовый козырек</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="extras" value="tkext" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Телескопические крепления</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="extras" value="arctic" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Исполнение Артика</span>
+                        </label>
+                        <label class="configurator__block-option">
+                          <input type="checkbox" name="extras" value="marine" class="configurator__block-input hidden" hidden="">
+                          <span class="configurator__block-value">Исполнение Море</span>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -508,6 +634,14 @@
                       <div class="configurator__side-name">Тип LED</div>
                       <div class="configurator__side-value"></div>
                     </li>
+                    <li data-row="cs" class="configurator__side-item">
+                      <div class="configurator__side-name">Система управления</div>
+                      <div class="configurator__side-value"></div>
+                    </li>
+                    <li data-row="ct" class="configurator__side-item">
+                      <div class="configurator__side-name">Тип подключения</div>
+                      <div class="configurator__side-value"></div>
+                    </li>
                     <li data-row="color" class="configurator__side-item">
                       <div class="configurator__side-name">Цвет корпуса</div>
                       <div class="configurator__side-value"></div>
@@ -517,12 +651,13 @@
                       <div class="configurator__side-value"></div>
                     </li>
                   </ul>
-                  <ul class="configurator__side-list">
-                    <li class="configurator__side-item">
+                  <ul class="configurator__side-list hidden">
+                    <li data-specification="" class="configurator__side-item hidden">
                       <a href="" download="" class="configurator__side-link icon-file">Спецификация</a>
                     </li>
-                    <li class="configurator__side-item">
-                      <a href="" download="" class="configurator__side-link icon-file">Фотометрические данные</a>
+                    <li data-photometric="" class="configurator__side-item hidden">
+                      <button type="button" class="configurator__side-link icon-file">Фотометрические данные<!--иг-->
+                      </button>
                     </li>
                   </ul>
                   <a href="" class="configurator__side-btn btn btn-primary icon-more">
@@ -1023,17 +1158,17 @@
     </div>
   </div>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20240624114808"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20240624114808"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20240624114808"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240624114808"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240624114808"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20240624114808" type="text/javascript"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20240703143248"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20240703143248"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20240703143248"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240703143248"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240703143248"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20240703143248" type="text/javascript"></script>
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20240624114808"></script>
+  <script src="js/app.min.js?_v=20240703143248"></script>
 
 
 </body>
