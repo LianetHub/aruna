@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filterValues = filterValues.replace(/[\[\]]/g, '').split(',').map(v => v.trim());
 
             document.querySelectorAll('input[name="led"]').forEach(ledInput => {
-                let ledOpticsType = ledInput.getAttribute('data-optics-type');
+                let ledOpticsType = ledInput.getAttribute('value');
                 if (filterValues.includes(ledOpticsType)) {
                     ledInput.parentNode.classList.add('hidden');
                 } else {
