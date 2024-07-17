@@ -424,8 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let imageKey = productImageData[caseColor + "_" + ledColor];
 
 
-            const newSrc = `${imageKey}.png`;
-            const newWebpSrc = `${imageKey}.webp`;
+            const newSrc = imageKey.png;
+            const newWebpSrc = imageKey.webp;
 
             productImage.src = newSrc;
             if (productSource) productSource.srcset = newWebpSrc;
@@ -442,11 +442,14 @@ document.addEventListener('DOMContentLoaded', () => {
             caseColors.forEach(caseColor => {
                 ledColors.forEach(ledColor => {
                     const img = document.createElement('img');
+                    const source = document.createElement('source');
 
                     if (typeof productImageData == "undefined" || productImageData == null) return;
                     let imageKey = productImageData[caseColor + "_" + ledColor];
-                    img.src = `${imageKey}.png`;
+                    img.src = imageKey.png;
+                    source.srcset = imageKey.webp;
                     hiddenContainer.appendChild(img);
+                    hiddenContainer.appendChild(source);
                 });
             });
 

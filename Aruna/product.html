@@ -44,14 +44,14 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240717120236">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240717120236">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240717120236">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240717122312">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20240717122312">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20240717122312">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20240717120236">
-  <link rel="stylesheet" href="css/style.min.css?_v=20240717120236">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20240717122312">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240717122312">
 
 </head>
 
@@ -243,10 +243,10 @@
                 </a>
               </div>
             </div>
-            <div class="product-card__image">
+            <div data-product="" class="product-card__image">
               <picture>
                 <source srcset="img/products/spotlights/ray-50-black-beige.webp" type="image/webp">
-                <img data-product="" src="img/products/spotlights/ray-50-black-beige.png" alt="Изображение товара">
+                <img src="img/products/spotlights/ray-50-black-beige.png" alt="Изображение товара">
               </picture>
             </div>
           </div>
@@ -1159,42 +1159,104 @@
   </div>
   <script>
             var productImageData = {
-                "black_beige": "img/products/spotlights/ray-50-black-beige",
-                "black_light-grey": "img/products/spotlights/ray-50-black-light-grey",
-                "black_white": "img/products/spotlights/ray-50-black-white",
-                "black_orange": "img/products/spotlights/ray-50-black-orange",
-                "black_violet": "img/products/spotlights/ray-50-black-violet",
-                "black_light-off": "img/products/spotlights/ray-50-black-light-off",
-                "black_rgbw": "img/products/spotlights/ray-50-black-rgbw",
-                "grey_beige": "img/products/spotlights/ray-50-grey-beige",
-                "grey_light-grey": "img/products/spotlights/ray-50-grey-light-grey",
-                "grey_white": "img/products/spotlights/ray-50-grey-white",
-                "grey_orange": "img/products/spotlights/ray-50-grey-orange",
-                "grey_violet": "img/products/spotlights/ray-50-grey-violet",
-                "grey_light-off": "img/products/spotlights/ray-50-grey-light-off",
-                "grey_rgbw": "img/products/spotlights/ray-50-grey-rgbw",
-                "white_beige": "img/products/spotlights/ray-50-white-beige",
-                "white_light-grey": "img/products/spotlights/ray-50-white-light-grey",
-                "white_white": "img/products/spotlights/ray-50-white-white",
-                "white_orange": "img/products/spotlights/ray-50-white-orange",
-                "white_violet": "img/products/spotlights/ray-50-white-violet",
-                "white_light-off": "img/products/spotlights/ray-50-white-light-off",
-                "white_rgbw": "img/products/spotlights/ray-50-white-rgbw"
+                "black_beige": {
+                    png: "img/products/spotlights/ray-50-black-beige.png",
+                    webp: "img/products/spotlights/ray-50-black-beige.webp",
+                },
+                "black_light-grey": {
+                    png: "img/products/spotlights/ray-50-black-light-grey.png",
+                    webp: "img/products/spotlights/ray-50-black-light-grey.webp",
+                },
+                "black_white": {
+                    png: "img/products/spotlights/ray-50-black-white.png",
+                    webp: "img/products/spotlights/ray-50-black-white.webp",
+                },
+                "black_orange": {
+                    png: "img/products/spotlights/ray-50-black-orange.png",
+                    webp: "img/products/spotlights/ray-50-black-orange.webp",
+                },
+                "black_violet": {
+                    png: "img/products/spotlights/ray-50-black-violet.png",
+                    webp: "img/products/spotlights/ray-50-black-violet.png",
+                },
+                "black_light-off": {
+                    png: "img/products/spotlights/ray-50-black-light-off.png",
+                    webp: "img/products/spotlights/ray-50-black-light-off.webp",
+                },
+                "black_rgbw": {
+                    png: "img/products/spotlights/ray-50-black-rgbw.png",
+                    webp: "img/products/spotlights/ray-50-black-rgbw.webp",
+                },
+                "grey_beige": {
+                    png: "img/products/spotlights/ray-50-grey-beige.png",
+                    webp: "img/products/spotlights/ray-50-grey-beige.webp",
+                },
+                "grey_light-grey": {
+                    png: "img/products/spotlights/ray-50-grey-light-grey.png",
+                    webp: "img/products/spotlights/ray-50-grey-light-grey",
+                },
+                "grey_white": {
+                    png: "img/products/spotlights/ray-50-grey-white.png",
+                    webp: "img/products/spotlights/ray-50-grey-white.webp",
+                },
+                "grey_orange": {
+                    png: "img/products/spotlights/ray-50-grey-orange.png",
+                    webp: "img/products/spotlights/ray-50-grey-orange.webp",
+                },
+                "grey_violet": {
+                    png: "img/products/spotlights/ray-50-grey-violet.png",
+                    webp: "img/products/spotlights/ray-50-grey-violet.webp",
+                },
+                "grey_light-off": {
+                    png: "img/products/spotlights/ray-50-grey-light-off.png",
+                    webp: "img/products/spotlights/ray-50-grey-light-off.webp",
+                },
+                "grey_rgbw": {
+                    png: "img/products/spotlights/ray-50-grey-rgbw.png",
+                    webp: "img/products/spotlights/ray-50-grey-rgbw.webp",
+                },
+                "white_beige": {
+                    png: "img/products/spotlights/ray-50-white-beige.png",
+                    webp: "img/products/spotlights/ray-50-white-beige.webp",
+                },
+                "white_light-grey": {
+                    png: "img/products/spotlights/ray-50-white-light-grey.png",
+                    webp: "img/products/spotlights/ray-50-white-light-grey",
+                },
+                "white_white": {
+                    png: "img/products/spotlights/ray-50-white-white.png",
+                    webp: "img/products/spotlights/ray-50-white-white.webp",
+                },
+                "white_orange": {
+                    png: "img/products/spotlights/ray-50-white-orange.png",
+                    webp: "img/products/spotlights/ray-50-white-orange.webp",
+                },
+                "white_violet": {
+                    png: "img/products/spotlights/ray-50-white-violet.png",
+                    webp: "img/products/spotlights/ray-50-white-violet.webp",
+                },
+                "white_light-off": {
+                    png: "img/products/spotlights/ray-50-white-light-off.png",
+                    webp: "img/products/spotlights/ray-50-white-light-off.webp",
+                },
+                "white_rgbw": {
+                    png: "img/products/spotlights/ray-50-white-rgbw.png",
+                    webp: "img/products/spotlights/ray-50-white-rgbw.webp"
+                },
             }
-
         </script>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20240717120236"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20240717120236"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20240717120236"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240717120236"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240717120236"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20240717120236" type="text/javascript"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20240717122312"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20240717122312"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20240717122312"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20240717122312"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20240717122312"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20240717122312" type="text/javascript"></script>
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20240717120236"></script>
+  <script src="js/app.min.js?_v=20240717122312"></script>
 
 
 </body>
