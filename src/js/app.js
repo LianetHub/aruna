@@ -1,6 +1,8 @@
 "use strict";
 
 
+
+
 import * as devFunctions from './modules/functions.js';
 
 //  init Fancybox
@@ -403,19 +405,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // selecting colors
 
-    if (document.querySelector('[data-product-name]')) {
+    if (document.querySelector('[data-product]')) {
 
         const caseColorInputs = document.querySelectorAll('input[name="case-color"]');
         const ledColorInputs = document.querySelectorAll('input[name="led-color"]');
         const productImage = document.querySelector('.product-card__image img');
         const productSource = document.querySelector('.product-card__image source');
-        const productName = productImage.getAttribute('data-product-name');
+
+
+
 
         function updateProductImage() {
             const caseColor = document.querySelector('input[name="case-color"]:checked').value;
             const ledColor = document.querySelector('input[name="led-color"]:checked').value;
-            const newSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
-            const newWebpSrc = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
+
+            if (typeof productImageData == "undefined" || productImageData == null) return;
+
+            let imageKey = productImageData[caseColor + "_" + ledColor];
+
+
+            const newSrc = `${imageKey}.png`;
+            const newWebpSrc = `${imageKey}.webp`;
 
             productImage.src = newSrc;
             if (productSource) productSource.srcset = newWebpSrc;
@@ -432,7 +442,10 @@ document.addEventListener('DOMContentLoaded', () => {
             caseColors.forEach(caseColor => {
                 ledColors.forEach(ledColor => {
                     const img = document.createElement('img');
-                    img.src = `img/products/spotlights/${productName}-${caseColor}-${ledColor}.png`;
+
+                    if (typeof productImageData == "undefined" || productImageData == null) return;
+                    let imageKey = productImageData[caseColor + "_" + ledColor];
+                    img.src = `${imageKey}.png`;
                     hiddenContainer.appendChild(img);
                 });
             });
