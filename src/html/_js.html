@@ -4,8 +4,41 @@
 <script src="js/libs/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+@@if(map===true){
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
 
+        if (document.getElementById('map')) {
+            ymaps.ready(init);
+            let map = document.getElementById('map');
+            let centerCoods = map.getAttribute('data-center').split(',').map(Number);
+            let placemarkCoods = map.getAttribute('data-placemark').split(',').map(Number);;
+
+            function init() {
+                var myMap = new ymaps.Map("map", {
+                    center: centerCoods,
+                    zoom: 17,
+                    controls: ['zoomControl']
+                }, {
+                    suppressMapOpenBlock: true
+                });
+
+                var myPlacemark = new ymaps.Placemark(placemarkCoods, {}, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/icons/placemark.svg',
+                    iconImageSize: [70, 80],
+                    iconImageOffset: [-15, -42]
+                });
+
+                myMap.geoObjects.add(myPlacemark);
+                myMap.controls.remove('routeEditor');
+            }
+        }
+    })
+
+</script>
+}
 <!-- plugnis -->
 
 

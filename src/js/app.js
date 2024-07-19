@@ -264,8 +264,14 @@ document.addEventListener('DOMContentLoaded', () => {
             let lastBlockChecked = document.querySelector('.configurator__block:nth-last-child(2) .configurator__block-input:checked');
             let specification = document.querySelector('[data-specification]');
 
+
+
             if (lastBlockChecked) {
                 specification.classList.remove('hidden');
+                let codeValue = codeChecked.value.replace(/\s/g, "_");
+                let opticsValue = opticsChecked.value;
+                let ledValue = ledChecked.value;
+                specification.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
             } else {
                 specification.classList.add('hidden');
             }
@@ -502,35 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // end selecting colors
-
-
-
-    if (document.getElementById('map')) {
-        ymaps.ready(init);
-        let map = document.getElementById('map');
-        let centerCoods = map.getAttribute('data-center').split(',').map(Number);
-        let placemarkCoods = map.getAttribute('data-placemark').split(',').map(Number);;
-
-        function init() {
-            var myMap = new ymaps.Map("map", {
-                center: centerCoods,
-                zoom: 17,
-                controls: ['zoomControl']
-            }, {
-                suppressMapOpenBlock: true
-            });
-
-            var myPlacemark = new ymaps.Placemark(placemarkCoods, {}, {
-                iconLayout: 'default#image',
-                iconImageHref: 'img/icons/placemark.svg',
-                iconImageSize: [70, 80],
-                iconImageOffset: [-15, -42]
-            });
-
-            myMap.geoObjects.add(myPlacemark);
-            myMap.controls.remove('routeEditor');
-        }
-    }
 
 
 
