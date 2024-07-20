@@ -255,8 +255,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (codeChecked && opticsChecked && ledChecked) {
                 photometricData.classList.remove('hidden');
                 photometricData.closest('.configurator__side-list').classList.remove('hidden');
+                let codeValue = codeChecked.value.replace(/\s/g, "_");
+                let opticsValue = opticsChecked.value;
+                let ledValue = ledChecked.value;
+                photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
+
             } else {
                 photometricData.classList.add('hidden');
+                photometricData.querySelector('.configurator__side-link').href = "";
                 photometricData.closest('.configurator__side-list').classList.add('hidden');
             }
 
@@ -268,10 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (lastBlockChecked) {
                 specification.classList.remove('hidden');
-                let codeValue = codeChecked.value.replace(/\s/g, "_");
-                let opticsValue = opticsChecked.value;
-                let ledValue = ledChecked.value;
-                specification.querySelector('.configurator__side-link').href = `/specification/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
             } else {
                 specification.classList.add('hidden');
             }
