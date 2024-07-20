@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let codeValue = codeChecked.value.replace(/\s/g, "_");
                 let opticsValue = opticsChecked.value;
                 let ledValue = ledChecked.value;
-                specification.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
+                specification.querySelector('.configurator__side-link').href = `/specification/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
             } else {
                 specification.classList.add('hidden');
             }

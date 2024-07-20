@@ -1,6 +1,7 @@
 export const formSubmit = () => {
 	const forms = document.querySelectorAll("form");
 	forms.forEach((form) => {
+		if (form.classList.contains('configurator')) return;
 		form.addEventListener("submit", formSend);
 
 		if (!form.querySelector('[name="captcha"]')) {
