@@ -252,30 +252,60 @@ document.addEventListener('DOMContentLoaded', () => {
             let ledChecked = document.querySelector('input[name="led"]:checked');
             let photometricData = document.querySelector('[data-photometric]');
 
-            if (codeChecked && opticsChecked && ledChecked) {
-                photometricData.classList.remove('hidden');
-                photometricData.closest('.configurator__side-list').classList.remove('hidden');
+            let otherChecked = document.querySelectorAll('.configurator__block-input:not([name="code"]):not([name="optics"]):not([name="led"]):checked').length > 0;
+
+
+            if (codeChecked && opticsChecked && ledChecked && !otherChecked) {
                 let codeValue = codeChecked.value.replace(/\s/g, "_");
                 let opticsValue = opticsChecked.value;
                 let ledValue = ledChecked.value;
-                photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
+                let url = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}&check=Y`;
 
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data === true) {
+                            photometricData.classList.remove('hidden');
+                            photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
+                        } else {
+                            photometricData.classList.add('hidden');
+                            photometricData.querySelector('.configurator__side-link').href = "";
+                        }
+                        updateSideListVisibility();
+                    })
+                    .catch(error => {
+                        console.error('Error checking file:', error);
+                        photometricData.classList.add('hidden');
+                        photometricData.querySelector('.configurator__side-link').href = "";
+                        updateSideListVisibility();
+                    });
             } else {
                 photometricData.classList.add('hidden');
                 photometricData.querySelector('.configurator__side-link').href = "";
-                photometricData.closest('.configurator__side-list').classList.add('hidden');
+                updateSideListVisibility();
             }
 
             // Показать/скрыть блок со спецификацией
             let lastBlockChecked = document.querySelector('.configurator__block:nth-last-child(2) .configurator__block-input:checked');
             let specification = document.querySelector('[data-specification]');
 
-
-
             if (lastBlockChecked) {
                 specification.classList.remove('hidden');
             } else {
                 specification.classList.add('hidden');
+            }
+            updateSideListVisibility();
+        };
+
+        let updateSideListVisibility = () => {
+            let photometricData = document.querySelector('[data-photometric]');
+            let specification = document.querySelector('[data-specification]');
+            let sideList = specification.closest('.configurator__side-list');
+
+            if (!photometricData.classList.contains('hidden') || !specification.classList.contains('hidden')) {
+                sideList.classList.remove('hidden');
+            } else {
+                sideList.classList.add('hidden');
             }
         };
 
