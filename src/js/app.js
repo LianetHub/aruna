@@ -256,10 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             if (codeChecked && opticsChecked && ledChecked && !otherChecked) {
+
                 let codeValue = codeChecked.value.replace(/\s/g, "_");
                 let opticsValue = opticsChecked.value;
                 let ledValue = ledChecked.value;
                 let url = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}&check=Y`;
+
 
                 fetch(url)
                     .then(response => response.json())
@@ -280,8 +282,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         updateSideListVisibility();
                     });
             } else {
-                photometricData.classList.add('hidden');
-                photometricData.querySelector('.configurator__side-link').href = "";
+                if (!otherChecked) {
+                    photometricData.classList.add('hidden');
+                    photometricData.querySelector('.configurator__side-link').href = "";
+                }
                 updateSideListVisibility();
             }
 
