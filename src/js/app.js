@@ -66,6 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
+        if (target.matches('.configurator__side-btn')) {
+            let currentInstance = Fancybox.getInstance();
+            let configurator = document.querySelector('.configurator');
+            let formDataConfigurator = new FormData(configurator);
+
+            const jsonformDataConfigurator = {};
+
+            formDataConfigurator.forEach((value, key) => {
+                jsonformDataConfigurator[key] = value;
+            });
+
+            const jsonStringFormData = JSON.stringify(jsonformDataConfigurator);
+
+
+            currentInstance.on('done', function () {
+                let currentForm = currentInstance.container.querySelector('.popup__form');
+                let input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'configurator-data';
+                input.value = jsonStringFormData;
+                currentForm.appendChild(input)
+            });
+
+            currentInstance.on('close', function () {
+                document.querySelector('[name="configurator-data"]').remove();
+            });
+        }
+
+
     });
 
     function getMenu() {
