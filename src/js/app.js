@@ -262,9 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelectorAll('.configurator__block-input').length > 0) {
 
-        document.querySelectorAll('.configurator__block-input').forEach(input => {
-            input.checked = false;
-        })
+
 
         let updateSidePanel = () => {
             let configuratorProps = document.getElementById('configurator-props');
@@ -404,6 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.configurator__block-input').forEach(configuratorInput => {
             configuratorInput.addEventListener('change', (e) => {
+                console.log('chenge');
                 let checkbox = e.target;
                 let options = checkbox.closest('.configurator__block-options');
                 let stepCheckboxes = options.querySelectorAll('.configurator__block-input');
@@ -468,6 +467,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateRowActiveState(name);
                 updateSidePanel();
             });
+            if (configuratorInput.checked) {
+                configuratorInput.dispatchEvent(new Event('change'));
+            } else {
+                configuratorInput.checked = false
+            }
         });
     }
 
