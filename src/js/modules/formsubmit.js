@@ -1,5 +1,5 @@
 export const formSubmit = () => {
-	const forms = document.querySelectorAll("form");
+	const forms = document.querySelectorAll("form:not('.search')");
 	forms.forEach((form) => {
 		if (form.classList.contains('configurator')) return;
 		form.addEventListener("submit", formSend);
