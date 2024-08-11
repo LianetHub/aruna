@@ -1,7 +1,8 @@
 export const formSubmit = () => {
-	const forms = document.querySelectorAll("form:not('.search')");
+	const forms = document.querySelectorAll("form");
 	forms.forEach((form) => {
 		if (form.classList.contains('configurator')) return;
+		if (form.classList.contains('search')) return;
 		form.addEventListener("submit", formSend);
 
 		if (!form.querySelector('[name="captcha"]')) {
