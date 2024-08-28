@@ -366,20 +366,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        let updateProductNumber = () => {
-            let activeBlocks = document.querySelectorAll('.configurator__block.active');
-            let productNumberParts = [];
+        // let updateProductNumber = () => {
+        //     let activeBlocks = document.querySelectorAll('.configurator__block.active');
+        //     let productNumberParts = [];
 
-            activeBlocks.forEach(block => {
-                let checkedInput = block.querySelector('.configurator__block-input:checked');
-                if (checkedInput) {
-                    productNumberParts.push(checkedInput.value);
-                }
-            });
+        //     activeBlocks.forEach(block => {
+        //         let checkedInput = block.querySelector('.configurator__block-input:checked');
+        //         if (checkedInput) {
+        //             productNumberParts.push(checkedInput.value);
+        //         }
+        //     });
 
-            let productNumber = productNumberParts.filter(Boolean).join('-');
-            document.querySelector('.configurator__number').textContent = productNumber;
-        };
+        //     let productNumber = productNumberParts.filter(Boolean).join('-');
+        //     document.querySelector('.configurator__number').textContent = productNumber;
+        // };
 
         let updateRowActiveState = (name) => {
             let row = document.querySelector(`.configurator__side-item[data-row="${name}"]`);
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = checkbox.nextElementSibling.textContent;
                     }
-                    updateProductNumber();
+                    // updateProductNumber();
                     if (checkbox.hasAttribute('data-filter')) {
                         filterLEDs(checkbox);
                     }
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = value;
                     }
-                    updateProductNumber();
+                    // updateProductNumber();
                 }
 
                 updateRowActiveState(name);
