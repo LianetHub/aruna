@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.configurator__block-input').forEach(configuratorInput => {
             configuratorInput.addEventListener('change', (e) => {
-                console.log('chenge');
+
                 let checkbox = e.target;
                 let options = checkbox.closest('.configurator__block-options');
                 let stepCheckboxes = options.querySelectorAll('.configurator__block-input');
