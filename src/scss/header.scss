@@ -41,9 +41,9 @@
 		width: 100%;
 		z-index: 6;
 		background: #fff;
-		@media (min-width: $md1) {
-			background: transparent;
-		}
+		// @media (min-width: $md1) {
+		// 	background: transparent;
+		// }
 	}
 	// .header__container
 	&__container {
@@ -292,7 +292,7 @@
 		transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
 		will-change: transform;
 		&::before {
-			content: "";
+			content: '';
 			display: block;
 			height: rem(2);
 			width: 100%;
