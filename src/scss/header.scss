@@ -57,10 +57,10 @@
 		padding: 1rem 0rem;
 		transition: padding 0.3s linear 0s, background-color 0.3s ease 0s;
 		@media (min-width: $md4) {
-			padding: 1.25rem 1rem;
+			padding: 1.25rem 0;
 		}
 		@media (min-width: $md1) {
-			padding: 1.75rem 6rem;
+			padding: 1.75rem 0;
 		}
 	}
 	// .header__logo

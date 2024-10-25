@@ -9,16 +9,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -5610,7 +5610,7 @@ body.lock {
   }
 
   .header__body {
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 0;
   }
 
   .header__phone {
@@ -8321,7 +8321,7 @@ body.lock {
   }
 
   .header__body {
-    padding: 1.75rem 6rem;
+    padding: 1.75rem 0;
   }
 
   .footer__top {
