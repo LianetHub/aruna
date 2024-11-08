@@ -284,10 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (codeChecked && opticsChecked && ledChecked && !otherChecked) {
 
-                let codeValue = codeChecked.value.replace(/\s/g, "_");
-                let opticsValue = opticsChecked.value;
-                let ledValue = ledChecked.value;
-                let url = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}&check=Y`;
+                let codeValue = transliterate(codeChecked.value.replace(/\s/g, "_"));
+                let opticsValue = transliterate(opticsChecked.value);
+                let ledValue = transliterate(ledChecked.value);
+                let url = `/photometric_data/?art_no=${codeValue}_${opticsValue}_${ledValue}&check=Y`;
+                console.log(url);
 
 
                 fetch(url)
@@ -295,8 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(data => {
                         if (data === true) {
                             photometricData.classList.remove('hidden');
-                            photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}-${opticsValue}-${ledValue}`;
-                        } else {
+                            photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}_${opticsValue}_${ledValue}`;
+                            console.log(`Файл: ${codeValue}_${opticsValue}_${ledValue}.ies`);
+                        }
+                        else {
                             photometricData.classList.add('hidden');
                             photometricData.querySelector('.configurator__side-link').href = "";
                         }
@@ -366,20 +369,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // let updateProductNumber = () => {
-        //     let activeBlocks = document.querySelectorAll('.configurator__block.active');
-        //     let productNumberParts = [];
+        let updateProductNumber = () => {
+            let activeBlocks = document.querySelectorAll('.configurator__block.active');
+            let productNumberParts = [];
 
-        //     activeBlocks.forEach(block => {
-        //         let checkedInput = block.querySelector('.configurator__block-input:checked');
-        //         if (checkedInput) {
-        //             productNumberParts.push(checkedInput.value);
-        //         }
-        //     });
+            activeBlocks.forEach(block => {
+                let checkedInput = block.querySelector('.configurator__block-input:checked');
+                if (checkedInput) {
+                    productNumberParts.push(checkedInput.value);
+                }
+            });
 
-        //     let productNumber = productNumberParts.filter(Boolean).join('-');
-        //     document.querySelector('.configurator__number').textContent = productNumber;
-        // };
+            let productNumber = productNumberParts.filter(Boolean).join('-');
+            document.querySelector('.configurator__number').textContent = productNumber;
+        };
 
         let updateRowActiveState = (name) => {
             let row = document.querySelector(`.configurator__side-item[data-row="${name}"]`);
@@ -452,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = checkbox.nextElementSibling.textContent;
                     }
-                    // updateProductNumber();
+                    updateProductNumber();
                     if (checkbox.hasAttribute('data-filter')) {
                         filterLEDs(checkbox);
                     }
@@ -461,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = value;
                     }
-                    // updateProductNumber();
+                    updateProductNumber();
                 }
 
                 updateRowActiveState(name);
@@ -473,6 +476,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 configuratorInput.checked = false
             }
         });
+
+        function transliterate(str) {
+
+            const translitMap = {
+                'А': 'A', 'а': 'a',
+                'Б': 'B', 'б': 'b',
+                'В': 'V', 'в': 'v',
+                'Г': 'G', 'г': 'g',
+                'Д': 'D', 'д': 'd',
+                'Е': 'E', 'е': 'e',
+                'Ё': 'Yo', 'ё': 'yo',
+                'Ж': 'Zh', 'ж': 'zh',
+                'З': 'Z', 'з': 'z',
+                'И': 'I', 'и': 'i',
+                'Й': 'Y', 'й': 'y',
+                'К': 'K', 'к': 'k',
+                'Л': 'L', 'л': 'l',
+                'М': 'M', 'м': 'm',
+                'Н': 'N', 'н': 'n',
+                'О': 'O', 'о': 'o',
+                'П': 'P', 'п': 'p',
+                'Р': 'R', 'р': 'r',
+                'С': 'S', 'с': 's',
+                'Т': 'T', 'т': 't',
+                'У': 'U', 'у': 'u',
+                'Ф': 'F', 'ф': 'f',
+                'Х': 'Kh', 'х': 'kh',
+                'Ц': 'Ts', 'ц': 'ts',
+                'Ч': 'Ch', 'ч': 'ch',
+                'Ш': 'Sh', 'ш': 'sh',
+                'Щ': 'Shch', 'щ': 'shch',
+                'Ъ': '', 'ъ': '',
+                'Ы': 'Y', 'ы': 'y',
+                'Ь': '', 'ь': '',
+                'Э': 'E', 'э': 'e',
+                'Ю': 'Yu', 'ю': 'yu',
+                'Я': 'Ya', 'я': 'ya'
+            };
+
+
+            let result = '';
+
+            for (const char of str) {
+                result += translitMap[char] !== undefined ? translitMap[char] : char;
+            }
+
+            return result;
+        }
+
+
     }
 
     // end configurator
