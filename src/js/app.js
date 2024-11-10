@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let opticsValue = transliterate(opticsChecked.value);
                 let ledValue = transliterate(ledChecked.value);
                 let url = `/photometric_data/?art_no=${codeValue}_${opticsValue}_${ledValue}&check=Y`;
-                console.log(url);
+
 
 
                 fetch(url)
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (data === true) {
                             photometricData.classList.remove('hidden');
                             photometricData.querySelector('.configurator__side-link').href = `/photometric_data/?art_no=${codeValue}_${opticsValue}_${ledValue}`;
-                            console.log(`Файл: ${codeValue}_${opticsValue}_${ledValue}.ies`);
+                            console.log(`Файл: /ies/${codeValue}/${codeValue}_${opticsValue}_${ledValue}.ies`);
                         }
                         else {
                             photometricData.classList.add('hidden');
