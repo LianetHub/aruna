@@ -1,25 +1,28 @@
 .header {
-	// position: sticky;
-	// top: 0;
-	// left: 0;
-	// z-index: 6;
-
 	transition: opacity 0.3s ease 0s;
 
 	&.header_main {
-		// .header__body {
-		// 	@media (min-width: $md1) {
-		// 		margin-bottom: -100%;
-		// 	}
-		// }
 		& + .page {
 			padding-top: 0;
 		}
 	}
 	&.header_product {
 		&.scroll {
-			.header__body {
+			.header__wrapper {
 				background: #fff;
+				color: $dark;
+			}
+			.header__logo {
+				filter: invert(1);
+			}
+			.menu__link {
+				color: #8a8e92;
+				&.active {
+					color: $dark;
+				}
+			}
+			.header__btn {
+				@extend .btn-primary-outline;
 			}
 		}
 	}
@@ -27,31 +30,28 @@
 		.header__body {
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
-			background: rgba(#fff, 0.9);
-			@media (any-hover: hover) {
-				&:hover {
-					background: #fff;
-				}
-			}
+		}
+		.header__wrapper {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(rem(50));
+			-webkit-backdrop-filter: blur(rem(50));
 		}
 	}
+	// .header__wrapper
 	&__wrapper {
 		position: fixed;
 		top: 0;
+		left: 0;
 		width: 100%;
 		z-index: 6;
-		background: #fff;
-		// @media (min-width: $md1) {
-		// 	background: transparent;
-		// }
+		color: #fff;
+		transition: all 0.3s ease 0s;
 	}
 	// .header__container
 	&__container {
 	}
 	// .header__body
 	&__body {
-		background: #fff;
-		color: $dark;
 		display: flex;
 		align-items: center;
 		padding: 1rem 0rem;
@@ -91,7 +91,7 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: #142356;
+				color: $accent;
 			}
 		}
 	}
@@ -118,11 +118,12 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	max-height: 100vh;
 	opacity: 0;
 	visibility: hidden;
 	background: rgba($color: #161c24, $alpha: 0.6);
+	color: $dark;
 	z-index: 6;
 
 	overflow-x: hidden;
@@ -154,6 +155,7 @@
 		opacity: 1;
 		visibility: visible;
 		margin-left: auto;
+		color: inherit;
 	}
 	&__body {
 		background: #fff;
@@ -199,16 +201,10 @@
 	&__link {
 		display: block;
 		position: relative;
-		color: #8a8e92;
 		transition: color 0.3s ease 0s;
 		line-height: 120%;
 		font-size: 1.125rem;
-		@media (min-width: $md5) {
-			font-size: 1.5rem;
-		}
-		@media (min-width: $md2) {
-			font-size: 1rem;
-		}
+		color: #8a8e92;
 		@media (any-hover: hover) {
 			&:hover {
 				color: $dark;
@@ -216,6 +212,21 @@
 		}
 		&.active {
 			color: $dark;
+		}
+		@media (min-width: $md5) {
+			font-size: 1.5rem;
+		}
+		@media (min-width: $md2) {
+			color: #d6d8d9;
+			font-size: 1rem;
+			&.active {
+				color: #fff;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					color: #fff;
+				}
+			}
 		}
 	}
 	// .menu__phone
@@ -233,6 +244,7 @@
 		@media (min-width: $md2) {
 			margin-top: 1.5rem;
 		}
+
 		&::before {
 			font-size: 1.1875rem;
 

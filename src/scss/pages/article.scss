@@ -121,6 +121,7 @@
 		&::before {
 			align-self: flex-start;
 			font-size: 1.25rem;
+			color: $accent;
 			@media (min-width: $md4) {
 				font-size: 1.4rem;
 			}
@@ -190,7 +191,7 @@
 			font-weight: 500;
 			display: block;
 			font-style: normal;
-			border-left: rem(6) solid #8a8e92;
+			border-left: rem(6) solid $accent;
 			font-size: 1rem;
 			padding: 0.25rem 0 0.25rem 1.2rem;
 			&:not(:first-child) {
@@ -294,6 +295,7 @@
 				& strong {
 					font-weight: 600;
 					line-height: 160%;
+					color: $accent;
 					@media (min-width: $md5) {
 						font-size: 1rem;
 					}
@@ -336,6 +338,7 @@
 					font-size: 1rem;
 					height: em(2, 1.25);
 					width: em(1.5, 1.25);
+					// color: $accent;
 					@media (min-width: $md2) {
 						font-size: 1.25rem;
 					}

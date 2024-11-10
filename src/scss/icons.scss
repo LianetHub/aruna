@@ -17,7 +17,9 @@
 		display: block;
 	}
 }
-
+.icon-download:before {
+	content: "\e917";
+}
 .icon-thin-phone:before {
 	content: "\e916";
 }

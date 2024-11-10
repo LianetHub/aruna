@@ -149,8 +149,9 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: #8a8e92;
-				border-color: #8a8e92;
+				background-color: $accent;
+				border-color: $accent;
+				color: $dark;
 			}
 		}
 	}
@@ -189,6 +190,7 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 			font-size: 3.547rem;
+			color: $accent;
 			@media (min-width: $md5) {
 				font-size: 5rem;
 			}

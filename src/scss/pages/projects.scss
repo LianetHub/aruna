@@ -180,6 +180,7 @@
 		&::before {
 			order: 1;
 			font-size: 0.65rem;
+			color: $accent;
 			@media (min-width: $md5) {
 				font-size: 1rem;
 			}
