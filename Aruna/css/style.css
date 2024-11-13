@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -25,8 +25,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -41,8 +41,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1355,47 +1355,47 @@ body.lock {
   font-size: 1.35rem;
 }
 
-.btn.btn-primary {
+.btn.btn-primary,
+.header.header_product.scroll .btn.header__btn {
   border: 0.09375rem solid #ffd665;
   background: #ffd665;
   color: #142356;
 }
 
-.btn.btn-primary::before {
+.btn.btn-primary::before,
+.header.header_product.scroll .btn.header__btn::before {
   color: #151d22;
   font-size: 1.65rem;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary:hover,
+.header.header_product.scroll .btn.header__btn:hover {
   background: #ffaa0d;
   border-color: #ffaa0d;
 }
 
-.btn.btn-primary:active {
+.btn.btn-primary:active,
+.header.header_product.scroll .btn.header__btn:active {
   background: #e48613;
   border-color: #e48613;
 }
 
-.btn.btn-primary-outline,
-.header.header_product.scroll .btn.header__btn {
+.btn.btn-primary-outline {
   border: 0.09375rem solid #ffd665;
   color: #fff;
 }
 
-.btn.btn-primary-outline::before,
-.header.header_product.scroll .btn.header__btn::before {
+.btn.btn-primary-outline::before {
   color: #ffd665;
 }
 
-.btn.btn-primary-outline:hover,
-.header.header_product.scroll .btn.header__btn:hover {
+.btn.btn-primary-outline:hover {
   border-color: #ffd665;
   color: #ffd665;
   background: rgba(255, 214, 101, 0.06);
 }
 
-.btn.btn-primary-outline:active,
-.header.header_product.scroll .btn.header__btn:active {
+.btn.btn-primary-outline:active {
   border-color: #ffd665;
   color: #ffd665;
   background: rgba(255, 214, 101, 0.16);

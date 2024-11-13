@@ -22,7 +22,7 @@
 				}
 			}
 			.header__btn {
-				@extend .btn-primary-outline;
+				@extend .btn-primary;
 			}
 		}
 	}
@@ -304,7 +304,7 @@
 		transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
 		will-change: transform;
 		&::before {
-			content: '';
+			content: "";
 			display: block;
 			height: rem(2);
 			width: 100%;
