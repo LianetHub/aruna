@@ -25,6 +25,14 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
@@ -34,14 +42,6 @@
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -8602,6 +8602,12 @@ body.lock {
   }
 }
 
+@media (max-width: 1199.98px) and (any-hover: hover) {
+  .menu__link:hover {
+    color: #10181d;
+  }
+}
+
 @media (max-width: 991.98px) {
   .contacts__item {
     border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.3);
@@ -8782,12 +8788,12 @@ body.lock {
     text-decoration: none;
   }
 
-  .header__phone:hover {
-    color: #ffd665;
+  .header.header_product.scroll .menu__link:hover {
+    color: #10181d;
   }
 
-  .menu__link:hover {
-    color: #10181d;
+  .header__phone:hover {
+    color: #ffd665;
   }
 
   .footer__menu-link:hover {

@@ -20,6 +20,11 @@
 				&.active {
 					color: $dark;
 				}
+				@media (any-hover: hover) {
+					&:hover {
+						color: $dark;
+					}
+				}
 			}
 			.header__btn {
 				@extend .btn-primary;
@@ -205,16 +210,19 @@
 		line-height: 120%;
 		font-size: 1.125rem;
 		color: #8a8e92;
-		@media (any-hover: hover) {
-			&:hover {
-				color: $dark;
-			}
-		}
+
 		&.active {
 			color: $dark;
 		}
 		@media (min-width: $md5) {
 			font-size: 1.5rem;
+		}
+		@media (max-width: $md2) {
+			@media (any-hover: hover) {
+				&:hover {
+					color: $dark;
+				}
+			}
 		}
 		@media (min-width: $md2) {
 			color: #d6d8d9;
