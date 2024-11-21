@@ -31,6 +31,15 @@
 	line-height: 120%;
 }
 
+.title-md {
+	font-size: rem(24);
+	@media (min-width: $md5) {
+		font-size: rem(40);
+	}
+	font-weight: 500;
+	line-height: 120%;
+}
+
 .title-sm {
 	font-weight: 500;
 	line-height: 120%;
@@ -51,9 +60,9 @@
 	margin: 0;
 	transform: none;
 	transition: color 0.3s ease 0s;
-	color: inherit;
+	color: $accent;
 	border-radius: 50%;
-	border: rem(2) solid currentColor;
+	border: rem(2) solid $accent;
 	transition: color 0.3s ease 0s, opacity 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s;
 
 	z-index: 2;
@@ -76,8 +85,8 @@
 		opacity: 0.28;
 	}
 	&:hover {
-		border: rem(1.5) solid $accent;
-		color: $accent;
+		border: rem(1.5) solid #fff;
+		color:#fff;
 	}
 	&:active {
 		border: rem(1.5) solid $accent;

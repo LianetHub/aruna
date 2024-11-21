@@ -180,19 +180,19 @@
 		}
 	}
 	&.btn-primary-outline {
-		border: rem(1.5) solid #ffd665;
+		border: rem(1.5) solid $accent;
 		color: #fff;
 		&::before {
-			color: #ffd665;
+			color: $accent;
 		}
 		&:hover {
-			border-color: #ffd665;
-			color: #ffd665;
+			border-color: darken($color: $accent, $amount: 10);
+			color: darken($color: $accent, $amount: 10);
 			background: rgba(255, 214, 101, 0.06);
 		}
 		&:active {
-			border-color: #ffd665;
-			color: #ffd665;
+			border-color: darken($color: $accent, $amount: 15);
+			color: darken($color: $accent, $amount: 15);
 			background: rgba(255, 214, 101, 0.16);
 		}
 	}
