@@ -370,17 +370,22 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         let updateProductNumber = () => {
-            let activeBlocks = document.querySelectorAll('.configurator__block.active');
+            const requiredNames = ['code', 'optics', 'led'];
+
+
             let productNumberParts = [];
 
-            activeBlocks.forEach(block => {
-                let checkedInput = block.querySelector('.configurator__block-input:checked');
+
+            requiredNames.forEach(name => {
+
+                let checkedInput = document.querySelector(`.configurator__block-input[name="${name}"]:checked`);
                 if (checkedInput) {
                     productNumberParts.push(checkedInput.value);
                 }
             });
 
-            let productNumber = productNumberParts.filter(Boolean).join('-');
+            let productNumber = productNumberParts.join('-');
+
             document.querySelector('.configurator__number').textContent = productNumber;
         };
 
@@ -449,6 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.classList.add('active');
                         row.querySelector('.configurator__side-value').textContent = value;
                     }
+                    updateProductNumber();
                     resetLEDs()
                 } else if (name === 'optics') {
                     if (checkbox.checked) {
