@@ -39,6 +39,9 @@
 		background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo.jpg") center center / cover no-repeat;
 		padding: 26rem 0 5.31rem;
 	}
+	@media (min-width: $md0) {
+		background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("@img/promo-lg.jpg") center center / cover no-repeat;
+	}
 	// .promo__container
 	&__container {
 		position: relative;

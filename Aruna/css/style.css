@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -8632,6 +8632,12 @@ body.lock {
   }
 }
 
+@media (min-width: 1659.98px) {
+  .no-webp .promo {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url("../img/promo-lg.jpg") center center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url("../img/promo-lg.jpg") center center/cover no-repeat; }
+}
+
 @media (max-width: 1199.98px) {
   .desktop-only {
     display: none;
@@ -8926,4 +8932,9 @@ body.lock {
 @media (min-width: 1199.98px) {
 
   .webp .promo { background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url(../img/promo.webp) center center/cover no-repeat; background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url(../img/promo.webp) center center/cover no-repeat; }
+}
+
+@media (min-width: 1659.98px) {
+
+  .webp .promo { background: -webkit-gradient(linear, left top, left bottom, color-stop(-37.2%, rgba(35, 44, 50, 0)), color-stop(93.66%, #10181d)), url(../img/promo-lg.webp) center center/cover no-repeat; background: linear-gradient(180deg, rgba(35, 44, 50, 0) -37.2%, #10181d 93.66%), url(../img/promo-lg.webp) center center/cover no-repeat; }
 }
