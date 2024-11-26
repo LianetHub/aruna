@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -23,18 +23,18 @@
 }
 
 @font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -918,15 +918,16 @@ body.lock {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  border: 0.09375rem solid #fff;
-  color: #fff;
+  border-color: #cda400;
+  color: #cda400;
+  background: rgba(255, 214, 101, 0.06);
 }
 
 .swiper-button-next:active,
 .swiper-button-prev:active {
-  border: 0.09375rem solid #FFCC01;
-  color: #FFCC01;
-  background: rgba(255, 214, 101, 0.1);
+  border-color: #b48f00;
+  color: #b48f00;
+  background: rgba(255, 214, 101, 0.16);
 }
 
 .swiper-pagination {
@@ -1376,14 +1377,14 @@ body.lock {
 
 .btn.btn-primary:hover,
 .header.header_product.scroll .btn.header__btn:hover {
-  background: #ffaa0d;
-  border-color: #ffaa0d;
+  background: #cda400;
+  border-color: #cda400;
 }
 
 .btn.btn-primary:active,
 .header.header_product.scroll .btn.header__btn:active {
-  background: #e48613;
-  border-color: #e48613;
+  background: #b48f00;
+  border-color: #b48f00;
 }
 
 .btn.btn-primary-outline {
