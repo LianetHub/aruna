@@ -1,23 +1,23 @@
 // Использование модулей SASS
-@use 'sass:math';
+@use "sass:math";
 // Использование модулей SASS
 // ======================================МИКСИНЫ==============================================
-@import 'mixins';
+@import "mixins";
 // ======================================МИКСИНЫ==============================================
 
 // ======================================ШРИФТЫ===============================================
 
 // &display=swap&subset=cyrillic-ext
-@import 'fonts';
+@import "fonts";
 
 // ======================================ШРИФТЫ===============================================
 // ======================================ИКОНОЧНЫЙ ШРИФТ======================================
-@import 'icons';
+@import "icons";
 
 // ======================================ИКОНОЧНЫЙ ШРИФТ======================================
 
 // Шрифт по умолчанию
-$fontfamily: 'Cygre';
+$fontfamily: "Cygre";
 
 // Шрифт по умолчанию
 
@@ -38,7 +38,7 @@ $containerPadding: 30;
 $black: #000;
 $dark: #10181d;
 $white: #fff;
-$accent: #FFCC01;
+$accent: #ffd665;
 
 // Z-Index
 $ui-index-1: 1; // Для наполняющих элементов в общем потоке
@@ -86,7 +86,7 @@ body {
 //=============== ОСНОВНАЯ СЕТКА===============================
 
 // Отзывчивая
-[class*='__container'] {
+[class*="__container"] {
 	margin: 0 auto;
 	box-sizing: content-box;
 	padding: 0 1rem;
@@ -115,12 +115,12 @@ body {
 
 //=================Подключаем файлы стилей
 //================Общий файл для элементов страницы
-@import 'grid';
-@import 'ui';
-@import 'forms';
+@import "grid";
+@import "ui";
+@import "forms";
 //================Общий файл для элементов страницы
-@import 'header';
-@import 'footer';
+@import "header";
+@import "footer";
 //=======================================
 
 // =======================ОСНОВНОЙ БЛОК==================
@@ -137,14 +137,14 @@ body {
 }
 // ========================================================
 
-@import 'pages/home';
-@import 'pages/catalog';
-@import 'pages/product';
-@import 'pages/projects';
-@import 'pages/project';
-@import 'pages/about';
-@import 'pages/blog';
-@import 'pages/article';
-@import 'pages/contacts';
-@import 'pages/error';
-@import 'pages/privacy';
+@import "pages/home";
+@import "pages/catalog";
+@import "pages/product";
+@import "pages/projects";
+@import "pages/project";
+@import "pages/about";
+@import "pages/blog";
+@import "pages/article";
+@import "pages/contacts";
+@import "pages/error";
+@import "pages/privacy";

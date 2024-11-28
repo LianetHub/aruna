@@ -171,12 +171,12 @@
 			font-size: 1.65rem;
 		}
 		&:hover {
-			background: darken($color: $accent, $amount: 10);
-			border-color: darken($color: $accent, $amount: 10);
+			background: #ffcc01;
+			border-color: #ffcc01;
 		}
 		&:active {
-			background: darken($color: $accent, $amount: 15);
-			border-color: darken($color: $accent, $amount: 15);
+			background: darken($color: #ffcc01, $amount: 5);
+			border-color: darken($color: #ffcc01, $amount: 5);
 		}
 	}
 	&.btn-primary-outline {
