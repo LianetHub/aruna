@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -25,16 +25,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -43,6 +35,14 @@
   font-display: swap;
   src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -3538,6 +3538,10 @@ body.lock {
 }
 
 .configurator__block-title {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: 500;
   line-height: 140%;
   font-size: 1.125rem;
@@ -3653,6 +3657,9 @@ body.lock {
 .configurator__side-item[data-row].active {
   display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .configurator__side-item[data-row]:not(:first-child):not(.hidden) {
@@ -3660,7 +3667,7 @@ body.lock {
 }
 
 .configurator__side-item[data-row]:not(:last-child) {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.375rem;
 }
 
 .configurator__side-item:not(:first-child):not(.hidden) {
@@ -3670,12 +3677,12 @@ body.lock {
 .configurator__side-name {
   font-size: 0.875rem;
   color: #747a7d;
-  line-height: 1.7142857143;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .configurator__side-value {
   font-size: 0.875rem;
-  line-height: 140%;
   color: #10181d;
 }
 
@@ -8878,6 +8885,10 @@ body.lock {
     -webkit-transform: scale(1.025);
         -ms-transform: scale(1.025);
             transform: scale(1.025);
+  }
+
+  .product-info__block .projects__item-name:hover {
+    color: #ffd665;
   }
 
   .projects__item-name:hover {

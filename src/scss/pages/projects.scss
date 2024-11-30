@@ -144,6 +144,13 @@
 		font-weight: 500;
 		line-height: 120%;
 		transition: color 0.3s ease 0s;
+		.product-info__block & {
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: rgba($color: #fff, $alpha: 0.6);
