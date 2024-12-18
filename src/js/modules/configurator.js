@@ -63,11 +63,26 @@ export const configurator = () => {
             updateSideListVisibility();
         }
 
-        // Показать/скрыть блок со спецификацией
-        let lastBlockChecked = document.querySelector('.configurator__block:nth-last-child(2) .configurator__block-input:checked');
-        let specification = document.querySelector('[data-specification]');
 
-        if (lastBlockChecked) {
+        const blocks = Array.from(document.querySelectorAll('.configurator__block')).filter(block =>
+            block.querySelector('.configurator__block-input:not([name="ext"])')
+        );
+
+        const specification = document.querySelector('[data-specification]');
+
+        let allBlocksValid = true;
+
+        blocks.forEach((block) => {
+            const inputs = block.querySelectorAll('.configurator__block-input');
+
+            const hasCheckedInput = Array.from(inputs).some(input => input.checked);
+
+            if (!hasCheckedInput) {
+                allBlocksValid = false;
+            }
+        });
+
+        if (allBlocksValid) {
             specification.classList.remove('hidden');
         } else {
             specification.classList.add('hidden');
@@ -258,7 +273,6 @@ export const configurator = () => {
             'Ю': 'Yu', 'ю': 'yu',
             'Я': 'Ya', 'я': 'ya'
         };
-
 
         let result = '';
 
