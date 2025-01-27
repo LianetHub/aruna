@@ -1,6 +1,7 @@
 import fs from "fs";
 import fonter from "gulp-fonter";
 import ttf2woff2 from "gulp-ttf2woff2";
+import rename from 'gulp-rename';
 
 export const otf2ttf = () => {
     return app.gulp
@@ -37,9 +38,23 @@ export const ttfToWoff = () => {
                 formats: ["woff"],
             })
         )
+        .pipe(
+            rename((file) => {
+                if (file.basename === "icons") {
+                    file.basename = `${file.basename}-${Date.now()}`;
+                }
+            })
+        )
         .pipe(app.gulp.dest(`${app.path.build.fonts}`))
         .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`))
         .pipe(ttf2woff2())
+        .pipe(
+            rename((file) => {
+                if (file.basename === "icons") {
+                    file.basename = `${file.basename}-${Date.now()}`;
+                }
+            })
+        )
         .pipe(app.gulp.dest(`${app.path.build.fonts}`));
 };
 export const copyWoff = () => {
@@ -93,11 +108,11 @@ export const fontsStyle = () => {
                         `@font-face {
                             font-family: '${fontName}';
                             font-display: swap;
-                            src: url("../fonts/${fontFileName}.woff") format("woff"), url("../fonts/${fontFileName}.woff2") format("woff2");
+                            src: url("../fonts/${fontFileName === "icons" ? `${fontFileName}-${Date.now()}` : fontFileName}.woff") format("woff"), url("../fonts/${fontFileName === "icons" ? `${fontFileName}-${Date.now()}` : fontFileName}.woff2") format("woff2");
                             font-weight: ${fontWeight};
                             font-style: normal;
                         }\r\n`, cb);
-                    newFileOnly = fontFileName;
+                    newFileOnly = fontFileName === "icons" ? `${fontFileName}-${Date.now()}` : fontFileName;
                 }
             }
         }
