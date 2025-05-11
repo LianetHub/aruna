@@ -35,12 +35,15 @@
 		padding: 1.125rem 0.75rem;
 		outline: rem(2) solid transparent;
 		font-size: 0.875rem;
+		min-height: rem(56);
 		@media (min-width: $md5) {
 			font-size: 1rem;
+			min-height: rem(60);
 		}
 		@media (min-width: $md2) {
 			font-size: 1.125rem;
-			padding: 1.53rem 0.75rem;
+			padding: 1.45rem 0.75rem;
+			min-height: rem(73);
 		}
 		&.form__input_sm {
 			font-size: 0.875rem;
@@ -338,6 +341,57 @@
 					text-decoration: none;
 				}
 			}
+		}
+	}
+}
+
+.option {
+	// .option__input
+	&__input {
+		&:checked {
+			& ~ .option__text {
+				&::before {
+					border-color: $accent;
+					background-color: transparent;
+				}
+				&::after {
+					scale: 1;
+				}
+			}
+		}
+	}
+	// .option__text
+	&__text {
+		position: relative;
+		font-size: 1rem;
+		line-height: 120%;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		&::before {
+			content: "";
+			width: 1.25rem;
+			height: 1.25rem;
+			border-radius: 50%;
+			flex-shrink: 0;
+			background: #fff;
+			border: rem(2) solid #ced0d1;
+			transition: background-color 0.3s ease, border-color 0.3s ease;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: rem(5);
+			transform: translateY(-50%);
+			border-radius: 50%;
+			scale: 0;
+			transition: scale 0.3s ease;
+			transform-origin: center 0;
+			background: $accent;
+			width: 0.625rem;
+			height: 0.625rem;
 		}
 	}
 }

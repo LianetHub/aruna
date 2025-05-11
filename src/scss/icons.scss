@@ -17,6 +17,30 @@
 		display: block;
 	}
 }
+.icon-calc:before {
+	content: "\e91e";
+}
+.icon-telegram-fill:before {
+	content: "\e91c";
+}
+.icon-whatsapp-fill:before {
+	content: "\e91d";
+}
+.icon-energy:before {
+	content: "\e901";
+}
+.icon-calendar:before {
+	content: "\e918";
+}
+.icon-chevron-down:before {
+	content: "\e919";
+}
+.icon-telegram:before {
+	content: "\e91a";
+}
+.icon-whatsapp:before {
+	content: "\e91b";
+}
 .icon-download:before {
 	content: "\e917";
 }
@@ -46,9 +70,6 @@
 }
 .icon-arrow-short:before {
 	content: "\e900";
-}
-.icon-calendar:before {
-	content: "\e901";
 }
 .icon-check:before {
 	content: "\e902";

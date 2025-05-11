@@ -22,9 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.beforeSlider();
     devFunctions.formSubmit();
     devFunctions.animation();
+
     configurator();
 
-
+    document.querySelectorAll('.select')?.forEach(element => {
+        new devFunctions.CustomSelect(element);
+    });
 
 
     // event handlers
@@ -123,15 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.products__slider')) {
         new Swiper('.products__slider', {
             slidesPerView: "auto",
-            spaceBetween: 30,
+            spaceBetween: 16,
             grabCursor: true,
             navigation: {
                 nextEl: '.products__next',
                 prevEl: '.products__prev'
             },
             breakpoints: {
-                1199.98: {
-                    spaceBetween: 48,
+                991.98: {
+                    spaceBetween: 42,
                 }
             }
         })
@@ -258,8 +261,24 @@ document.addEventListener('DOMContentLoaded', () => {
     headerObserver.observe(headerElement);
 
 
+    // widget animation
+
+    const widget = document.querySelector('.widgets');
+    if (widget) {
 
 
+        function toggleWidgetVisibility() {
+            if (window.scrollY > 300) {
+                widget.classList.add('visible');
+            } else {
+                widget.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', toggleWidgetVisibility);
+
+        toggleWidgetVisibility()
+    }
 
 
 
@@ -364,10 +383,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // end selecting colors
 
 
+    const selectType = document.querySelector('select[name="type"]');
+    const buildingFields = document.querySelector('fieldset#building-fields');
+    const bridgeFields = document.querySelector('fieldset#bridge-fields');
+    const monumentFields = document.querySelector('fieldset#monument-fields');
+    const parkFields = document.querySelector('fieldset#park-fields');
+    const streetFields = document.querySelector('fieldset#street-fields');
+
+    selectType?.addEventListener('change', () => {
+
+        buildingFields.setAttribute('inert', 'true');
+        bridgeFields.setAttribute('inert', 'true');
+        monumentFields.setAttribute('inert', 'true');
+        parkFields.setAttribute('inert', 'true');
+        streetFields.setAttribute('inert', 'true');
+
+        buildingFields.setAttribute('disabled', 'true');
+        bridgeFields.setAttribute('disabled', 'true');
+        monumentFields.setAttribute('disabled', 'true');
+        parkFields.setAttribute('disabled', 'true');
+        streetFields.setAttribute('disabled', 'true');
+
+
+        switch (selectType.value) {
+            case 'Здание':
+                buildingFields.removeAttribute('inert');
+                buildingFields.removeAttribute('disabled');
+                break;
+            case 'Мост':
+                bridgeFields.removeAttribute('inert');
+                bridgeFields.removeAttribute('disabled');
+                break;
+            case 'Памятник':
+                monumentFields.removeAttribute('inert');
+                monumentFields.removeAttribute('disabled');
+                break;
+            case 'Парк/сквер':
+                parkFields.removeAttribute('inert');
+                parkFields.removeAttribute('disabled');
+                break;
+            case 'Улица':
+                streetFields.removeAttribute('inert');
+                streetFields.removeAttribute('disabled');
+                break;
+            default:
+                break;
+        }
+    });
+
+
+
+    const form = document.querySelector('.calc__form');
+
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        for (const [key, value] of formData.entries()) {
+            console.log(`Ключ ${key}: Значение ${value}`);
+        }
+    });
+
 
 
 })
-
-
-
 

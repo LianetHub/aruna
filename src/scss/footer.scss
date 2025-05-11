@@ -49,9 +49,48 @@
 	// .footer__menu
 	&__menu {
 		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $md4) {
+			flex-direction: row;
+		}
 		@media (min-width: $md3) {
 			margin-left: auto;
 			margin-top: 0;
+		}
+	}
+	// .footer__socials
+	&__socials {
+		display: flex;
+		gap: rem(19);
+		margin-top: 1.5rem;
+		@media (min-width: $md4) {
+			margin-top: 0;
+			margin-left: rem(32);
+		}
+		@media (min-width: $md2) {
+			margin-left: rem(57);
+		}
+	}
+	// .footer__social
+	&__social {
+		font-size: rem(32);
+		@media (min-width: $md2) {
+			font-size: rem(40);
+		}
+		&.icon-whatsapp {
+			@media (any-hover: hover) {
+				&:hover {
+					color: #35cd22;
+				}
+			}
+		}
+		&.icon-telegram {
+			@media (any-hover: hover) {
+				&:hover {
+					color: #039be5;
+				}
+			}
 		}
 	}
 	// .footer__menu-list
@@ -72,9 +111,15 @@
 	// .footer__menu-link
 	&__menu-link {
 		color: #8a8e92;
-		font-size: 1.125rem;
 		line-height: 140%;
 		transition: color 0.3s ease 0s;
+		font-size: 1.125rem;
+		@media (min-width: $md3) {
+			font-size: 0.875rem;
+		}
+		@media (min-width: $md2) {
+			font-size: 1.125rem;
+		}
 		&.active {
 			color: #fff;
 		}

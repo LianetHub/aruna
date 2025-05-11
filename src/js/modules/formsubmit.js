@@ -2,6 +2,7 @@ export const formSubmit = () => {
 	const forms = document.querySelectorAll("form");
 	forms.forEach((form) => {
 		if (form.classList.contains('configurator')) return;
+		if (form.classList.contains('calc__form')) return;
 		if (form.classList.contains('search')) return;
 		form.addEventListener("submit", formSend);
 
@@ -110,5 +111,6 @@ export const formSubmit = () => {
 			dragToClose: false,
 			closeButton: false,
 		});
+		ym(99294522, 'reachGoal', 'zayavka')
 	}
 };

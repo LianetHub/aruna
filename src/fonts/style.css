@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src: url('fonts/icons.eot?ckq0jd');
-  src: url('fonts/icons.eot?ckq0jd#iefix') format('embedded-opentype'),
-    url('fonts/icons.ttf?ckq0jd') format('truetype'),
-    url('fonts/icons.woff?ckq0jd') format('woff'),
-    url('fonts/icons.svg?ckq0jd#icons') format('svg');
+  src:  url('fonts/icons.eot?51lt5g');
+  src:  url('fonts/icons.eot?51lt5g#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?51lt5g') format('truetype'),
+    url('fonts/icons.woff?51lt5g') format('woff'),
+    url('fonts/icons.svg?51lt5g#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,98 +25,96 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-calc:before {
+  content: "\e91e";
+}
+.icon-telegram-fill:before {
+  content: "\e91c";
+}
+.icon-whatsapp-fill:before {
+  content: "\e91d";
+}
+.icon-energy:before {
+  content: "\e901";
+}
+.icon-calendar:before {
+  content: "\e918";
+}
+.icon-chevron-down:before {
+  content: "\e919";
+}
+.icon-telegram:before {
+  content: "\e91a";
+}
+.icon-whatsapp:before {
+  content: "\e91b";
+}
 .icon-download:before {
   content: "\e917";
 }
-
 .icon-thin-phone:before {
   content: "\e916";
 }
-
 .icon-file:before {
   content: "\e915";
 }
-
 .icon-eac:before {
   content: "\e910";
 }
-
 .icon-power:before {
   content: "\e911";
 }
-
 .icon-production:before {
   content: "\e912";
 }
-
 .icon-rts:before {
   content: "\e913";
 }
-
 .icon-voltage:before {
   content: "\e914";
 }
-
 .icon-doc:before {
   content: "\e90f";
 }
-
 .icon-arrow-short:before {
   content: "\e900";
 }
-
-.icon-calendar:before {
-  content: "\e901";
-}
-
 .icon-check:before {
   content: "\e902";
 }
-
 .icon-chevron:before {
   content: "\e903";
 }
-
 .icon-close:before {
   content: "\e904";
 }
-
 .icon-colors:before {
   content: "\e905";
 }
-
 .icon-hammer:before {
   content: "\e906";
 }
-
 .icon-left:before {
   content: "\e907";
 }
-
 .icon-location:before {
   content: "\e908";
 }
-
 .icon-more:before {
   content: "\e909";
 }
-
 .icon-phone:before {
   content: "\e90a";
 }
-
 .icon-play:before {
   content: "\e90b";
 }
-
 .icon-right:before {
   content: "\e90c";
 }
-
 .icon-umbrella:before {
   content: "\e90d";
 }
-
 .icon-vk:before {
   content: "\e90e";
 }

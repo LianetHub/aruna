@@ -1,0 +1,62 @@
+[
+    {
+        "url": "@img/products/spotlights/01.png",
+        "category": "Прожекторы",
+        "name": "RAY 50",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/02.png",
+        "category": "Прожекторы",
+        "name": "CONTOUR S3 250",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/03.png",
+        "category": "Прожекторы",
+        "name": "Серия SPOT",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/04.png",
+        "category": "Прожекторы",
+        "name": "ARSLIM 250",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/05.png",
+        "category": "Прожекторы",
+        "name": "RAY 590",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/01.png",
+        "category": "Прожекторы",
+        "name": "RAY 50",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/02.png",
+        "category": "Прожекторы",
+        "name": "CONTOUR S3 250",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/03.png",
+        "category": "Прожекторы",
+        "name": "Серия SPOT",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/04.png",
+        "category": "Прожекторы",
+        "name": "ARSLIM 250",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    },
+    {
+        "url": "@img/products/spotlights/05.png",
+        "category": "Прожекторы",
+        "name": "RAY 590",
+        "description": "Высокопроизводительные наружные светильники для поверхностного монтажа"
+    }
+]
