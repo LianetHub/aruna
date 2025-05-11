@@ -152,6 +152,15 @@ export class CustomSelect {
                     item.setAttribute('aria-checked', 'false');
                 });
 
+                const hasVisibleItems = Array.from(items).some(item => item.style.display !== 'none');
+
+                const dropdownList = this.$dropdown.querySelector('.dropdown__body');
+                if (!hasVisibleItems) {
+                    dropdownList.classList.add('hidden');
+                } else {
+                    dropdownList.classList.remove('hidden');
+                }
+
 
                 this.$select.removeAttribute('name');
                 input.setAttribute('name', this.selectName);

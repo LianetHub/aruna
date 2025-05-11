@@ -17,16 +17,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -41,7 +41,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1746972170700.woff") format("woff"), url("../fonts/icons-1746972170700.woff2") format("woff2");
+  src: url("../fonts/icons-1746972596116.woff") format("woff"), url("../fonts/icons-1746972596116.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1746972172026.woff") format("woff"), url("../fonts/icons-1746972172026.woff2") format("woff2");
+  src: url("../fonts/icons-1746972594773.woff") format("woff"), url("../fonts/icons-1746972594773.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -3400,7 +3400,6 @@ body.lock {
 .catalog__category-card {
   border-radius: 1.125rem;
   background: #161f25;
-  min-height: 100%;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -7501,7 +7500,7 @@ body.lock {
   }
 
   .catalog__category-card {
-    min-height: 12.3125rem;
+    min-height: 100%;
     padding: 0.88rem 1.87rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
