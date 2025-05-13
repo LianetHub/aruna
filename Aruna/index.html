@@ -44,14 +44,14 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250511170956">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20250511170956">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250511170956">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250513142656">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20250513142656">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250513142656">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20250511170956">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250511170956">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20250513142656">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250513142656">
 
 </head>
 
@@ -279,8 +279,9 @@
                 <div class="calc__form-rows" data-animate="bottom">
                   <div class="calc__form-row">
                     <div class="calc__form-select">
-                      <select name="location" class="select" data-searchable="">
-                        <option selected="" value="Москва">Москва</option>
+                      <select name="location" class="select" data-searchable="" data-placeholder="Город">
+                        <option selected="" disabled="" value=""></option>
+                        <option value="Москва">Москва</option>
                         <option value="Санкт-Петербург">Санкт-Петербург</option>
                         <option value="Новосибирск">Новосибирск</option>
                         <option value="Екатеринбург">Екатеринбург</option>
@@ -304,7 +305,8 @@
                     </div>
                     <div class="calc__form-select">
                       <select name="type" class="select">
-                        <option selected="" value="Здание">Здание</option>
+                        <option disabled="" selected="" value="">Выберите тип</option>
+                        <option value="Здание">Здание</option>
                         <option value="Мост">Мост</option>
                         <option value="Памятник">Памятник</option>
                         <option value="Парк/сквер">Парк/сквер</option>
@@ -315,7 +317,7 @@
                   </div>
 
                   <!-- Поля здания -->
-                  <fieldset id="building-fields" class="calc__form-row">
+                  <fieldset id="building-fields" inert="" disabled="" class="calc__form-row">
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-perimeter-building">Периметр, м</label>
@@ -393,6 +395,16 @@
                     </div>
                   </fieldset>
                   <!-- Поля Улица -->
+
+                  <!-- Поля Cвой Вариант -->
+                  <fieldset id="custom-option-fields" inert="" disabled="" class="calc__form-row">
+                    <legend class="calc__form-caption title-sm">Параметры объекта</legend>
+                    <div class="calc__form-column calc__form-column--xl">
+                      <label class="calc__form-label" for="calc-custom">Опишите параметры</label>
+                      <input type="number" name="custom" id="calc-custom" class="form__input">
+                    </div>
+                  </fieldset>
+                  <!-- Поля Вариант -->
 
                   <fieldset class="calc__form-row">
                     <legend class="calc__form-caption title-sm">Наличие освещения</legend>
@@ -577,7 +589,7 @@
         <div class="products__container">
           <div class="products__header">
             <h2 class="products__title title" data-animate="bottom">
-              Продукция
+              Хиты продаж
             </h2>
             <div class="products__controls" data-animate="scale">
               <button type="button" class="swiper-button-prev products__prev"></button>
@@ -1214,16 +1226,16 @@
     </div>
   </div>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20250511170956"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20250511170956"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20250511170956"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20250511170956"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20250511170956"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20250513142656"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20250513142656"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20250513142656"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20250513142656"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20250513142656"></script>
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20250511170956"></script>
+  <script src="js/app.min.js?_v=20250513142656"></script>
 
 
 </body>

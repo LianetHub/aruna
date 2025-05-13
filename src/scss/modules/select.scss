@@ -96,6 +96,7 @@
 	}
 	&__input-wrapper {
 		position: relative;
+		display: block;
 		.icon-chevron {
 			position: absolute;
 			top: 50%;
@@ -207,7 +208,7 @@
 			}
 		}
 		mark {
-			font-weight: 700;
+			font-weight: 400;
 			background: transparent;
 		}
 		&[aria-disabled="true"] {

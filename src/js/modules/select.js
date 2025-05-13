@@ -50,7 +50,8 @@ export class CustomSelect {
                      <span class="icon-chevron"></span>
                <input type="text" class="dropdown__input" 
                   autocomplete="off" 
-                  value="${this.defaultText}" 
+                  value="${this.defaultText}"
+                  placeholder="${this.placeholder}" 
                 />
                </span>
              `;

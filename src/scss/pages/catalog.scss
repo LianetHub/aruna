@@ -115,6 +115,10 @@
 				.catalog__category-card {
 					grid-template-columns: 1fr;
 					padding: rem(32);
+					&::after {
+						width: 100%;
+						bottom: 9rem;
+					}
 				}
 			}
 			.catalog__category-image {
@@ -135,7 +139,18 @@
 	&__category-card {
 		border-radius: 1.125rem;
 		background: #161f25;
-
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50%;
+			border-radius: 1.125rem;
+			z-index: -1;
+			box-shadow: 0px 64px 170px -67px rgba(255, 210, 87, 0.25);
+		}
 		display: grid;
 		align-items: center;
 		gap: 1.25rem;
@@ -172,6 +187,7 @@
 		align-items: center;
 		max-width: 50%;
 		margin: 0 auto;
+
 		@media (min-width: $md3) {
 			height: 9.3125rem;
 			max-width: 100%;

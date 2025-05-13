@@ -1,22 +1,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -25,7 +9,23 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1747135615425.woff") format("woff"), url("../fonts/icons-1747135615425.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -39,17 +39,17 @@
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/icons-1746972596116.woff") format("woff"), url("../fonts/icons-1746972596116.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1746972594773.woff") format("woff"), url("../fonts/icons-1746972594773.woff2") format("woff2");
+  src: url("../fonts/icons-1747135616764.woff") format("woff"), url("../fonts/icons-1747135616764.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -939,6 +939,7 @@ body.lock {
 
 .dropdown__input-wrapper {
   position: relative;
+  display: block;
 }
 
 .dropdown__input-wrapper .icon-chevron,
@@ -1075,7 +1076,7 @@ body.lock {
 }
 
 .dropdown__list-item mark {
-  font-weight: 700;
+  font-weight: 400;
   background: transparent;
 }
 
@@ -3400,6 +3401,7 @@ body.lock {
 .catalog__category-card {
   border-radius: 1.125rem;
   background: #161f25;
+  position: relative;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -3409,6 +3411,19 @@ body.lock {
   align-items: center;
   padding: 1rem;
   min-height: 18rem;
+}
+
+.catalog__category-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  border-radius: 1.125rem;
+  z-index: -1;
+  -webkit-box-shadow: 0px 64px 170px -67px rgba(255, 210, 87, 0.25);
+          box-shadow: 0px 64px 170px -67px rgba(255, 210, 87, 0.25);
 }
 
 .catalog__category-image {
@@ -6668,6 +6683,11 @@ body.lock {
     grid-column: span 3;
   }
 
+  .calc__form-column.calc__form-column--xl {
+    -ms-grid-column-span: 6;
+    grid-column: span 6;
+  }
+
   .catalog__list {
     margin-top: 2.25rem;
     -ms-grid-columns: (1fr)[2];
@@ -7488,6 +7508,11 @@ body.lock {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 2rem;
+  }
+
+  .catalog__category.catalog__category--large .catalog__category-card::after {
+    width: 100%;
+    bottom: 9rem;
   }
 
   .catalog__category.catalog__category--large .catalog__category-image {

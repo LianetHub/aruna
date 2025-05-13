@@ -1407,6 +1407,9 @@ $serviceDuraion: 0.45s;
 			&.calc__form-column--large {
 				grid-column: span 3;
 			}
+			&.calc__form-column--xl {
+				grid-column: span 6;
+			}
 		}
 	}
 	// .calc__form-label

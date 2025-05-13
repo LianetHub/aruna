@@ -389,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const monumentFields = document.querySelector('fieldset#monument-fields');
     const parkFields = document.querySelector('fieldset#park-fields');
     const streetFields = document.querySelector('fieldset#street-fields');
+    const customFields = document.querySelector('fieldset#custom-option-fields');
 
     selectType?.addEventListener('change', () => {
 
@@ -397,12 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
         monumentFields.setAttribute('inert', 'true');
         parkFields.setAttribute('inert', 'true');
         streetFields.setAttribute('inert', 'true');
+        customFields.setAttribute('inert', 'true');
 
         buildingFields.setAttribute('disabled', 'true');
         bridgeFields.setAttribute('disabled', 'true');
         monumentFields.setAttribute('disabled', 'true');
         parkFields.setAttribute('disabled', 'true');
         streetFields.setAttribute('disabled', 'true');
+        customFields.setAttribute('disabled', 'true');
 
 
         switch (selectType.value) {
@@ -425,6 +428,10 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'Улица':
                 streetFields.removeAttribute('inert');
                 streetFields.removeAttribute('disabled');
+                break;
+            case 'Свой вариант/другое':
+                customFields.removeAttribute('inert');
+                customFields.removeAttribute('disabled');
                 break;
             default:
                 break;
