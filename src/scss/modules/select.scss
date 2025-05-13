@@ -130,6 +130,9 @@
 	}
 	&__input {
 		@extend .dropdown__button;
+		color: $dark;
+		padding-right: 3rem;
+		text-overflow: ellipsis;
 		&::placeholder {
 			color: #a1a5a7;
 			opacity: 1;
