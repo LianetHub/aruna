@@ -44,14 +44,14 @@
   <!-- Twitter -->
 
   <!-- plugnis -->
-  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250513142656">
-  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20250513142656">
-  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250513142656">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250513151418">
+  <link rel="stylesheet" href="css/libs/fancybox.css?_v=20250513151418">
+  <link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250513151418">
   <!-- plugnis -->
 
 
-  <link rel="stylesheet" href="css/reset.min.css?_v=20250513142656">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250513142656">
+  <link rel="stylesheet" href="css/reset.min.css?_v=20250513151418">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250513151418">
 
 </head>
 
@@ -304,7 +304,7 @@
                       </select>
                     </div>
                     <div class="calc__form-select">
-                      <select name="type" class="select">
+                      <select name="type" class="select" data-placeholder="Выберите тип">
                         <option disabled="" selected="" value="">Выберите тип</option>
                         <option value="Здание">Здание</option>
                         <option value="Мост">Мост</option>
@@ -321,11 +321,11 @@
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-perimeter-building">Периметр, м</label>
-                      <input type="number" name="perimeter" id="calc-perimeter-building" class="form__input">
+                      <input type="number" name="perimeter" id="calc-perimeter-building" class="form__input" placeholder="Введите периметр">
                     </div>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-height-building">высота над поверхностью воды. м</label>
-                      <input type="number" name="height" id="calc-height-building" class="form__input">
+                      <input type="number" name="height" id="calc-height-building" class="form__input" placeholder="Введите высоту">
                     </div>
                   </fieldset>
                   <!-- Поля здания -->
@@ -335,35 +335,35 @@
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column">
                       <label class="calc__form-label" for="calc-width-bridge">длина, м</label>
-                      <input type="number" name="length" id="calc-width-bridge" class="form__input">
+                      <input type="number" name="length" id="calc-width-bridge" class="form__input" placeholder="Введите длину">
                     </div>
                     <div class="calc__form-column">
                       <label class="calc__form-label" for="calc-height-bridge">высота над поверхностью воды. м</label>
-                      <input type="number" name="height" id="calc-height-bridge" class="form__input">
+                      <input type="number" name="height" id="calc-height-bridge" class="form__input" placeholder="Введите высоту">
                     </div>
                     <div class="calc__form-column">
                       <label class="calc__form-label" for="calc-lighting-type-bridge">тип подсветки</label>
                       <div class="calc__form-select">
                         <select id="calc-lighting-type-bridge" name="type" class="select">
-                          <option value="подсветка снизу">подсветка снизу</option>
-                          <option value="подсветка и снизу, и башен">подсветка и снизу, и башен</option>
+                          <option selected="" disabled="" value="">Выберите тип</option>
+                          <option value="подсветка снизу">Подсветка снизу</option>
+                          <option value="подсветка и снизу, и башен">Подсветка и снизу, и башен</option>
                         </select>
                       </div>
                     </div>
                   </fieldset>
                   <!-- Поля Мост -->
 
-
                   <!-- Поля Памятник -->
                   <fieldset id="monument-fields" inert="" disabled="" class="calc__form-row">
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-perimeter-monument">Периметр, м</label>
-                      <input type="number" name="perimeter" id="calc-perimeter-monument" class="form__input">
+                      <input type="number" name="perimeter" id="calc-perimeter-monument" class="form__input" placeholder="Введите периметр">
                     </div>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-height-monument">высота над поверхностью воды. м</label>
-                      <input type="number" name="height" id="calc-height-monument" class="form__input">
+                      <input type="number" name="height" id="calc-height-monument" class="form__input" placeholder="Введите высоту">
                     </div>
                   </fieldset>
                   <!-- Поля Памятник -->
@@ -373,11 +373,11 @@
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-path-park">Общая длина дорожек, м</label>
-                      <input type="number" name="path" id="calc-path-park" class="form__input">
+                      <input type="number" name="path" id="calc-path-park" class="form__input" placeholder="Введите длину">
                     </div>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-width-park">Ширина дорожек, м</label>
-                      <input type="number" name="width" id="calc-width-park" class="form__input">
+                      <input type="number" name="width" id="calc-width-park" class="form__input" placeholder="Введите ширину">
                     </div>
                   </fieldset>
                   <!-- Поля Парк/сквер -->
@@ -387,11 +387,11 @@
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-length-street">Общая длина улицы, м</label>
-                      <input type="number" name="length" id="calc-length-street" class="form__input">
+                      <input type="number" name="length" id="calc-length-street" class="form__input" placeholder="Введите длину">
                     </div>
                     <div class="calc__form-column calc__form-column--large">
                       <label class="calc__form-label" for="calc-width-street">Ширина улицы, м</label>
-                      <input type="number" name="width" id="calc-width-street" class="form__input">
+                      <input type="number" name="width" id="calc-width-street" class="form__input" placeholder="Введите ширину">
                     </div>
                   </fieldset>
                   <!-- Поля Улица -->
@@ -401,7 +401,7 @@
                     <legend class="calc__form-caption title-sm">Параметры объекта</legend>
                     <div class="calc__form-column calc__form-column--xl">
                       <label class="calc__form-label" for="calc-custom">Опишите параметры</label>
-                      <input type="number" name="custom" id="calc-custom" class="form__input">
+                      <input type="text" name="custom" id="calc-custom" class="form__input" placeholder="Опишите свой вариант">
                     </div>
                   </fieldset>
                   <!-- Поля Вариант -->
@@ -1226,16 +1226,16 @@
     </div>
   </div>
   <!-- plugnis -->
-  <script src="js/libs/jquery-3.7.1.min.js?_v=20250513142656"></script>
-  <script src="js/libs/swiper-bundle.min.js?_v=20250513142656"></script>
-  <script src="js/libs/fancybox.umd.js?_v=20250513142656"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20250513142656"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20250513142656"></script>
+  <script src="js/libs/jquery-3.7.1.min.js?_v=20250513151418"></script>
+  <script src="js/libs/swiper-bundle.min.js?_v=20250513151418"></script>
+  <script src="js/libs/fancybox.umd.js?_v=20250513151418"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20250513151418"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js?_v=20250513151418"></script>
 
   <!-- plugnis -->
 
 
-  <script src="js/app.min.js?_v=20250513142656"></script>
+  <script src="js/app.min.js?_v=20250513151418"></script>
 
 
 </body>

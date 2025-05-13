@@ -36,6 +36,7 @@
 		line-height: 140%;
 		border-radius: 0.25rem;
 		background: #f2f2f2;
+		color: #a1a5a7;
 		padding: 1rem 0.75rem;
 		outline: rem(2) solid transparent;
 		font-size: 0.875rem;
@@ -54,7 +55,9 @@
 			padding: 1.45rem 0.75rem;
 			min-height: rem(73);
 		}
-
+		&.selected {
+			color: $dark;
+		}
 		&::before {
 			transition: transform 0.3s ease 0s;
 			order: 1;
@@ -101,7 +104,7 @@
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			right: 1rem;
+			right: 0.75rem;
 			z-index: 2;
 			pointer-events: none;
 			&::before {
@@ -127,6 +130,10 @@
 	}
 	&__input {
 		@extend .dropdown__button;
+		&::placeholder {
+			color: #a1a5a7;
+			opacity: 1;
+		}
 	}
 	// .dropdown__button-column
 	&__button-column {
