@@ -237,11 +237,14 @@
 				height: rem(146);
 			}
 		}
-		& img {
+		& picture {
+			display: contents;
+		}
+		& img,
+		& source {
 			display: block;
 			max-height: 100%;
 
-			width: auto;
 			transition: transform 0.3s ease 0s;
 		}
 	}

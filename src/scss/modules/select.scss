@@ -131,7 +131,7 @@
 	&__input {
 		@extend .dropdown__button;
 		color: $dark;
-		padding-right: 3rem;
+		padding-right: 3rem !important;
 		text-overflow: ellipsis;
 		&::placeholder {
 			color: #a1a5a7;

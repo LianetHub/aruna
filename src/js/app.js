@@ -440,21 +440,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const form = document.querySelector('.calc__form');
-
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        for (const [key, value] of formData.entries()) {
-            console.log(`Ключ ${key}: Значение ${value}`);
-        }
-    });
-
-
-
 })
 
