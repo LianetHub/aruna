@@ -11,6 +11,9 @@ export const formSubmit = () => {
 	});
 
 	document.addEventListener("input", handleFormInput);
+	document.querySelectorAll('select')?.forEach(select => {
+		select.addEventListener("change", handleFormInput)
+	});
 
 	async function formSend(e) {
 		e.preventDefault();
@@ -45,7 +48,9 @@ export const formSubmit = () => {
 	}
 
 	function handleFormInput(e) {
+
 		const { target } = e;
+
 		if (target.classList.contains('_error')) {
 			formRemoveError(target);
 		}
@@ -58,19 +63,22 @@ export const formSubmit = () => {
 		formReq.forEach(input => {
 			formRemoveError(input);
 
-			if (input.matches("[name='email']") && !emailTest(input.value)) {
-				formAddError(input);
-				error++;
-			} else if (input.matches("[type='checkbox']") && !input.checked) {
-				formAddError(input);
-				error++;
-			} else if (input.value.trim() === "" || (input.matches("[name='message']") && input.value.trim().length < 1)) {
-				formAddError(input);
-				error++;
-			} else if (input.matches("[type='tel']") && !phoneTest(input.value)) {
-				formAddError(input);
-				error++;
+			if (input.getAttribute("name")) {
+				if (input.matches("[name='email']") && !emailTest(input.value)) {
+					formAddError(input);
+					error++;
+				} else if (input.matches("[type='checkbox']") && !input.checked) {
+					formAddError(input);
+					error++;
+				} else if (input.value.trim() === "" || (input.matches("[name='message']") && input.value.trim().length < 1)) {
+					formAddError(input);
+					error++;
+				} else if (input.matches("[type='tel']") && !phoneTest(input.value)) {
+					formAddError(input);
+					error++;
+				}
 			}
+
 		});
 
 		return error;

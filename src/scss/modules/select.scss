@@ -1,3 +1,10 @@
+.select._error ~ .dropdown {
+	& .dropdown__button {
+		outline: 1px solid #ba2028;
+		background: #fff1ed;
+	}
+}
+
 .dropdown {
 	position: relative;
 	&.visible {
