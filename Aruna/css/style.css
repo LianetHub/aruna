@@ -17,16 +17,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -41,7 +41,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1747255066150.woff") format("woff"), url("../fonts/icons-1747255066150.woff2") format("woff2");
+  src: url("../fonts/icons-1747331127394.woff") format("woff"), url("../fonts/icons-1747331127394.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1747255064790.woff") format("woff"), url("../fonts/icons-1747255064790.woff2") format("woff2");
+  src: url("../fonts/icons-1747331126049.woff") format("woff"), url("../fonts/icons-1747331126049.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -3441,7 +3441,20 @@ body.lock {
   gap: 0.875rem;
 }
 
+.catalog__category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .catalog__category-card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   border-radius: 1.125rem;
   background: #161f25;
   position: relative;
@@ -7572,7 +7585,7 @@ body.lock {
   }
 
   .catalog__category-card {
-    min-height: 100%;
+    min-height: 15.625rem;
     padding: 0.88rem 1.87rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -8545,7 +8558,7 @@ body.lock {
   }
 
   .catalog__category.catalog__category--large .catalog__category-image {
-    height: 17.75rem;
+    height: 21.75rem;
   }
 
   .catalog__category-image {
@@ -8553,7 +8566,7 @@ body.lock {
   }
 
   .catalog__category-image.catalog__category-image--small {
-    height: 9.3125rem;
+    height: 9rem;
   }
 
   .catalog__category-image.catalog__category-image--medium {

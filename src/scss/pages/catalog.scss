@@ -107,6 +107,8 @@
 	}
 	// .catalog__category
 	&__category {
+		display: flex;
+		flex-direction: column;
 		&.catalog__category--large {
 			@media (min-width: $md3) {
 				grid-row: span 2;
@@ -130,13 +132,14 @@
 					}
 				}
 				@media (min-width: $md2) {
-					height: 17.75rem;
+					height: 21.75rem;
 				}
 			}
 		}
 	}
 	// .catalog__category-card
 	&__category-card {
+		flex: 1 1 auto;
 		border-radius: 1.125rem;
 		background: #161f25;
 		position: relative;
@@ -158,7 +161,7 @@
 		padding: 1rem;
 		min-height: rem(288);
 		@media (min-width: $md3) {
-			min-height: 100%;
+			min-height: rem(250);
 			padding: 0.88rem 1.87rem;
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -201,7 +204,7 @@
 				height: 6.5rem;
 			}
 			@media (min-width: $md2) {
-				height: 9.3125rem;
+				height: 9rem;
 			}
 		}
 		&.catalog__category-image--medium {
