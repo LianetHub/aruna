@@ -8,11 +8,36 @@ import { configurator } from './modules/configurator.js';
 
 //  init Fancybox
 if (typeof Fancybox !== "undefined" && Fancybox !== null) {
+
+    const defaultTitles = new WeakMap();
+
     Fancybox.bind("[data-fancybox]", {
         dragToClose: false,
-        closeButton: false
+        closeButton: false,
+        on: {
+            reveal: (fancybox, slide) => {
+
+                const customTitle = slide?.title;
+                const slideContent = slide.el;
+
+                if (!slideContent) return;
+
+
+                const popupTitle = slideContent.querySelector('.popup__title');
+                if (!popupTitle) return;
+
+
+                if (!defaultTitles.has(popupTitle)) {
+                    defaultTitles.set(popupTitle, popupTitle.textContent.trim());
+                }
+
+                const defaultTitle = defaultTitles.get(popupTitle);
+                popupTitle.textContent = customTitle || defaultTitle;
+            }
+        }
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -393,45 +418,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     selectType?.addEventListener('change', () => {
 
-        buildingFields.setAttribute('inert', 'true');
-        bridgeFields.setAttribute('inert', 'true');
-        monumentFields.setAttribute('inert', 'true');
-        parkFields.setAttribute('inert', 'true');
-        streetFields.setAttribute('inert', 'true');
-        customFields.setAttribute('inert', 'true');
+        buildingFields?.setAttribute('inert', 'true');
+        bridgeFields?.setAttribute('inert', 'true');
+        monumentFields?.setAttribute('inert', 'true');
+        parkFields?.setAttribute('inert', 'true');
+        streetFields?.setAttribute('inert', 'true');
+        customFields?.setAttribute('inert', 'true');
 
-        buildingFields.setAttribute('disabled', 'true');
-        bridgeFields.setAttribute('disabled', 'true');
-        monumentFields.setAttribute('disabled', 'true');
-        parkFields.setAttribute('disabled', 'true');
-        streetFields.setAttribute('disabled', 'true');
-        customFields.setAttribute('disabled', 'true');
+        buildingFields?.setAttribute('disabled', 'true');
+        bridgeFields?.setAttribute('disabled', 'true');
+        monumentFields?.setAttribute('disabled', 'true');
+        parkFields?.setAttribute('disabled', 'true');
+        streetFields?.setAttribute('disabled', 'true');
+        customFields?.setAttribute('disabled', 'true');
 
 
         switch (selectType.value) {
             case 'Здание':
-                buildingFields.removeAttribute('inert');
-                buildingFields.removeAttribute('disabled');
+                buildingFields?.removeAttribute('inert');
+                buildingFields?.removeAttribute('disabled');
                 break;
             case 'Мост':
-                bridgeFields.removeAttribute('inert');
-                bridgeFields.removeAttribute('disabled');
+                bridgeFields?.removeAttribute('inert');
+                bridgeFields?.removeAttribute('disabled');
                 break;
             case 'Памятник':
-                monumentFields.removeAttribute('inert');
-                monumentFields.removeAttribute('disabled');
+                monumentFields?.removeAttribute('inert');
+                monumentFields?.removeAttribute('disabled');
                 break;
             case 'Парк/сквер':
-                parkFields.removeAttribute('inert');
-                parkFields.removeAttribute('disabled');
+                parkFields?.removeAttribute('inert');
+                parkFields?.removeAttribute('disabled');
                 break;
             case 'Улица':
-                streetFields.removeAttribute('inert');
-                streetFields.removeAttribute('disabled');
+                streetFields?.removeAttribute('inert');
+                streetFields?.removeAttribute('disabled');
                 break;
             case 'Свой вариант/другое':
-                customFields.removeAttribute('inert');
-                customFields.removeAttribute('disabled');
+                customFields?.removeAttribute('inert');
+                customFields?.removeAttribute('disabled');
                 break;
             default:
                 break;

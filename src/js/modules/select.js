@@ -31,7 +31,8 @@ export class CustomSelect {
     }
 
     getDefaultText() {
-        const selectedOption = this.$select.querySelector('option[selected]');
+        const selectedOption = this.$select.querySelector('option[selected]:not([disabled])');
+
         if (selectedOption) {
             return selectedOption.text;
         } else {
@@ -50,7 +51,7 @@ export class CustomSelect {
                      <span class="icon-chevron"></span>
                <input type="text" class="dropdown__input" 
                   autocomplete="off" 
-                  value="${this.defaultText}"
+                
                   placeholder="${this.placeholder}" 
                 />
                </span>
@@ -297,20 +298,32 @@ export class CustomSelect {
             listItem.setAttribute('aria-checked', 'false');
         });
 
+        const selectedItem = this.$dropdown.querySelector(`.dropdown__list-item[data-value="${state.selectedValue}"]`);
+        if (selectedItem) {
+            selectedItem.classList.add('selected');
+            selectedItem.setAttribute('aria-checked', 'true');
+        }
+
         if (this.isSearchable) {
             const input = this.$dropdown.querySelector('.dropdown__input');
-            input.value = state.selectedText;
+            input.value = this.placeholder || state.selectedText;
             input.removeAttribute('name');
         }
+
         this.$select.setAttribute('name', this.selectName);
 
-        const selectedItem = this.$dropdown.querySelector(`.dropdown__list-item[data-value="${state.selectedValue}"]`);
+        const buttonText = this.$dropdown.querySelector('.dropdown__button-text');
+        const button = this.$dropdown.querySelector('.dropdown__button');
 
-        selectedItem.classList.add('selected');
-        selectedItem.setAttribute('aria-checked', 'true');
+        if (buttonText) {
+            buttonText.textContent = this.placeholder || state.selectedText;
+        }
 
-        this.$dropdown.querySelector('.dropdown__button-text').textContent = state.selectedText;
+        if (button) {
+            button.classList.remove('selected');
+        }
     }
+
 
     syncSelectedOption() {
         const selectedOption = this.$select.options[this.$select.selectedIndex];
