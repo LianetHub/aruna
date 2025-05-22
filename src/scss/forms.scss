@@ -288,6 +288,14 @@
 				}
 			}
 		}
+		&._error {
+			& + .checkbox__content {
+				&::before {
+					border: 1px solid #ba2028;
+					background: #fff1ed;
+				}
+			}
+		}
 	}
 	// .checkbox__content
 	&__content {

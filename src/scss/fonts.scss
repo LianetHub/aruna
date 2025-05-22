@@ -15,28 +15,21 @@
 @font-face {
                             font-family: 'Cygre';
                             font-display: swap;
-                            src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-                            font-weight: 400;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'Cygre';
-                            font-display: swap;
                             src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
                             font-weight: 500;
                             font-style: normal;
                         }
 @font-face {
-                            font-family: 'icons';
+                            font-family: 'Cygre';
                             font-display: swap;
-                            src: url("../fonts/icons-1747859211360.woff") format("woff"), url("../fonts/icons-1747859211360.woff2") format("woff2");
+                            src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
                             font-weight: 400;
                             font-style: normal;
                         }
 @font-face {
                             font-family: 'icons';
                             font-display: swap;
-                            src: url("../fonts/icons-1747859212692.woff") format("woff"), url("../fonts/icons-1747859212692.woff2") format("woff2");
+                            src: url("../fonts/icons-1747924758413.woff") format("woff"), url("../fonts/icons-1747924758413.woff2") format("woff2");
                             font-weight: 400;
                             font-style: normal;
                         }
@@ -45,5 +38,12 @@
                             font-display: swap;
                             src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
                             font-weight: 600;
+                            font-style: normal;
+                        }
+@font-face {
+                            font-family: 'icons';
+                            font-display: swap;
+                            src: url("../fonts/icons-1747924759765.woff") format("woff"), url("../fonts/icons-1747924759765.woff2") format("woff2");
+                            font-weight: 400;
                             font-style: normal;
                         }
