@@ -345,6 +345,13 @@
 				}
 			}
 		}
+		& a:not([class]) {
+			@extend .our-projects__footer-more;
+			&::before {
+				@extend %ic;
+				@extend .icon-arrow-short;
+			}
+		}
 	}
 	// .article__share
 	&__share {

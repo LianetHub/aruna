@@ -17,24 +17,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/icons-1747924758413.woff") format("woff"), url("../fonts/icons-1747924758413.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -49,11 +41,20 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1747924759765.woff") format("woff"), url("../fonts/icons-1747924759765.woff2") format("woff2");
+  src: url("../fonts/icons-1761849897054.woff") format("woff"), url("../fonts/icons-1761849897054.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1761849895830.woff") format("woff"), url("../fonts/icons-1761849895830.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.article__body a:not([class])::before,
 .products__slide-card.products__slide-card--hit::before,
 .checkbox__input:checked + .checkbox__content::before,
 .pagination__btn:last-child::before,
@@ -149,7 +150,8 @@
   content: "\e90f";
 }
 
-.icon-arrow-short:before {
+.icon-arrow-short:before,
+.article__body a:not([class]):before {
   content: "\e900";
 }
 
@@ -2959,7 +2961,8 @@ body.lock {
   margin-top: 1rem;
 }
 
-.our-projects__footer-more {
+.our-projects__footer-more,
+.article__body a:not([class]) {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2972,7 +2975,8 @@ body.lock {
   color: #ffd665;
 }
 
-.our-projects__footer-more::before {
+.our-projects__footer-more::before,
+.article__body a:not([class])::before {
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
   transition: transform 0.3s ease 0s;
@@ -5800,7 +5804,8 @@ body.lock {
     border-top: 0.0625rem solid rgba(255, 255, 255, 0.19);
   }
 
-  .our-projects__footer-more {
+  .our-projects__footer-more,
+  .article__body a:not([class]) {
     font-size: 1.125rem;
   }
 
@@ -9995,7 +10000,8 @@ body.lock {
     color: #fff;
   }
 
-  .our-projects__footer-more:hover::before {
+  .our-projects__footer-more:hover::before,
+  .article__body a:hover:not([class])::before {
     -webkit-transform: translateX(0.625rem);
         -ms-transform: translateX(0.625rem);
             transform: translateX(0.625rem);
