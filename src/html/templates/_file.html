@@ -1,0 +1,24 @@
+<li class="files__item">
+    <div class="files__card card @@if(typeof desc == 'undefined') {card--small}">
+        <div class="card__header">
+            <div class="card__content">
+                <div class="card__title title-sm">@@title</div>
+                @@if(typeof desc !== 'undefined') {
+                <div class="card__desc">@@desc</div>
+                }
+            </div>
+            <div class="card__image">
+                <img src="@@image" alt="Изображение файла">
+            </div>
+        </div>
+        <div class="card__footer">
+            @@if(typeof details !== 'undefined') {
+            <a href="" class="card__btn btn btn-primary icon-download">Скачать</a>
+            <div class="card__details">@@details</div>
+            }
+            @@if(typeof details == 'undefined') {
+            <a href="/presentations.html" class="card__btn btn btn-primary">Перейти</a>
+            }
+        </div>
+    </div>
+</li>

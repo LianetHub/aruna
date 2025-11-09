@@ -1,0 +1,43 @@
+[
+    {
+        "title": "IES",
+        "desc": "Помогает смоделировать распределение света",
+        "image": "@img/files/ies.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Видео",
+        "desc": "Содержит видеозаписи с&nbsp;инструкцией",
+        "image": "@img/files/video.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Изображения светильников",
+        "desc": "Посмотрите изображения светильников",
+        "image": "@img/files/lamps.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Каталог",
+        "desc": "Весь ассортимент продуктов",
+        "image": "@img/files/catalog.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Логотип",
+        "desc": "Тут содержится наш фирменный логотип",
+        "image": "@img/files/logo.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Паспорта",
+        "desc": "Паспорта светильников",
+        "image": "@img/files/passport.png",
+        "details": "IES, 250 МБ"
+    },
+    {
+        "title": "Презентации",
+        "desc": "Идеально для архитекторов, дизайнеров, инженеров",
+        "image": "@img/files/presentation.png"
+    }
+]

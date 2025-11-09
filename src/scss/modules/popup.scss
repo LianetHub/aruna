@@ -31,6 +31,18 @@
 	padding: 0;
 	background: none;
 	max-width: rem(500);
+	&--video {
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		padding: rem(40) rem(16) rem(30);
+		.popup__body {
+			justify-content: center;
+			flex-direction: row;
+			background: transparent;
+			padding: 0;
+		}
+	}
 
 	// .popup__body
 	&__body {
@@ -42,6 +54,10 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		flex: 1 1 auto;
+		.popup__close {
+			color: #1f2b32;
+		}
 		@media (min-width: $md5) {
 			padding: 2.69rem 2.25rem;
 		}
@@ -88,20 +104,37 @@
 		top: 0.5rem;
 		right: 0.5rem;
 		font-size: 1.25rem;
+
+		transition: color 0.3s ease 0s;
+		&::before {
+			@extend %ic, .icon-close;
+		}
 		@media (min-width: $md4) {
 			font-size: 1.5rem;
 			top: 0.75rem;
 			right: 0.87rem;
 		}
-		color: #1f2b32;
-		transition: color 0.3s ease 0s;
-		&::before {
-			@extend %ic, .icon-close;
-		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: $accent;
 			}
+		}
+	}
+	&__video {
+		background: #000;
+		height: 0;
+		display: block;
+		position: relative;
+		width: 100%;
+
+		margin: auto;
+		padding-bottom: 56.25%;
+		& iframe {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 }

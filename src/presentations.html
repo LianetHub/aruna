@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'ARUNA | Презентации'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "className": "",
+            "active": 2
+            })
+            <main class="page">
+                <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Главная</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="/files.html" class="breadcrumbs__link" itemprop="item">
+                                    <span itemprop="name">Файлы</span>
+                                </a>
+                                <meta itemprop="position" content="2">
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumbs__link active" itemprop="item">
+                                    <span itemprop="name">Презентации</span>
+                                </a>
+                                <meta itemprop="position" content="3">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="files">
+                    <div class="files__container">
+                        <div class="files__header">
+                            <h1 class="files__title title-lg">Презентации</h1>
+                        </div>
+                        <ul class="files__list">
+                            @@loop('./html/templates/_file.html', './html/json/_presents.json')
+                        </ul>
+                    </div>
+                </section>
+                @@include('./html/_feedback.html', {})
+            </main>
+            @@include('html/_footer.html', {
+            "active": 2
+            })
+        </div>
+        @@include('html/_modal.html', {})
+        @@include('html/_js.html', {
+        "map": false
+        })
+    </body>
+</html>

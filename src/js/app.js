@@ -1,10 +1,9 @@
 "use strict";
 
 
-
-
 import * as devFunctions from './modules/functions.js';
 import { configurator } from './modules/configurator.js';
+
 
 //  init Fancybox
 if (typeof Fancybox !== "undefined" && Fancybox !== null) {
@@ -35,6 +34,46 @@ if (typeof Fancybox !== "undefined" && Fancybox !== null) {
                 popupTitle.textContent = customTitle || defaultTitle;
             }
         }
+    });
+
+
+
+    Fancybox.bind('[data-fancybox-video]', {
+        closeButton: false,
+        on: {
+            reveal: (instance) => {
+
+                const slide = instance.getSlide();
+
+                const trigger = slide?.triggerEl;
+                if (!trigger) return;
+
+                const videoCode = trigger.dataset.videoCode;
+                const ownerId = trigger.dataset.ownerId;
+                const container = document.querySelector("#vk-video-container");
+
+                if (videoCode && ownerId && container) {
+                    const vkVideoUrl = `https://vk.com/video_ext.php?oid=${ownerId}&id=${videoCode}&hd=2&autoplay=1&mute=0`;
+
+                    const iframe = document.createElement("iframe");
+                    iframe.src = vkVideoUrl;
+                    iframe.frameBorder = "0";
+                    iframe.allow = "autoplay; encrypted-media";
+                    iframe.allowFullscreen = true;
+                    iframe.width = "100%";
+                    iframe.height = "100%";
+
+                    container.innerHTML = "";
+                    container.appendChild(iframe);
+                }
+            },
+
+            close: () => {
+
+                const container = document.querySelector("#vk-video-container");
+                if (container) container.innerHTML = "";
+            },
+        },
     });
 }
 
