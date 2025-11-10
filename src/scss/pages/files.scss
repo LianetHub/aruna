@@ -140,6 +140,12 @@
 	}
 	// .card__title
 	&__title {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
 	}
 	// .card__desc
 	&__desc {
@@ -166,10 +172,20 @@
 		justify-content: center;
 		align-items: center;
 
-		width: rem(95);
-		height: rem(95);
+		width: rem(140);
+		height: rem(140);
 		margin-top: rem(-24);
 		margin-right: rem(-12);
+		@media (any-hover: hover) {
+			&:hover {
+				& img {
+					transform: scale(1.015);
+				}
+			}
+		}
+		& img {
+			transition: transform 0.3s ease;
+		}
 		@media (min-width: $md5) {
 			margin-top: rem(-30);
 			margin-right: rem(-32);

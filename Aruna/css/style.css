@@ -1,14 +1,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -17,8 +9,8 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -33,24 +25,32 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1762788363910.woff") format("woff"), url("../fonts/icons-1762788363910.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1762788362622.woff") format("woff"), url("../fonts/icons-1762788362622.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons-1762679611904.woff") format("woff"), url("../fonts/icons-1762679611904.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons-1762679609832.woff") format("woff"), url("../fonts/icons-1762679609832.woff2") format("woff2");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -5629,6 +5629,11 @@ body.lock {
   margin-top: auto;
 }
 
+.card__title {
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
 .card__desc {
   max-width: 15.75rem;
   font-size: 0.875rem;
@@ -5648,10 +5653,17 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 5.9375rem;
-  height: 5.9375rem;
+  width: 8.75rem;
+  height: 8.75rem;
   margin-top: -1.5rem;
   margin-right: -0.75rem;
+}
+
+.card__image img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .card__footer {
@@ -10463,6 +10475,16 @@ body.lock {
 
   .contacts__item-link:hover {
     color: rgba(255, 255, 255, 0.3);
+  }
+
+  .card__title:hover {
+    color: #ffd665;
+  }
+
+  .card__image:hover img {
+    -webkit-transform: scale(1.015);
+        -ms-transform: scale(1.015);
+            transform: scale(1.015);
   }
 }
 
