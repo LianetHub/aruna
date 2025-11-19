@@ -136,11 +136,19 @@
 			display: flex;
 			justify-content: space-between;
 			margin-top: 2rem;
-			align-items: flex-end;
+			align-items: center;
 		}
 		@media (min-width: $md1) {
 			margin-top: 2.5rem;
 			padding-right: 1rem;
+		}
+	}
+	&__bottom-info {
+		display: contents;
+		@media (min-width: $md4) {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
 		}
 	}
 	// .footer__contacts
@@ -209,19 +217,41 @@
 	&__privacy {
 		margin-top: 2rem;
 		font-size: 0.875rem;
-		@media (min-width: $md4) {
-			font-size: 0.8125rem;
-			margin-top: 0;
-		}
 
 		line-height: 160%;
 		text-decoration-line: underline;
 		color: rgba($color: #fff, $alpha: 0.5);
 		transition: color 0.3s ease 0s;
+		order: 1;
+		@media (min-width: $md4) {
+			font-size: 0.8125rem;
+			margin-top: rem(0);
+			order: 0;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #fff;
 			}
 		}
+	}
+	// .footer__winner
+	&__winner {
+		display: flex;
+		align-items: center;
+		gap: rem(21);
+		max-width: rem(272);
+		margin-top: 2rem;
+		@media (min-width: $md4) {
+			margin-top: 0;
+		}
+	}
+	// .footer__winner-logo
+	&__winner-logo {
+		flex: 0 0 rem(41);
+	}
+	// .footer__winner-text
+	&__winner-text {
+		font-size: rem(13);
+		line-height: 140%;
 	}
 }

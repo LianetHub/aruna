@@ -25,6 +25,14 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -33,7 +41,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1762966234947.woff") format("woff"), url("../fonts/icons-1762966234947.woff2") format("woff2");
+  src: url("../fonts/icons-1763576797521.woff") format("woff"), url("../fonts/icons-1763576797521.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -41,16 +49,8 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1762966236248.woff") format("woff"), url("../fonts/icons-1762966236248.woff2") format("woff2");
+  src: url("../fonts/icons-1763576796303.woff") format("woff"), url("../fonts/icons-1763576796303.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -2421,6 +2421,10 @@ body.lock {
   display: contents;
 }
 
+.footer__bottom-info {
+  display: contents;
+}
+
 .footer__contacts {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
@@ -2504,6 +2508,32 @@ body.lock {
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.footer__winner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3125rem;
+  max-width: 17rem;
+  margin-top: 2rem;
+}
+
+.footer__winner-logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 2.5625rem;
+          flex: 0 0 2.5625rem;
+}
+
+.footer__winner-text {
+  font-size: 0.8125rem;
+  line-height: 140%;
 }
 
 .page {
@@ -6897,9 +6927,20 @@ body.lock {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-top: 2rem;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .footer__bottom-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.25rem;
   }
 
   .footer__contacts {
@@ -6912,6 +6953,13 @@ body.lock {
 
   .footer__privacy {
     font-size: 0.8125rem;
+    margin-top: 0rem;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+
+  .footer__winner {
     margin-top: 0;
   }
 
