@@ -17,8 +17,24 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1763713913112.woff") format("woff"), url("../fonts/icons-1763713913112.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -31,25 +47,9 @@
 }
 
 @font-face {
-  font-family: "Cygre";
-  font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1763576797521.woff") format("woff"), url("../fonts/icons-1763576797521.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons-1763576796303.woff") format("woff"), url("../fonts/icons-1763576796303.woff2") format("woff2");
+  src: url("../fonts/icons-1763713914324.woff") format("woff"), url("../fonts/icons-1763713914324.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -2520,9 +2520,14 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.3125rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 1.25rem;
   max-width: 17rem;
   margin-top: 2rem;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .footer__winner-logo {
@@ -10047,7 +10052,6 @@ body.lock {
 
   .footer__bottom {
     margin-top: 2.5rem;
-    padding-right: 1rem;
   }
 
   .promo::before {
@@ -10442,6 +10446,10 @@ body.lock {
 
   .footer__privacy:hover {
     color: #fff;
+  }
+
+  .footer__winner:hover {
+    color: #ffd665;
   }
 
   .our-projects__footer-more:hover::before,
