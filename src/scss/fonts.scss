@@ -1,15 +1,15 @@
 @font-face {
                             font-family: 'Cygre';
                             font-display: swap;
-                            src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-                            font-weight: 700;
+                            src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+                            font-weight: 350;
                             font-style: normal;
                         }
 @font-face {
                             font-family: 'Cygre';
                             font-display: swap;
-                            src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-                            font-weight: 350;
+                            src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+                            font-weight: 700;
                             font-style: normal;
                         }
 @font-face {
@@ -27,13 +27,6 @@
                             font-style: normal;
                         }
 @font-face {
-                            font-family: 'icons';
-                            font-display: swap;
-                            src: url("../fonts/icons-1763713913112.woff") format("woff"), url("../fonts/icons-1763713913112.woff2") format("woff2");
-                            font-weight: 400;
-                            font-style: normal;
-                        }
-@font-face {
                             font-family: 'Cygre';
                             font-display: swap;
                             src: url("../fonts/Cygre-SemiBold.woff") format("woff"), url("../fonts/Cygre-SemiBold.woff2") format("woff2");
@@ -43,7 +36,14 @@
 @font-face {
                             font-family: 'icons';
                             font-display: swap;
-                            src: url("../fonts/icons-1763713914324.woff") format("woff"), url("../fonts/icons-1763713914324.woff2") format("woff2");
+                            src: url("../fonts/icons-1763741754693.woff") format("woff"), url("../fonts/icons-1763741754693.woff2") format("woff2");
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+@font-face {
+                            font-family: 'icons';
+                            font-display: swap;
+                            src: url("../fonts/icons-1763741755957.woff") format("woff"), url("../fonts/icons-1763741755957.woff2") format("woff2");
                             font-weight: 400;
                             font-style: normal;
                         }
