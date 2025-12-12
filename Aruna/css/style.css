@@ -17,14 +17,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -39,9 +31,9 @@
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/icons-1763741754693.woff") format("woff"), url("../fonts/icons-1763741754693.woff2") format("woff2");
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,7 +41,15 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1763741755957.woff") format("woff"), url("../fonts/icons-1763741755957.woff2") format("woff2");
+  src: url("../fonts/icons-1765552120575.woff") format("woff"), url("../fonts/icons-1765552120575.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1765552119330.woff") format("woff"), url("../fonts/icons-1765552119330.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -244,6 +244,11 @@ body.lock {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-x: clip;
+  --header-height: 102px;
+}
+
+.wrapper:has(.sale-banner.visible) {
+  --header-height: 184px;
 }
 
 [class*=__container] {
@@ -1291,6 +1296,135 @@ body.lock {
   color: #039be5;
 }
 
+.sale-banner {
+  background: rgba(0, 0, 0, 0.52);
+  z-index: 12;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.sale-banner__wrapper {
+  color: #fff;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: #182127;
+  position: relative;
+  padding: 4.13rem 0.5rem 1.69rem;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.sale-banner__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sale-banner__icon {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -3.12rem;
+  height: 6.3125rem;
+}
+
+.sale-banner__icon img {
+  max-width: 3.03869rem;
+}
+
+.sale-banner__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 2.4375rem;
+  height: 3.5625rem;
+  border-radius: 3.5625rem;
+  background: #ffd665;
+  -webkit-filter: blur(1.875rem);
+          filter: blur(1.875rem);
+}
+
+.sale-banner__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sale-banner__title {
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  font-size: 1.25rem;
+  line-height: 114%;
+}
+
+.sale-banner__text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 110%;
+  max-width: 90%;
+  margin-top: 0.875rem;
+}
+
+.sale-banner__close {
+  position: absolute;
+  color: #747a7d;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.1875rem;
+}
+
+.sale-banner__btn {
+  width: 100%;
+}
+
+.sale-banner__btn.btn.icon-more {
+  padding: 0.44rem 0.75rem 0.44rem 1rem;
+  font-size: 1rem;
+  min-height: 2.625rem;
+  gap: 0.31rem;
+}
+
 .title-lg {
   font-weight: 500;
   font-size: 2rem;
@@ -1880,6 +2014,11 @@ body.lock {
   border: 0.09375rem solid #ffd665;
   color: #ffd665;
   background: rgba(255, 214, 101, 0.1);
+}
+
+.btn.btn-white {
+  background: #fff;
+  color: #151d22;
 }
 
 .btn.btn-secondary {
@@ -2546,7 +2685,7 @@ body.lock {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow-x: clip;
-  padding-top: 3.75rem;
+  padding-top: max(3.75rem, var(--header-height) + 1rem);
 }
 
 .no-webp .promo {
@@ -5949,7 +6088,7 @@ body.lock {
   }
 
   .page {
-    padding-top: 5rem;
+    padding-top: max(5rem, var(--header-height) + 1rem);
   }
 
   .promo::before {
@@ -6815,6 +6954,90 @@ body.lock {
     min-width: 3.875rem;
     gap: 0.63rem;
     right: 2rem;
+  }
+
+  .sale-banner {
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    height: auto;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -5.125rem;
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, margin-top 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, margin-top 0.3s ease;
+  }
+
+  .sale-banner.visible {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+  }
+
+  .sale-banner__wrapper {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    -webkit-transition: none 0.3s ease;
+    transition: none 0.3s ease;
+    overflow: hidden;
+    padding: 1.25rem 0;
+    background: #10181d;
+    border-radius: 0;
+  }
+
+  .sale-banner__content {
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 4.06rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-right: 2.5rem;
+  }
+
+  .sale-banner__icon {
+    height: 4.1875rem;
+    top: 50%;
+    width: 4.06rem;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 0;
+  }
+
+  .sale-banner__icon img {
+    max-width: 2.0625rem;
+  }
+
+  .sale-banner__main {
+    text-align: left;
+  }
+
+  .sale-banner__text {
+    margin-top: 0;
+  }
+
+  .sale-banner__close {
+    font-size: 1.6875rem;
+    right: 1rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  .sale-banner__btn {
+    width: auto;
+    margin-left: auto;
   }
 
   .title-sm {
@@ -7836,9 +8059,24 @@ body.lock {
   }
 }
 
+@media (min-width: 840px) {
+  .sale-banner__content {
+    padding-right: 0;
+  }
+}
+
 @media (min-width: 991.98px) {
   [class*=__container] {
     max-width: 60rem;
+  }
+
+  .sale-banner__content {
+    padding-right: 2.5rem;
+  }
+
+  .sale-banner__title {
+    line-height: 140%;
+    font-size: 1.5rem;
   }
 
   .footer__top {
@@ -7868,7 +8106,7 @@ body.lock {
   }
 
   .page {
-    padding-top: 6.25rem;
+    padding-top: max(6.25rem, var(--header-height) + 1rem);
   }
 
   .promo::before {
@@ -8419,6 +8657,12 @@ body.lock {
   }
 }
 
+@media (min-width: 1070px) {
+  .sale-banner__content {
+    padding-right: 0;
+  }
+}
+
 @media (min-width: 1199.98px) {
   body.lock {
     overflow: visible;
@@ -8441,6 +8685,22 @@ body.lock {
 
   .widgets {
     right: 3.5rem;
+  }
+
+  .sale-banner__content {
+    padding-right: 2rem;
+  }
+
+  .sale-banner__main {
+    gap: 1.875rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .sale-banner__text {
+    max-width: 19.8125rem;
   }
 
   .title-lg {
@@ -9775,6 +10035,13 @@ body.lock {
   }
 }
 
+@media (min-width: 1260px) {
+  .sale-banner__content {
+    gap: 1.875rem;
+    padding-right: 0;
+  }
+}
+
 @media (min-width: 1400px) {
   .col-xxl {
     -webkit-box-flex: 1;
@@ -10036,6 +10303,14 @@ body.lock {
     max-width: 78.125rem;
   }
 
+  .sale-banner__title {
+    font-size: 1.75rem;
+  }
+
+  .sale-banner__close {
+    right: 2rem;
+  }
+
   .header__body {
     padding: 1.75rem 0;
   }
@@ -10192,8 +10467,36 @@ body.lock {
 }
 
 @media (max-width: 767.98px) {
+  body:has(.sale-banner.visible) {
+    overflow: hidden;
+  }
+
   .wrapper {
     overflow: hidden;
+  }
+
+  .sale-banner {
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 100vh;
+  }
+
+  .sale-banner.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sale-banner.visible .sale-banner__wrapper {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
   .pc-only {
@@ -10391,6 +10694,10 @@ body.lock {
 
   .widgets__item:hover {
     color: #ffc832;
+  }
+
+  .sale-banner__close:hover {
+    color: #ba2028;
   }
 
   .pagination__btn:hover {

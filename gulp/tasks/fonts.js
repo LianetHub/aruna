@@ -104,13 +104,12 @@ export const fontsStyle = () => {
                         default: fontWeight = 400; break;
                     }
 
-                    let dateHash = Date.now();
 
                     fs.appendFile(fontsFile,
                         `@font-face {
                             font-family: '${fontName}';
                             font-display: swap;
-                            src: url("../fonts/${fontFileName === "icons" ? `${fontFileName}-${dateHash}` : fontFileName}.woff") format("woff"), url("../fonts/${fontFileName === "icons" ? `${fontFileName}-${dateHash}` : fontFileName}.woff2") format("woff2");
+                            src: url("../fonts/${fontFileName === "icons" ? `${fontFileName}}` : fontFileName}.woff") format("woff"), url("../fonts/${fontFileName === "icons" ? `${fontFileName}` : fontFileName}.woff2") format("woff2");
                             font-weight: ${fontWeight};
                             font-style: normal;
                         }\r\n`, cb);

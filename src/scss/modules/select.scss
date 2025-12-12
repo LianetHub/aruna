@@ -1,6 +1,6 @@
 .select._error ~ .dropdown {
 	& .dropdown__button {
-		outline: 1px solid #ba2028;
+		outline: 1px solid $red;
 		background: #fff1ed;
 	}
 }

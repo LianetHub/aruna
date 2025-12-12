@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.beforeSlider();
     devFunctions.formSubmit();
     devFunctions.animation();
+    devFunctions.initHeaderObserver()
 
     configurator();
 
@@ -306,10 +307,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // animation header
     window.addEventListener('scroll', function (e) {
-
-        document.body.style.setProperty("--header-height", Math.ceil(document.querySelector('.header__wrapper').offsetHeight) + "px")
+        getHeaderHeight()
     })
 
+    function getHeaderHeight() {
+        document.body.style.setProperty("--header-height", Math.ceil(document.querySelector('.header__wrapper').offsetHeight) + "px")
+    }
+
+    getHeaderHeight()
 
     const headerElement = document.querySelector('.header');
 

@@ -7,6 +7,7 @@ export { formSubmit } from './formsubmit.js';
 export { animation } from './animation.js';
 export { toggleLocking } from "./toggleLocking.js";
 export { intInputMask } from './intInputMask.js';
+export { initHeaderObserver } from './headerObserver.js';
 export { CustomSelect } from "./select.js";
 
 

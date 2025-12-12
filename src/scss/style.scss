@@ -39,6 +39,7 @@ $black: #000;
 $dark: #10181d;
 $white: #fff;
 $accent: #ffd665;
+$red: #ba2028;
 
 // Z-Index
 $ui-index-1: 1; // Для наполняющих элементов в общем потоке
@@ -66,6 +67,11 @@ body {
 			overflow: visible;
 		}
 	}
+	&:has(.sale-banner.visible) {
+		@media (max-width: $md4) {
+			overflow: hidden;
+		}
+	}
 }
 // ==================ОБОЛОЧКА==============================
 .wrapper {
@@ -78,6 +84,10 @@ body {
 	overflow-x: clip;
 	@media (max-width: $md4) {
 		overflow: hidden;
+	}
+	--header-height: 102px;
+	&:has(.sale-banner.visible) {
+		--header-height: 184px;
 	}
 }
 
@@ -127,12 +137,12 @@ body {
 .page {
 	flex: 1 1 auto;
 	overflow-x: clip;
-	padding-top: rem(60);
+	padding-top: max(rem(60), calc(var(--header-height) + 1rem));
 	@media (min-width: $md5) {
-		padding-top: rem(80);
+		padding-top: max(rem(80), calc(var(--header-height) + 1rem));
 	}
 	@media (min-width: $md3) {
-		padding-top: rem(100);
+		padding-top: max(rem(100), calc(var(--header-height) + 1rem));
 	}
 }
 // ========================================================
