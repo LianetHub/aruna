@@ -1,40 +1,21 @@
 export const initHeaderObserver = () => {
-    const headerWrapper = document.querySelector('.header__wrapper');
 
+    const headerWrapper = document.querySelector('.header__wrapper');
     if (headerWrapper) {
         const updateHeaderHeight = () => {
-            const height = headerWrapper.offsetHeight;
-            document.body.style.setProperty("--header-height", `${height}px`);
+            document.body.style.setProperty("--header-height", `${headerWrapper.offsetHeight}px`);
         };
-
-
-        const observer = new ResizeObserver(updateHeaderHeight);
-        observer.observe(headerWrapper);
+        new ResizeObserver(updateHeaderHeight).observe(headerWrapper);
     }
 
     const headerElement = document.querySelector('.header');
-
     const scrollTrigger = document.createElement('div');
-    scrollTrigger.style.position = 'absolute';
-    scrollTrigger.style.top = '0';
-    scrollTrigger.style.height = '1px';
-    scrollTrigger.style.width = '1px';
-    scrollTrigger.style.opacity = '0';
-    scrollTrigger.style.pointerEvents = 'none';
+    Object.assign(scrollTrigger.style, { position: 'absolute', top: '0', height: '1px', width: '1px', opacity: '0', pointerEvents: 'none' });
     document.body.prepend(scrollTrigger);
 
-    const scrollCallback = (entries) => {
-
-        if (!entries[0].isIntersecting) {
-            headerElement.classList.add('scroll');
-        } else {
-            headerElement.classList.remove('scroll');
-        }
-    };
-
-    const headerObserver = new IntersectionObserver(scrollCallback);
-    headerObserver.observe(scrollTrigger);
-
+    new IntersectionObserver((entries) => {
+        headerElement.classList.toggle('scroll', !entries[0].isIntersecting);
+    }).observe(scrollTrigger);
 
 
     const saleBanner = document.querySelector('.sale-banner');
@@ -47,35 +28,72 @@ export const initHeaderObserver = () => {
 
         const closeBanner = () => {
             saleBanner.classList.remove('visible');
-
             sessionStorage.setItem(storageKey, 'true');
-        };
-
-        const isClosedInSession = sessionStorage.getItem(storageKey);
-
-        if (!isClosedInSession) {
 
             setTimeout(() => {
-                saleBanner.classList.add('visible');
+                if (saleBannerWrapper) saleBannerWrapper.style.transform = '';
+            }, 300);
+        };
 
+
+        if (!sessionStorage.getItem(storageKey)) {
+            setTimeout(() => {
+                saleBanner.classList.add('visible');
             }, 3000);
         }
 
 
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeBanner();
-            });
-        }
+        closeBtn?.addEventListener('click', (e) => { e.preventDefault(); closeBanner(); });
+
 
         saleBanner.addEventListener('click', (e) => {
-            closeBanner();
+            if (e.target === saleBanner) closeBanner();
         });
 
+
         if (saleBannerWrapper) {
-            saleBannerWrapper.addEventListener('click', (e) => {
-                e.stopPropagation();
+            let startY = 0;
+            let currentY = 0;
+            let isDragging = false;
+
+
+            saleBannerWrapper.addEventListener('touchstart', (e) => {
+                if (!saleBanner.classList.contains('visible')) return;
+
+                startY = e.touches[0].clientY;
+                isDragging = true;
+
+                saleBannerWrapper.style.transition = 'none';
+            }, { passive: true });
+
+
+            saleBannerWrapper.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                currentY = e.touches[0].clientY;
+                const diff = currentY - startY;
+
+
+                if (diff > 0) {
+                    saleBannerWrapper.style.transform = `translateY(${diff}px)`;
+                }
+            }, { passive: true });
+
+
+            saleBannerWrapper.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+
+                const diff = currentY - startY;
+                const threshold = 100;
+
+                saleBannerWrapper.style.transition = '';
+
+                if (diff > threshold) {
+                    saleBannerWrapper.style.transform = `translateY(calc(100% + 50px))`;
+                    setTimeout(closeBanner, 300);
+                } else {
+                    saleBannerWrapper.style.transform = '';
+                }
             });
         }
     }

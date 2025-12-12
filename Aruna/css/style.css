@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
-  font-weight: 350;
+  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Bold.woff") format("woff"), url("../fonts/Cygre-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/Cygre-Book.woff") format("woff"), url("../fonts/Cygre-Book.woff2") format("woff2");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -41,7 +41,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1765552120575.woff") format("woff"), url("../fonts/icons-1765552120575.woff2") format("woff2");
+  src: url("../fonts/icons-1765566274411.woff") format("woff"), url("../fonts/icons-1765566274411.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1765552119330.woff") format("woff"), url("../fonts/icons-1765552119330.woff2") format("woff2");
+  src: url("../fonts/icons-1765566273146.woff") format("woff"), url("../fonts/icons-1765566273146.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -1312,6 +1312,15 @@ body.lock {
   position: relative;
 }
 
+.sale-banner__resizer {
+  position: absolute;
+  top: -3.125rem;
+  left: 0;
+  width: 100%;
+  height: 6.25rem;
+  z-index: 9;
+}
+
 .sale-banner__wrapper {
   color: #fff;
   border-radius: 0.75rem 0.75rem 0 0;
@@ -1412,6 +1421,7 @@ body.lock {
   top: 0.75rem;
   right: 0.75rem;
   font-size: 1.1875rem;
+  z-index: 10;
 }
 
 .sale-banner__btn {
@@ -6976,6 +6986,10 @@ body.lock {
     margin-top: 0;
   }
 
+  .sale-banner__resizer {
+    display: none;
+  }
+
   .sale-banner__wrapper {
     -webkit-transform: none;
         -ms-transform: none;
@@ -10485,7 +10499,7 @@ body.lock {
     left: 0;
     bottom: 0;
     right: 0;
-    min-height: 100vh;
+    height: 100svh;
   }
 
   .sale-banner.visible {
