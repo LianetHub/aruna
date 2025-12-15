@@ -15,12 +15,12 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		height: 100svh;
+		height: 100dvh;
 		&.visible {
 			opacity: 1;
 			visibility: visible;
 			.sale-banner__wrapper {
-				transform: none;
+				transform: translate3d(0, 0, 1px);
 			}
 		}
 	}
@@ -59,11 +59,12 @@
 		background: #182127;
 		position: relative;
 		padding: 4.13rem rem(8) 1.69rem;
-		transform: translateY(100%);
-		transition: transform 0.3s ease;
+		transform: translate3d(0, 100%, 1px);
+		will-change: transform;
+		transition: transform 0.3s ease 0.15s;
 		@media (min-width: $md4) {
 			transform: none;
-			transition: none 0.3s ease;
+			transition: none;
 			overflow: hidden;
 			padding: rem(20) 0;
 			background: #10181d;
@@ -146,11 +147,13 @@
 		text-align: center;
 		align-items: center;
 		@media (min-width: $md4) {
+			align-items: flex-start;
 			text-align: left;
 		}
 		@media (min-width: $md2) {
 			gap: rem(30);
 			flex-direction: row;
+			align-items: center;
 		}
 	}
 	// .sale-banner__title

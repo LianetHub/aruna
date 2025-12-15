@@ -31,6 +31,14 @@
 }
 
 @font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons-1765824754682.woff") format("woff"), url("../fonts/icons-1765824754682.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Cygre";
   font-display: swap;
   src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
@@ -41,15 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1765566274411.woff") format("woff"), url("../fonts/icons-1765566274411.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons-1765566273146.woff") format("woff"), url("../fonts/icons-1765566273146.woff2") format("woff2");
+  src: url("../fonts/icons-1765824753448.woff") format("woff"), url("../fonts/icons-1765824753448.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -1327,13 +1327,13 @@ body.lock {
   background: #182127;
   position: relative;
   padding: 4.13rem 0.5rem 1.69rem;
-  -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: translate3d(0, 100%, 1px);
+          transform: translate3d(0, 100%, 1px);
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.3s ease 0.15s;
+  transition: -webkit-transform 0.3s ease 0.15s;
+  transition: transform 0.3s ease 0.15s;
+  transition: transform 0.3s ease 0.15s, -webkit-transform 0.3s ease 0.15s;
 }
 
 .sale-banner__content {
@@ -6994,8 +6994,8 @@ body.lock {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-    -webkit-transition: none 0.3s ease;
-    transition: none 0.3s ease;
+    -webkit-transition: none;
+    transition: none;
     overflow: hidden;
     padding: 1.25rem 0;
     background: #10181d;
@@ -7033,6 +7033,9 @@ body.lock {
   }
 
   .sale-banner__main {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     text-align: left;
   }
 
@@ -8711,6 +8714,9 @@ body.lock {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .sale-banner__text {
@@ -10499,7 +10505,7 @@ body.lock {
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100svh;
+    height: 100dvh;
   }
 
   .sale-banner.visible {
@@ -10508,9 +10514,8 @@ body.lock {
   }
 
   .sale-banner.visible .sale-banner__wrapper {
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
+    -webkit-transform: translate3d(0, 0, 1px);
+            transform: translate3d(0, 0, 1px);
   }
 
   .pc-only {

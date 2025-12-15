@@ -23,6 +23,7 @@ export const initHeaderObserver = () => {
     if (saleBanner) {
         const saleBannerWrapper = saleBanner.querySelector('.sale-banner__wrapper');
         const closeBtn = saleBanner.querySelector('.sale-banner__close');
+        const saleBannerBtn = saleBanner.querySelector('.sale-banner__btn');
         const storageKey = 'sale-banner-closed';
 
 
@@ -44,6 +45,10 @@ export const initHeaderObserver = () => {
 
 
         closeBtn?.addEventListener('click', (e) => { e.preventDefault(); closeBanner(); });
+
+        saleBannerBtn?.addEventListener('click', () => {
+            sessionStorage.setItem(storageKey, 'true');
+        });
 
 
         saleBanner.addEventListener('click', (e) => {
