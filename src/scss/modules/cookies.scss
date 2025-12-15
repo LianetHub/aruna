@@ -1,0 +1,50 @@
+.cookie {
+	position: fixed;
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(rem(17));
+	-webkit-backdrop-filter: blur(rem(17));
+	z-index: 6;
+	left: rem(16);
+	right: rem(16);
+	bottom: rem(22);
+	padding: 1rem;
+
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+	@media (min-width: $md5) {
+		padding: 1.5rem 1.875rem 1.5625rem 1.875rem;
+		max-width: rem(513);
+		bottom: rem(40);
+		left: rem(32);
+		right: auto;
+	}
+
+	&--hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	// .cookie__text
+	&__text {
+		font-size: 0.8125rem;
+		line-height: 138.462%;
+		@media (min-width: $md5) {
+			line-height: 140%;
+			font-size: 1.125rem;
+		}
+	}
+	// .cookie__accept
+	&__accept {
+		margin-top: rem(18);
+		width: 100%;
+		@media (min-width: $md5) {
+			width: auto;
+		}
+		&.btn.btn-white-outline {
+			padding: 0.7rem 2.125rem;
+			background: transparent;
+		}
+	}
+}

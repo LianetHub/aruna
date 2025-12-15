@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     devFunctions.beforeSlider();
     devFunctions.formSubmit();
     devFunctions.animation();
-    devFunctions.initHeaderObserver()
+    devFunctions.initHeaderObserver();
+    devFunctions.cookies();
 
     configurator();
 
