@@ -17,6 +17,14 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -31,9 +39,9 @@
 }
 
 @font-face {
-  font-family: "Cygre";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
+  src: url("../fonts/icons-1768316158846.woff") format("woff"), url("../fonts/icons-1768316158846.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -41,15 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1765826212122.woff") format("woff"), url("../fonts/icons-1765826212122.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons-1765826210576.woff") format("woff"), url("../fonts/icons-1765826210576.woff2") format("woff2");
+  src: url("../fonts/icons-1768316160126.woff") format("woff"), url("../fonts/icons-1768316160126.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -5741,12 +5741,32 @@ body.lock {
 .privacy__body {
   margin-top: 3rem;
   max-width: 52.79869rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.privacy__body a {
+  text-decoration: underline;
+  color: #ffd665;
 }
 
 .privacy__body h2 {
+  margin-bottom: 0.75rem;
   font-weight: 500;
   line-height: 120%;
   font-size: 1.125rem;
+}
+
+.privacy__body h2::before {
+  content: counter(section) ". ";
+  margin-right: 0.5rem;
+  white-space: nowrap;
 }
 
 .privacy__body h2:not(:first-child) {
@@ -5766,14 +5786,65 @@ body.lock {
   margin-top: 1.2rem;
 }
 
+.privacy__body dfn {
+  color: #ffd665;
+  font-weight: 500;
+}
+
 .privacy__body ul li {
+  position: relative;
   line-height: 120%;
   font-size: 0.875rem;
+  padding-left: 1em;
+}
+
+.privacy__body ul li:not(:last-child) {
+  margin-bottom: 0.15rem;
 }
 
 .privacy__body ul li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
   content: "-";
-  margin-right: 0.25rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.privacy__body ol {
+  margin-top: 0.25rem;
+  counter-reset: item;
+}
+
+.privacy__body ol > li {
+  position: relative;
+  counter-increment: item;
+  line-height: 120%;
+  font-size: 0.875rem;
+  padding-left: 2.25em;
+}
+
+.privacy__body ol > li:not(:last-child) {
+  margin-bottom: 0.15rem;
+}
+
+.privacy__body ol > li ol > li {
+  padding-left: 3.25em;
+}
+
+.privacy__body ol > li ol > li ol > li {
+  padding-left: 3.75em;
+}
+
+.privacy__body ol > li::before {
+  content: counter(section) "." counters(item, ".") ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.privacy__section {
+  counter-increment: section;
 }
 
 .files {
@@ -6686,6 +6757,10 @@ body.lock {
   }
 
   .privacy__body ul li {
+    font-size: 1rem;
+  }
+
+  .privacy__body ol > li {
     font-size: 1rem;
   }
 
@@ -10926,6 +11001,10 @@ body.lock {
 
   .contacts__item-link:hover {
     color: rgba(255, 255, 255, 0.3);
+  }
+
+  .privacy__body a:hover {
+    text-decoration: none;
   }
 
   .card__title:hover {
