@@ -30,6 +30,14 @@
 	&__text {
 		font-size: 0.8125rem;
 		line-height: 138.462%;
+		& a {
+			text-decoration: underline;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
 		@media (min-width: $md5) {
 			line-height: 140%;
 			font-size: 1.125rem;

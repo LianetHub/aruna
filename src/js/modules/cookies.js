@@ -39,7 +39,7 @@ export const cookies = () => {
             noticeDiv.classList.add('cookie', 'cookie--hidden');
             noticeDiv.innerHTML =
                 '<div class="cookie__text">' +
-                'Мы используем файлы cookie, чтобы сайт работал&nbsp;лучше. Оставаясь с нами, вы соглашаетесь на использование файлов cookie.' +
+                'Мы используем файлы cookie, чтобы сайт работал&nbsp;лучше. Оставаясь с нами, вы соглашаетесь на <a href="">использование файлов cookie</a>.' +
                 '</div>' +
                 '<button type="button" class="cookie__accept btn btn-white-outline btn-sm">Хорошо</button>';
 
@@ -47,7 +47,7 @@ export const cookies = () => {
 
             setTimeout(() => {
                 noticeDiv.classList.remove('cookie--hidden');
-            }, 100);
+            }, 3000);
 
             document.querySelector('.cookie__accept').addEventListener('click', function () {
                 setCookie('cookie_notice', 1, { expires: 180 * 24 * 60 * 60, path: '/' });

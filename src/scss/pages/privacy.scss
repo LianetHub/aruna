@@ -11,6 +11,7 @@
 	}
 	// .privacy__title
 	&__title {
+		line-height: 1;
 		@media (max-width: $md5) {
 			font-size: 1.5rem;
 		}
@@ -26,13 +27,13 @@
 			max-width: 46.8125rem;
 		}
 		& a {
-			text-decoration: underline;
-			color: $accent;
-			@media (any-hover: hover) {
-				&:hover {
-					text-decoration: none;
-				}
-			}
+			// text-decoration: underline;
+			// color: $accent;
+			// @media (any-hover: hover) {
+			// 	&:hover {
+			// 		text-decoration: none;
+			// 	}
+			// }
 		}
 		& h2 {
 			&::before {
@@ -82,10 +83,10 @@
 				font-size: 1rem;
 			}
 		}
-		& dfn {
-			color: $accent;
-			font-weight: 500;
-		}
+		// & dfn {
+		// 	color: $accent;
+		// 	font-weight: 500;
+		// }
 		& ul {
 			& li {
 				position: relative;

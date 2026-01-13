@@ -17,14 +17,6 @@
 @font-face {
   font-family: "Cygre";
   font-display: swap;
-  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cygre";
-  font-display: swap;
   src: url("../fonts/Cygre-Medium.woff") format("woff"), url("../fonts/Cygre-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -41,7 +33,15 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1768316158846.woff") format("woff"), url("../fonts/icons-1768316158846.woff2") format("woff2");
+  src: url("../fonts/icons-1768322438394.woff") format("woff"), url("../fonts/icons-1768322438394.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cygre";
+  font-display: swap;
+  src: url("../fonts/Cygre-Regular.woff") format("woff"), url("../fonts/Cygre-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons-1768316160126.woff") format("woff"), url("../fonts/icons-1768316160126.woff2") format("woff2");
+  src: url("../fonts/icons-1768322437130.woff") format("woff"), url("../fonts/icons-1768322437130.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -1459,6 +1459,10 @@ body.lock {
 .cookie__text {
   font-size: 0.8125rem;
   line-height: 138.462%;
+}
+
+.cookie__text a {
+  text-decoration: underline;
 }
 
 .cookie__accept {
@@ -5738,6 +5742,10 @@ body.lock {
   padding: 0rem 0em 1.87rem 0em;
 }
 
+.privacy__title {
+  line-height: 1;
+}
+
 .privacy__body {
   margin-top: 3rem;
   max-width: 52.79869rem;
@@ -5749,11 +5757,6 @@ body.lock {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-}
-
-.privacy__body a {
-  text-decoration: underline;
-  color: #ffd665;
 }
 
 .privacy__body h2 {
@@ -5784,11 +5787,6 @@ body.lock {
 
 .privacy__body p:not(:first-child) {
   margin-top: 1.2rem;
-}
-
-.privacy__body dfn {
-  color: #ffd665;
-  font-weight: 500;
 }
 
 .privacy__body ul li {
@@ -10847,6 +10845,10 @@ body.lock {
     color: #ba2028;
   }
 
+  .cookie__text a:hover {
+    text-decoration: none;
+  }
+
   .pagination__btn:hover {
     color: #fff;
   }
@@ -11001,10 +11003,6 @@ body.lock {
 
   .contacts__item-link:hover {
     color: rgba(255, 255, 255, 0.3);
-  }
-
-  .privacy__body a:hover {
-    text-decoration: none;
   }
 
   .card__title:hover {
