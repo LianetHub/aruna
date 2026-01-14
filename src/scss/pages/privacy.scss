@@ -11,7 +11,9 @@
 	}
 	// .privacy__title
 	&__title {
-		line-height: 1;
+		&.title-lg {
+			line-height: 1;
+		}
 		@media (max-width: $md5) {
 			font-size: 1.5rem;
 		}
@@ -27,13 +29,13 @@
 			max-width: 46.8125rem;
 		}
 		& a {
-			// text-decoration: underline;
+			text-decoration: underline;
 			// color: $accent;
-			// @media (any-hover: hover) {
-			// 	&:hover {
-			// 		text-decoration: none;
-			// 	}
-			// }
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 		& h2 {
 			&::before {
