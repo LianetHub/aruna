@@ -50,9 +50,10 @@ $ui-index-5: 5; // Для модалок
 $ui-index-6: 6; // Для элементов, перекрывающих все
 
 //ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ
-html {
-	scroll-padding-top: var(--header-height);
+* {
+	scroll-margin-top: var(--header-height);
 }
+
 body {
 	font-family: $fontfamily, sans-serif;
 	color: $white;
