@@ -367,6 +367,10 @@
 
 		&.product-card__image_composite {
 			padding: 0;
+
+			& img {
+				max-height: 50vh;
+			}
 		}
 
 		& img {

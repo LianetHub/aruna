@@ -18,12 +18,15 @@
 	}
 
 	// .breadcrumbs__container
-	&__container {}
+	&__container {
+		min-width: 0;
+	}
 
 	// .breadcrumbs__list
 	&__list {
 		display: flex;
 		align-items: center;
+		min-width: 0;
 		color: #8a8e92;
 
 		@media (min-width: $md5) {
@@ -35,9 +38,16 @@
 	&__item {
 		display: inline-flex;
 		align-items: center;
+		flex-shrink: 0;
 
 		@media (min-width: $md5) {
 			gap: 0.25rem;
+		}
+
+		&:last-child {
+			min-width: 0;
+			flex-shrink: 1;
+			overflow: hidden;
 		}
 
 		&:not(:first-child) {
@@ -62,10 +72,6 @@
 	// .breadcrumbs__link
 	&__link {
 		transition: color 0.3s ease 0s;
-		white-space: nowrap;
-		max-width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
 		font-size: 0.75rem;
 
 		@media (min-width: $md4) {
@@ -81,6 +87,15 @@
 		&.active {
 			pointer-events: none;
 			color: #fff;
+		}
+
+		.breadcrumbs__item:last-child & {
+			display: block;
+			min-width: 0;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 }
