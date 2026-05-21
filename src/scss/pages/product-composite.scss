@@ -4,12 +4,13 @@
 	&__advantages {
 		margin-top: 1.6rem;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+
 		gap: 1.75rem;
 		max-width: 34.5rem;
 		order: -1;
 
 		@media (min-width: $md4) {
+			grid-template-columns: repeat(2, 1fr);
 			order: 0;
 			margin-top: 1.8rem;
 		}
@@ -58,6 +59,38 @@
 	}
 }
 
+
+.product-info__characteristics_composite {
+	text-align: left;
+
+
+	.product-info__characteristics-item {
+		align-items: flex-start;
+		flex: 0 0 9.5rem;
+		max-width: 9.5rem;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.product-info__characteristics-icon {
+		width: 5rem;
+		height: 5rem;
+		border: rem(1) solid #c2c5c6;
+		border-radius: 0.31rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+
+		& img {
+			max-width: 2.5rem;
+			max-height: 2.5rem;
+			object-fit: contain;
+		}
+	}
+}
 
 .product-info__spec-caption {
 	font-weight: 500;

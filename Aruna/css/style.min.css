@@ -201,6 +201,10 @@ body {
   min-width: 320px;
   min-height: 100%;
   line-height: normal;
+  --header-height: 102px;
+}
+body:has(.sale-banner.visible) {
+  --header-height: 184px;
 }
 body.lock {
   overflow: hidden;
@@ -223,15 +227,11 @@ body.lock {
   display: flex;
   flex-direction: column;
   overflow-x: clip;
-  --header-height: 102px;
 }
 @media (max-width: 767.98px) {
   .wrapper {
     overflow: hidden;
   }
-}
-.wrapper:has(.sale-banner.visible) {
-  --header-height: 184px;
 }
 
 [class*=__container] {
@@ -5756,8 +5756,10 @@ body.lock {
   order: -1;
   max-width: 57rem;
 }
-.product-card__title.product-card__title_offset {
-  margin-right: -17rem;
+@media (min-width: 1199.98px) {
+  .product-card__title.product-card__title_offset {
+    margin-right: -17rem;
+  }
 }
 .product-card__content {
   display: grid;
@@ -5781,8 +5783,16 @@ body.lock {
     align-items: flex-start;
     padding: 0em 0em 5.56rem 0em;
   }
+}
+.product-card__content.product-card__content_small {
+  padding-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1199.98px) {
   .product-card__content.product-card__content_small {
-    padding-bottom: 2.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .product-card__main {
@@ -6731,13 +6741,13 @@ body.lock {
 .product-card__advantages {
   margin-top: 1.6rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1.75rem;
   max-width: 34.5rem;
   order: -1;
 }
 @media (min-width: 767.98px) {
   .product-card__advantages {
+    grid-template-columns: repeat(2, 1fr);
     order: 0;
     margin-top: 1.8rem;
   }
@@ -6778,6 +6788,33 @@ body.lock {
   .product-card__advantages-text {
     font-size: 1rem;
   }
+}
+
+.product-info__characteristics_composite {
+  text-align: left;
+}
+.product-info__characteristics_composite .product-info__characteristics-item {
+  align-items: flex-start;
+  flex: 0 0 9.5rem;
+  max-width: 9.5rem;
+}
+.product-info__characteristics_composite .product-info__characteristics-item::before {
+  display: none;
+}
+.product-info__characteristics_composite .product-info__characteristics-icon {
+  width: 5rem;
+  height: 5rem;
+  border: 0.0625rem solid #c2c5c6;
+  border-radius: 0.31rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.product-info__characteristics_composite .product-info__characteristics-icon img {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  object-fit: contain;
 }
 
 .product-info__spec-caption {

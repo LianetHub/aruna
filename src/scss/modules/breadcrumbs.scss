@@ -1,21 +1,25 @@
 .breadcrumbs {
 	padding: 1.5rem 0;
+
 	@media (min-width: $md2) {
 		padding: 2rem 0;
 	}
+
 	&.breadcrumbs_sm {
-		.breadcrumbs__item {
-		}
+		.breadcrumbs__item {}
+
 		.breadcrumbs__link {
 			font-size: 0.65rem;
+
 			@media (min-width: $md4) {
 				font-size: 0.875rem;
 			}
 		}
 	}
+
 	// .breadcrumbs__container
-	&__container {
-	}
+	&__container {}
+
 	// .breadcrumbs__list
 	&__list {
 		display: flex;
@@ -26,6 +30,7 @@
 			gap: 0.25rem;
 		}
 	}
+
 	// .breadcrumbs__item
 	&__item {
 		display: inline-flex;
@@ -38,9 +43,11 @@
 		&:not(:first-child) {
 			&::before {
 				font-size: 0.65rem;
+
 				@media (min-width: $md5) {
 					font-size: 0.75rem;
 				}
+
 				height: 1rem;
 				width: 1rem;
 				display: flex;
@@ -51,6 +58,7 @@
 			}
 		}
 	}
+
 	// .breadcrumbs__link
 	&__link {
 		transition: color 0.3s ease 0s;
@@ -59,9 +67,11 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		font-size: 0.75rem;
+
 		@media (min-width: $md4) {
 			font-size: 0.875rem;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: #fff;

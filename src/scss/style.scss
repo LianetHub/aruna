@@ -62,18 +62,27 @@ body {
 	min-width: 320px;
 	min-height: 100%;
 	line-height: normal;
+	--header-height: 102px;
+
+	&:has(.sale-banner.visible) {
+		--header-height: 184px;
+	}
+
 	&.lock {
 		overflow: hidden;
+
 		@media (min-width: $md2) {
 			overflow: visible;
 		}
 	}
+
 	&:has(.sale-banner.visible) {
 		@media (max-width: $md4) {
 			overflow: hidden;
 		}
 	}
 }
+
 // ==================ОБОЛОЧКА==============================
 .wrapper {
 	position: relative;
@@ -83,13 +92,11 @@ body {
 	flex-direction: column;
 	// overflow: hidden;
 	overflow-x: clip;
+
 	@media (max-width: $md4) {
 		overflow: hidden;
 	}
-	--header-height: 102px;
-	&:has(.sale-banner.visible) {
-		--header-height: 184px;
-	}
+
 }
 
 //================== ОБОЛОЧКА==================================
@@ -102,21 +109,27 @@ body {
 	box-sizing: content-box;
 	padding: 0 1rem;
 	max-width: 100%;
+
 	@media (min-width: $md5) {
 		max-width: rem(540);
 	}
+
 	@media (min-width: $md4) {
 		max-width: rem(720);
 	}
+
 	@media (min-width: $md3) {
 		max-width: rem(960);
 	}
+
 	@media (min-width: $md2) {
 		max-width: rem(1140);
 	}
+
 	@media (min-width: $md1) {
 		max-width: rem(1250);
 	}
+
 	&.container-lg {
 		max-width: rem(1430);
 	}
@@ -139,13 +152,16 @@ body {
 	flex: 1 1 auto;
 	overflow-x: clip;
 	padding-top: max(rem(60), calc(var(--header-height) + 1rem));
+
 	@media (min-width: $md5) {
 		padding-top: max(rem(80), calc(var(--header-height) + 1rem));
 	}
+
 	@media (min-width: $md3) {
 		padding-top: max(rem(100), calc(var(--header-height) + 1rem));
 	}
 }
+
 // ========================================================
 
 @import "pages/home";
