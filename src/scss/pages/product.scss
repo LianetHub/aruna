@@ -151,7 +151,7 @@
 
 	// .product-card__spec
 	&__spec {
-		margin-top: 1.75rem;
+		margin-top: 2rem;
 		padding-bottom: 1.25rem;
 		order: -1;
 
@@ -368,6 +368,10 @@
 		&.product-card__image_composite {
 			padding: 0;
 
+			@media (min-width:$md4) {
+				text-align: right;
+			}
+
 			& img {
 				max-height: 50vh;
 
@@ -393,7 +397,7 @@
 	&__advantages {
 		margin-top: 1.6rem;
 		display: grid;
-		gap: 1.75rem;
+		gap: 1.25rem;
 		max-width: 34.5rem;
 		order: -1;
 
@@ -401,6 +405,7 @@
 			grid-template-columns: repeat(2, 1fr);
 			order: 0;
 			margin-top: 1.8rem;
+			gap: 1.75rem;
 		}
 
 		@media (min-width: $md2) {
@@ -427,11 +432,6 @@
 		align-items: center;
 		justify-content: center;
 
-		& img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
 	}
 
 	// .product-card__advantages-text
@@ -441,9 +441,7 @@
 		color: #fff;
 		max-width: 12.625rem;
 
-		@media (min-width: $md3) {
-			font-size: 1rem;
-		}
+
 	}
 }
 
@@ -793,12 +791,6 @@
 			align-items: center;
 		}
 
-		&:first-child {
-			@media (min-width: $md4) {
-				flex: 0 0 6.31rem;
-				padding-right: 1.31rem;
-			}
-		}
 	}
 
 	// .product-info__block-header
@@ -1277,19 +1269,31 @@
 	}
 
 	.product-info__characteristics-icon {
-		width: 5rem;
-		height: 5rem;
+
 		border: rem(1) solid #c2c5c6;
 		border-radius: 0.31rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
+		width: 3.875rem;
+		height: 3.875rem;
+
+		@media (min-width:$md4) {
+			width: 5rem;
+			height: 5rem;
+		}
 
 		& img {
-			max-width: 2.5rem;
-			max-height: 2.5rem;
 			object-fit: contain;
+			max-width: 1.75rem;
+			max-height: 1.75rem;
+
+			@media (min-width:$md4) {
+				max-width: 2.5rem;
+				max-height: 2.5rem;
+
+			}
 		}
 	}
 }
@@ -1365,8 +1369,8 @@
 
 	&__icon {
 		flex-shrink: 0;
-		width: 3rem;
-		height: 3rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
